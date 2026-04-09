@@ -206,9 +206,9 @@
     /* ===== HERO ===== */
     .hero {
       position: relative; overflow: hidden;
-      min-height: 620px;
+      min-height: 480px;
       display: flex; align-items: center;
-      padding: 100px 0 180px;
+      padding: 80px 0 160px;
     }
     .hero__bg {
       position: absolute; top: 0; left: 0; right: 0; bottom: 0;
@@ -230,56 +230,70 @@
       background-size: contain; background-repeat: no-repeat; background-position: center;
       opacity: 0.06; z-index: 2; pointer-events: none;
     }
-    .hero .container { position: relative; z-index: 3; display: flex; align-items: center; gap: 60px; }
-    .hero__content { flex: 0 0 55%; }
+    .hero .container { position: relative; z-index: 3; text-align: center; max-width: 800px; }
+    .hero__content { }
     .hero__badge {
-      display: inline-block; font-family: var(--font-body); font-size: 12px;
+      display: inline-block; font-family: var(--font-body); font-size: 11px;
       font-weight: 600; color: var(--white); text-transform: uppercase; letter-spacing: 2.5px;
-      background: var(--sky-blue); padding: 10px 24px; border-radius: 50px;
-      margin-bottom: 28px;
+      background: rgba(255,255,255,0.15); backdrop-filter: blur(8px);
+      padding: 8px 22px; border-radius: 50px; border: 1px solid rgba(255,255,255,0.25);
+      margin-bottom: 24px;
     }
     .hero h1 {
-      font-family: var(--font-heading); font-size: 56px; font-weight: 700;
-      color: var(--white); line-height: 1.1; margin-bottom: 10px;
+      font-family: var(--font-heading); font-size: 52px; font-weight: 700;
+      color: var(--white); line-height: 1.15; margin-bottom: 12px;
     }
-    /* Terracotta underline decoration for the H1 */
     .hero__title-accent {
       display: block; width: 60px; height: 3px;
-      background: var(--terracotta); margin-bottom: 22px;
+      background: var(--terracotta); margin: 0 auto 24px;
     }
     .hero__sub {
       font-size: 17px; line-height: 1.8; color: rgba(255,255,255,0.82);
-      margin-bottom: 40px; max-width: 520px; font-family: var(--font-body);
+      margin: 0 auto 32px; max-width: 560px; font-family: var(--font-body);
     }
-    .hero__buttons { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 44px; }
+    .hero__buttons { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; margin-bottom: 32px; }
     .hero__trust {
-      display: flex; flex-wrap: wrap; gap: 16px; align-items: center;
+      display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: center;
     }
     .hero__trust img {
-      height: 28px; width: auto; opacity: 0.7; filter: brightness(0) invert(1);
+      height: 26px; width: auto; opacity: 0.6; filter: brightness(0) invert(1);
       transition: opacity 0.3s;
     }
     .hero__trust img:hover { opacity: 1; }
 
-    .hero__media { flex: 0 0 40%; }
-    .hero__video-placeholder {
-      border-radius: 20px; overflow: hidden;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-      border: 2px solid rgba(255,255,255,0.15);
-      background: rgba(0,0,0,0.3);
-      aspect-ratio: 16/9;
-      display: flex; align-items: center; justify-content: center;
-      position: relative; cursor: pointer;
+    /* Water animation */
+    .hero__water-anim {
+      position: relative; height: 60px; margin: 0 auto 28px; width: 200px;
     }
-    .hero__play-btn {
-      width: 80px; height: 80px; border-radius: 50%;
-      background: var(--sun-orange);
-      display: flex; align-items: center; justify-content: center;
-      transition: transform 0.3s, box-shadow 0.3s;
+    .water-drop {
+      position: absolute; width: 8px; height: 8px; border-radius: 50%;
+      background: rgba(255,255,255,0.4); top: 0;
+      animation: waterFall 2.5s ease-in infinite;
     }
-    .hero__play-btn i { color: var(--white); font-size: 28px; margin-left: 4px; }
-    .hero__video-placeholder:hover .hero__play-btn {
-      transform: scale(1.1); box-shadow: 0 8px 30px rgba(232,148,74,0.5);
+    .water-drop:nth-child(1) { left: 30%; animation-delay: 0s; }
+    .water-drop:nth-child(2) { left: 50%; animation-delay: 0.8s; width: 6px; height: 6px; }
+    .water-drop:nth-child(3) { left: 70%; animation-delay: 1.5s; width: 7px; height: 7px; }
+    .water-surface {
+      position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+      width: 120px; height: 20px;
+    }
+    .water-ripple {
+      position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+      width: 0; height: 0; border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.3);
+      animation: ripple 2.5s ease-out infinite;
+    }
+    .water-ripple:nth-child(1) { animation-delay: 0.1s; }
+    .water-ripple:nth-child(2) { animation-delay: 0.9s; }
+    .water-ripple:nth-child(3) { animation-delay: 1.6s; }
+    @keyframes waterFall {
+      0% { top: 0; opacity: 0.8; transform: scale(1); }
+      70% { top: 40px; opacity: 0.6; transform: scale(0.8); }
+      100% { top: 45px; opacity: 0; transform: scale(0.3); }
+    }
+    @keyframes ripple {
+      0% { width: 0; height: 0; opacity: 0.6; }
+      100% { width: 80px; height: 16px; opacity: 0; }
     }
 
     /* ===== HERO WAVES (3-layer brand colors) ===== */
@@ -680,11 +694,8 @@
 
     /* ===== RESPONSIVE ===== */
     @media (max-width: 992px) {
-      .hero .container { flex-direction: column; }
-      .hero__content { flex: 1; }
-      .hero__media { flex: 1; width: 100%; max-width: 500px; }
       .hero h1 { font-size: 40px; }
-      .hero { padding: 80px 0 160px; }
+      .hero { padding: 70px 0 150px; }
       .hardness__grid { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto 40px; }
       .meet-solit .container { flex-direction: column; }
       .meet-solit__photo { flex: none; width: 100%; max-width: 380px; margin: 0 auto; }
@@ -793,7 +804,18 @@
         <div class="hero__badge" data-en="Arizona's Only Dual-Tank Specialist" data-es="El Unico Especialista de Doble Tanque en Arizona">Arizona's Only Dual-Tank Specialist</div>
         <h1 data-en="You Deserve Clean Water." data-es="Usted Merece Agua Limpia.">You Deserve Clean Water.</h1>
         <span class="hero__title-accent"></span>
-        <p class="hero__sub" data-en="Recent studies show tap water across Phoenix, Mesa, Chandler, Gilbert, Tempe, and Scottsdale contains elevated chlorine, ammonia, sediments, and metals. Even water that looks clean may not be safe." data-es="Estudios recientes muestran que el agua del grifo en Phoenix, Mesa, Chandler, Gilbert, Tempe y Scottsdale contiene niveles elevados de cloro, amoniaco, sedimentos y metales. Incluso el agua que se ve limpia puede no ser segura.">Recent studies show tap water across Phoenix, Mesa, Chandler, Gilbert, Tempe, and Scottsdale contains elevated chlorine, ammonia, sediments, and metals. Even water that looks clean may not be safe.</p>
+        <!-- Water drop animation -->
+        <div class="hero__water-anim">
+          <div class="water-drop"></div>
+          <div class="water-drop"></div>
+          <div class="water-drop"></div>
+          <div class="water-surface">
+            <div class="water-ripple"></div>
+            <div class="water-ripple"></div>
+            <div class="water-ripple"></div>
+          </div>
+        </div>
+        <p class="hero__sub" data-en="The water in your home might look clean. It's not. Your family drinks it, cooks with it, and bathes in it every day. Find out what's really in it." data-es="El agua de su hogar puede parecer limpia. No lo es. Su familia la bebe, cocina y se bana con ella todos los dias. Descubra lo que realmente contiene.">The water in your home might look clean. It's not. Your family drinks it, cooks with it, and bathes in it every day. Find out what's really in it.</p>
         <div class="hero__buttons">
           <a href="#contact" class="btn-orange"><i class="fas fa-calendar-check"></i> <span data-en="Book Your Free Test" data-es="Reserve Su Prueba Gratis">Book Your Free Test</span></a>
           <a href="#hardness" class="btn-outline"><i class="fas fa-arrow-down"></i> <span data-en="Learn More" data-es="Mas Informacion">Learn More</span></a>
@@ -805,13 +827,6 @@
           <img src="assets/brand/Proudly-MADE-IN-USA.png" alt="Made in USA" title="Proudly Made in USA">
           <img src="assets/brand/Lifetime-Warranty.png" alt="Lifetime Warranty" title="Lifetime Warranty">
           <img src="assets/brand/Acredited_Business-BBB.png" alt="BBB Accredited" title="BBB Accredited Business">
-        </div>
-      </div>
-      <div class="hero__media fade-up">
-        <div class="hero__video-placeholder">
-          <div class="hero__play-btn">
-            <i class="fas fa-play"></i>
-          </div>
         </div>
       </div>
     </div>
