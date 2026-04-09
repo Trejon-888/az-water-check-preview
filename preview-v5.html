@@ -99,9 +99,11 @@
       margin-bottom: 14px;
     }
     .section-title {
-      font-family: var(--font-heading); font-size: 40px; font-weight: 700;
+      font-family: var(--font-body); font-size: 40px; font-weight: 700;
       color: var(--dark); line-height: 1.15; margin-bottom: 22px;
     }
+    .heading-avenir { font-family: var(--font-body); font-weight: 700; }
+    .heading-palmore { font-family: var(--font-heading); text-transform: uppercase; letter-spacing: 2px; }
     .section-text {
       font-size: 16px; line-height: 1.8; color: var(--text); max-width: 720px;
     }
@@ -235,6 +237,7 @@
     .hero-title {
       font-family: var(--font-heading); font-size: 52px; font-weight: 700;
       color: var(--white); line-height: 1.15; margin-bottom: 12px;
+      text-transform: uppercase; letter-spacing: 2px;
     }
     .hero-title .char {
       display: inline-block;
@@ -317,7 +320,7 @@
     .hardness__card--moderate .hardness__score { color: var(--sun-orange); }
     .hardness__card--soft .hardness__score { color: var(--sky-blue); }
     .hardness__card h3 {
-      font-family: var(--font-heading); font-size: 20px; font-weight: 700;
+      font-family: var(--font-body); font-size: 20px; font-weight: 700;
       color: var(--dark); margin-bottom: 8px;
     }
     .hardness__card .region {
@@ -377,7 +380,7 @@
       margin: 0 auto 18px; display: block;
     }
     .why-testing__card h3 {
-      font-family: var(--font-heading); font-size: 17px; font-weight: 700;
+      font-family: var(--font-body); font-size: 17px; font-weight: 700;
       color: var(--dark); margin-bottom: 10px; line-height: 1.3;
     }
     .why-testing__card p {
@@ -425,6 +428,7 @@
     .pillar h3 {
       font-family: var(--font-heading); font-size: 20px; font-weight: 700;
       color: var(--dark); margin-bottom: 14px;
+      text-transform: uppercase; letter-spacing: 2px;
     }
     .pillar p { font-size: 14px; line-height: 1.75; margin-bottom: 22px; }
     .pillar .btn-orange { font-size: 12px; padding: 10px 22px; }
@@ -467,9 +471,40 @@
       border-left: 4px solid var(--terracotta); padding: 22px 28px; margin: 28px 0;
       background: rgba(192,120,80,0.06); border-radius: 0 14px 14px 0;
       font-style: italic; font-size: 17px; line-height: 1.75; color: var(--dark);
-      font-family: var(--font-heading); font-weight: 400;
+      font-family: var(--font-body); font-weight: 400;
     }
     .meet-solit__content p { font-size: 15px; line-height: 1.8; margin-bottom: 18px; }
+
+    /* ===== THE SYSTEM (Product Section) ===== */
+    .the-system { padding: 100px 0; background: var(--white); }
+    .the-system .container { max-width: var(--container); }
+    .the-system__grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 60px;
+      align-items: center; margin-top: 40px;
+    }
+    .the-system__image img {
+      width: 100%; border-radius: 16px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+    }
+    .the-system__details ul {
+      list-style: none; padding: 0; margin: 0 0 28px;
+    }
+    .the-system__details ul li {
+      font-size: 16px; line-height: 1.9; padding: 6px 0 6px 28px;
+      position: relative; color: var(--text);
+    }
+    .the-system__details ul li::before {
+      content: '\f00c'; font-family: 'Font Awesome 6 Free'; font-weight: 900;
+      position: absolute; left: 0; color: var(--sky-blue); font-size: 13px; top: 10px;
+    }
+    .the-system__details .system-link {
+      display: block; font-size: 14px; color: var(--sky-blue);
+      font-weight: 600; margin-bottom: 20px; transition: color 0.3s;
+    }
+    .the-system__details .system-link:hover { color: var(--sky-dark); }
+    @media (max-width: 768px) {
+      .the-system__grid { grid-template-columns: 1fr; gap: 32px; }
+    }
 
     /* ===== HOW IT WORKS ===== */
     .how-it-works { padding: 100px 0; background: var(--white); }
@@ -490,7 +525,7 @@
     }
     .step__icon i { font-size: 32px; color: var(--sky-blue); }
     .step h3 {
-      font-family: var(--font-heading); font-size: 22px; font-weight: 700;
+      font-family: var(--font-body); font-size: 22px; font-weight: 700;
       color: var(--dark); margin-bottom: 12px;
     }
     .step p { font-size: 15px; line-height: 1.75; }
@@ -520,8 +555,8 @@
       padding: 22px 20px; text-align: center;
     }
     .health-card__body p {
-      font-family: var(--font-heading);
-      font-size: 15px; font-weight: 600; color: var(--dark);
+      font-family: var(--font-body);
+      font-size: 15px; font-weight: 700; color: var(--dark);
       line-height: 1.4;
     }
 
@@ -540,7 +575,7 @@
       color: var(--text); margin-bottom: 20px;
     }
     .testimonial-card__author {
-      font-family: var(--font-heading); font-size: 14px; font-weight: 700;
+      font-family: var(--font-body); font-size: 14px; font-weight: 700;
       color: var(--dark);
     }
     .testimonial-card__location { font-size: 12px; color: #999; margin-top: 2px; }
@@ -562,7 +597,7 @@
     .contact .container { display: flex; gap: 60px; align-items: flex-start; }
     .contact__info { flex: 1; color: var(--white); }
     .contact__info h2 {
-      font-family: var(--font-heading); font-size: 38px; font-weight: 700;
+      font-family: var(--font-body); font-size: 38px; font-weight: 700;
       line-height: 1.15; margin-bottom: 30px;
     }
     .contact__checklist { margin-bottom: 40px; }
@@ -580,7 +615,7 @@
       font-size: 20px;
     }
     .contact__phone a {
-      font-family: var(--font-heading); font-size: 28px; font-weight: 700;
+      font-family: var(--font-body); font-size: 28px; font-weight: 700;
       color: var(--white);
     }
     .contact__serving {
@@ -592,7 +627,7 @@
       padding: 40px 36px; box-shadow: 0 12px 48px rgba(0,0,0,0.2);
     }
     .contact__form-card h3 {
-      font-family: var(--font-heading); font-size: 24px; font-weight: 700;
+      font-family: var(--font-body); font-size: 24px; font-weight: 700;
       color: var(--dark); margin-bottom: 24px; text-align: center;
     }
     .form-group { margin-bottom: 16px; }
@@ -627,7 +662,7 @@
     }
     .form-success i { font-size: 48px; color: var(--sky-blue); margin-bottom: 16px; }
     .form-success h3 {
-      font-family: var(--font-heading); font-size: 22px; color: var(--dark);
+      font-family: var(--font-body); font-size: 22px; font-weight: 700; color: var(--dark);
       margin-bottom: 8px;
     }
     .form-success p { font-size: 14px; color: var(--text); }
@@ -651,7 +686,7 @@
     }
     .footer__social a:hover { background: var(--sun-orange); }
     .footer h4 {
-      font-family: var(--font-heading); font-size: 16px; font-weight: 700;
+      font-family: var(--font-body); font-size: 16px; font-weight: 700;
       color: var(--white); margin-bottom: 22px;
     }
     .footer ul li { padding: 5px 0; }
@@ -802,7 +837,7 @@
     <div class="container">
       <div class="hero__content">
         <div class="hero__badge" data-en="Arizona's Only Dual-Tank Specialist" data-es="El Unico Especialista de Doble Tanque en Arizona">Arizona's Only Dual-Tank Specialist</div>
-        <h1 class="hero-title" aria-label="You Deserve Clean Water." data-en="You Deserve Clean Water." data-es="Usted Merece Agua Limpia.">You Deserve Clean Water.</h1>
+        <h1 class="hero-title" aria-label="YOU DESERVE CLEAN WATER." data-en="YOU DESERVE CLEAN WATER." data-es="USTED MERECE AGUA LIMPIA.">YOU DESERVE CLEAN WATER.</h1>
         <span class="hero__title-accent"></span>
         <!-- SVG Water Surface Animation -->
         <div class="hero__water-surface">
@@ -847,7 +882,7 @@
     <div class="container">
       <div class="hardness__intro fade-up">
         <div class="section-label">Arizona Water Hardness Levels</div>
-        <h2 class="section-title" data-en="Why Phoenix Metro Has Some of the Hardest Water in America" data-es="Por Que el Area de Phoenix Tiene Una de las Aguas Mas Duras de America">Why Phoenix Metro Has Some of the Hardest Water in America</h2>
+        <h2 class="section-title" data-en="Why Phoenix Metro Has Some of the Hardest Water in America" data-es="Por Que el Area Metropolitana de Phoenix Tiene Una de las Aguas Mas Duras de America">Why Phoenix Metro Has Some of the Hardest Water in America</h2>
         <p class="section-text" style="margin: 0 auto;">Here in Arizona, especially in Phoenix Metro, the average water hardness is among the highest in the United States. Many homes measure between 15-25 grains per gallon, far exceeding the 7+ threshold that the Water Quality Association classifies as "very hard." This means your water is loaded with dissolved minerals, chemicals, and sediments that affect everything from your skin to your pipes.</p>
       </div>
 
@@ -945,7 +980,7 @@
     <div class="container">
       <div class="fade-up">
         <div class="section-label">Why It Matters</div>
-        <h2 class="section-title">Why Testing Your Water Matters</h2>
+        <h2 class="section-title" data-en="Why Testing Your Water Matters" data-es="Por Que Es Importante Analizar Su Agua">Why Testing Your Water Matters</h2>
         <p class="section-text" style="margin: 0 auto 10px;">Your water may look clean, but invisible contaminants can affect your health, home, and family every day.</p>
       </div>
 
@@ -1002,7 +1037,7 @@
   <!-- ===== CURIOSITY ===== -->
   <section class="curiosity">
     <div class="container fade-up">
-      <h2 class="section-title">Have you ever wondered what's really in your tap water?</h2>
+      <h2 class="section-title" data-en="Have you ever wondered what's really in your tap water?" data-es="Alguna vez se ha preguntado que hay realmente en el agua de su grifo?">Have you ever wondered what's really in your tap water?</h2>
       <p>Most Arizona homeowners don't think about it. You cook with it. You bathe in it. Your kids drink it every day. But have you actually seen what's in it?</p>
       <p>Even though your city treats the water supply, what comes out of your faucet can be very different. As water travels through miles of pipelines and passes through your home's plumbing system, its quality changes.</p>
       <a href="#contact" class="btn-orange"><i class="fas fa-search"></i> Find Out What's In Your Water</a>
@@ -1022,31 +1057,31 @@
       <div class="pillars__grid">
         <div class="pillar fade-up">
           <div class="pillar__icon"><i class="fas fa-heart"></i></div>
-          <h3>Health</h3>
+          <h3 data-en="HEALTH" data-es="SALUD">Health</h3>
           <p>Clean water means healthier skin, hair, and hydration. No more chlorine damage. Hard or chemical-filled water can cause dryness and rashes.</p>
           <a href="#contact" class="btn-orange">Learn More</a>
         </div>
         <div class="pillar fade-up">
           <div class="pillar__icon"><i class="fas fa-dollar-sign"></i></div>
-          <h3>Savings</h3>
+          <h3 data-en="SAVINGS" data-es="AHORRO">Savings</h3>
           <p>Save 50%+ on cleaning products. Reduce energy costs. Your water heater works harder with hard water, leading to higher bills.</p>
           <a href="#contact" class="btn-orange">Learn More</a>
         </div>
         <div class="pillar fade-up">
           <div class="pillar__icon"><i class="fas fa-leaf"></i></div>
-          <h3>Environmental Care</h3>
+          <h3 data-en="ENVIRONMENTAL CARE" data-es="CUIDADO AMBIENTAL">Environmental Care</h3>
           <p>No more bottled water. Organic cleaning products included for life. Less plastic waste.</p>
           <a href="#contact" class="btn-orange">Learn More</a>
         </div>
         <div class="pillar fade-up">
           <div class="pillar__icon"><i class="fas fa-cogs"></i></div>
-          <h3>Innovation</h3>
+          <h3 data-en="INNOVATION" data-es="INNOVACION">Innovation</h3>
           <p>Revolutionary Vortech&trade; dual-tank technology. Tank 1 restores minerals. Tank 2 removes chemicals and heavy metals.</p>
           <a href="#contact" class="btn-orange">Learn More</a>
         </div>
         <div class="pillar fade-up">
           <div class="pillar__icon"><i class="fas fa-sun"></i></div>
-          <h3>Arizona Advantage</h3>
+          <h3 data-en="ARIZONA ADVANTAGE" data-es="VENTAJA ARIZONA">Arizona Advantage</h3>
           <p>The only dual-tank system in Arizona. Lifetime warranty. One maintenance visit every 10 years.</p>
           <a href="#contact" class="btn-orange">Learn More</a>
         </div>
@@ -1065,13 +1100,42 @@
       </div>
       <div class="meet-solit__content fade-up">
         <div class="section-label">The Person Behind Your Water</div>
-        <h2 class="section-title" data-en="Meet Solit" data-es="Conoce a Solit">Meet Solit</h2>
+        <h2 class="section-title heading-palmore" data-en="MEET SOLIT" data-es="CONOCE A SOLIT">MEET SOLIT</h2>
+        <p style="font-family: var(--font-body); font-size: 14px; font-weight: 600; color: var(--terracotta); letter-spacing: 1px; margin-top: -14px; margin-bottom: 16px;">Authorized Aquafeel Solutions Representative &mdash; Arizona</p>
         <div class="meet-solit__quote">
           "I don't sell water systems. I ask questions. And when people see what's in their water, they make the decision for themselves."
         </div>
         <p>Solit's approach is simple: curiosity first. She starts by asking "Have you ever done a water test?" Then "Which water do you cook with?" People start thinking. They start wondering. And that's enough.</p>
         <p>With 90%+ engagement from this approach, Solit doesn't need a sales pitch. She switched to the dual-tank system because it's the only one she'd put in her own home. When you book a test, you're getting someone who genuinely cares about your water quality -- not a salesperson reading a script.</p>
         <a href="#contact" class="btn-orange"><i class="fas fa-calendar-check"></i> Book a Test With Solit</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="terracotta-divider"></div>
+
+  <!-- ===== THE SYSTEM (Product Section) ===== -->
+  <section class="the-system" id="the-system">
+    <div class="container">
+      <div class="fade-up" style="text-align: center;">
+        <div class="section-label" data-en="THE SYSTEM" data-es="EL SISTEMA">THE SYSTEM</div>
+        <h2 class="section-title" data-en="Aquafeel Dual-Tank Water Purification" data-es="Purificacion de Agua de Doble Tanque Aquafeel">Aquafeel Dual-Tank Water Purification</h2>
+      </div>
+      <div class="the-system__grid">
+        <div class="the-system__image fade-up">
+          <img src="assets/brand/Features_Benefits.png" alt="Aquafeel dual-tank water purification system cross-section diagram" loading="lazy">
+        </div>
+        <div class="the-system__details fade-up">
+          <ul>
+            <li>Dual-tank technology designed for Arizona's hard water</li>
+            <li>Pre-Filter, KDF, Catalytic Carbon, and Ion Exchange Resin</li>
+            <li>Lifetime warranty with maintenance every 10 years</li>
+            <li>NSF ANSI 44, 42, 61/372 certified</li>
+            <li>Made in USA with 25+ year track record</li>
+          </ul>
+          <a href="https://aquafeelsolutions.com" target="_blank" rel="noopener" class="system-link">Learn more about Aquafeel Solutions <i class="fas fa-arrow-right"></i></a>
+          <a href="#contact" class="btn-orange"><i class="fas fa-calendar-check"></i> <span data-en="Book Your Free Water Test" data-es="Reserve Su Prueba Gratuita">Book Your Free Water Test</span></a>
+        </div>
       </div>
     </div>
   </section>
@@ -1087,19 +1151,19 @@
         <div class="step fade-up">
           <div class="step__number">1</div>
           <div class="step__icon"><i class="fas fa-vial"></i></div>
-          <h3>We Test</h3>
+          <h3 data-en="We Test" data-es="Analizamos">We Test</h3>
           <p>Free 15-minute test at your kitchen sink. We check for chlorine, ammonia, hardness, heavy metals, and more.</p>
         </div>
         <div class="step fade-up">
           <div class="step__number">2</div>
           <div class="step__icon"><i class="fas fa-clipboard-check"></i></div>
-          <h3>You Decide</h3>
+          <h3 data-en="You Decide" data-es="Usted Decide">You Decide</h3>
           <p>No pressure, no sales pitch. We show you the results and explain what they mean. The choice is yours.</p>
         </div>
         <div class="step fade-up">
           <div class="step__number">3</div>
           <div class="step__icon"><i class="fas fa-wrench"></i></div>
-          <h3>We Install</h3>
+          <h3 data-en="We Install" data-es="Instalamos">We Install</h3>
           <p>Professional installation by certified technicians. Lifetime warranty. One maintenance visit every 10 years.</p>
         </div>
       </div>
@@ -1111,7 +1175,7 @@
     <div class="container">
       <div class="health-effects__intro fade-up">
         <div class="section-label">Know The Risks</div>
-        <h2 class="section-title">The Effects of Bad Water</h2>
+        <h2 class="section-title" data-en="The Effects of Bad Water" data-es="Los Efectos del Agua Contaminada">The Effects of Bad Water</h2>
         <p class="section-text" style="margin: 0 auto;">Bad water doesn't just taste or smell unpleasant -- it can seriously affect your health and home.</p>
       </div>
       <div class="health-effects__grid">
@@ -1356,7 +1420,7 @@
 
   <!-- ===== MOBILE STICKY CTA ===== -->
   <div class="mobile-cta">
-    <a href="#contact" class="btn-orange"><i class="fas fa-calendar-check"></i> Book Free Water Test</a>
+    <a href="#contact" class="btn-orange"><i class="fas fa-calendar-check"></i> <span data-en="Book Free Water Test" data-es="Reserve Su Prueba Gratis">Book Free Water Test</span></a>
   </div>
 
   <!-- ===== SCRIPTS ===== -->
