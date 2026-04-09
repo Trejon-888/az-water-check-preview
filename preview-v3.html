@@ -1,0 +1,1272 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AZ Water Check | Free Home Water Quality Test in Arizona</title>
+  <meta name="description" content="Arizona's only dual-tank water purification specialist. Free home water quality test. Lifetime warranty. Bilingual service.">
+
+  <!-- Google Fonts: Nunito Sans (Avenir alternative) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,300;0,6..12,400;0,6..12,500;0,6..12,600;0,6..12,700;1,6..12,400;1,6..12,600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome 6.5.1 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Swiper 8 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+
+  <style>
+    /* ========================================
+       PALMORE FONT FACES
+       ======================================== */
+    @font-face {
+      font-family: 'Palmore';
+      src: url('assets/brand/fonts/PalmoreLight.ttf') format('truetype');
+      font-weight: 300;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Palmore';
+      src: url('assets/brand/fonts/PalmoreRegular.ttf') format('truetype');
+      font-weight: 400;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Palmore';
+      src: url('assets/brand/fonts/PalmoreSemibold.ttf') format('truetype');
+      font-weight: 600;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Palmore';
+      src: url('assets/brand/fonts/PalmoreBold.ttf') format('truetype');
+      font-weight: 700;
+      font-display: swap;
+    }
+
+    /* ========================================
+       DESIGN TOKENS
+       ======================================== */
+    :root {
+      --sky-blue: #5BA4C9;
+      --sky-blue-dark: #4890B5;
+      --terracotta: #C07850;
+      --terracotta-dark: #A86840;
+      --sun-orange: #E8944A;
+      --sun-orange-dark: #D4823A;
+      --dark: #1a1a1a;
+      --text: #4a4a4a;
+      --cream: #F5EDE3;
+      --white: #FFFFFF;
+      --light-blue: #E8F4FA;
+      --container: 1140px;
+      --font-heading: 'Palmore', Georgia, 'Times New Roman', serif;
+      --font-body: 'Nunito Sans', 'Avenir', 'Helvetica Neue', sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      color: var(--text);
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.7;
+    }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; height: auto; display: block; }
+    ul { list-style: none; }
+    .container { max-width: var(--container); margin: 0 auto; padding: 0 24px; }
+
+    /* ===== PILL BUTTONS ===== */
+    .btn-orange {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--sun-orange); color: var(--white); font-family: var(--font-body);
+      font-size: 15px; font-weight: 600; padding: 16px 36px; border-radius: 50px;
+      border: none; cursor: pointer; transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+      letter-spacing: 0.3px;
+    }
+    .btn-orange:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 24px rgba(232,148,74,0.4);
+      background: var(--sun-orange-dark);
+    }
+    .btn-outline {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: transparent; color: var(--white); font-family: var(--font-body);
+      font-size: 15px; font-weight: 600; padding: 16px 36px; border-radius: 50px;
+      border: 2px solid rgba(255,255,255,0.5); cursor: pointer; transition: all 0.3s;
+    }
+    .btn-outline:hover { background: var(--white); color: var(--sky-blue); border-color: var(--white); }
+
+    /* ===== SECTION SHARED ===== */
+    .section-label {
+      font-family: var(--font-body); font-size: 13px; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 3px; color: var(--terracotta);
+      margin-bottom: 14px;
+    }
+    .section-title {
+      font-family: var(--font-heading); font-size: 40px; font-weight: 600;
+      color: var(--dark); line-height: 1.15; margin-bottom: 22px;
+    }
+    .section-text {
+      font-size: 16px; line-height: 1.8; color: var(--text); max-width: 720px;
+    }
+
+    /* ===== ANIMATIONS ===== */
+    .fade-up {
+      opacity: 0; transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    /* ===== TOP BAR ===== */
+    .top-bar {
+      background: var(--sky-blue); min-height: 45px;
+      display: flex; align-items: center;
+    }
+    .top-bar .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+    .top-bar__info { display: flex; align-items: center; gap: 24px; }
+    .top-bar__info a, .top-bar__info span {
+      color: var(--white); font-size: 12px; font-family: var(--font-body);
+      font-weight: 600;
+      display: flex; align-items: center; gap: 6px;
+    }
+    .top-bar__info i { color: rgba(255,255,255,0.8); font-size: 14px; }
+    .top-bar__right { display: flex; align-items: center; gap: 12px; }
+    .top-bar__social { display: flex; gap: 2px; }
+    .top-bar__social a {
+      color: var(--white); width: 34px; height: 34px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 14px; border-radius: 50%; transition: background 0.3s;
+    }
+    .top-bar__social a:hover { background: rgba(255,255,255,0.15); }
+    .top-bar__lang {
+      color: var(--white); font-family: var(--font-body); font-size: 12px;
+      font-weight: 600; border-left: 1px solid rgba(255,255,255,0.35);
+      padding-left: 12px; display: flex; align-items: center; gap: 6px;
+    }
+    .lang-btn {
+      background: none; border: none; color: rgba(255,255,255,0.5);
+      font-family: var(--font-body); font-size: 12px; font-weight: 600;
+      cursor: pointer; transition: color 0.3s;
+    }
+    .lang-btn.active, .lang-btn:hover { color: var(--white); }
+
+    /* ===== NAVBAR ===== */
+    .navbar {
+      background: var(--white); position: sticky; top: 0; z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      border-bottom: 1px solid rgba(0,0,0,0.04);
+    }
+    .navbar .container { display: flex; align-items: center; justify-content: space-between; min-height: 72px; }
+    .navbar__logo img {
+      height: 45px; width: auto; object-fit: contain;
+    }
+    .navbar__links { display: flex; align-items: center; }
+    .navbar__links a {
+      font-family: var(--font-body); font-size: 14px; font-weight: 500;
+      color: var(--dark); padding: 24px 16px; position: relative;
+      transition: color 0.3s;
+    }
+    .navbar__links a::after {
+      content: ''; position: absolute; bottom: 18px; left: 16px; right: 16px;
+      height: 3px; background: var(--sun-orange); transform: scaleX(0); transition: transform 0.3s;
+      border-radius: 2px;
+    }
+    .navbar__links a:hover { color: var(--sky-blue); }
+    .navbar__links a:hover::after { transform: scaleX(1); }
+    .navbar__right { display: flex; align-items: center; gap: 12px; }
+    .navbar__lang {
+      display: flex; align-items: center; gap: 4px;
+    }
+    .nav-lang-btn {
+      background: none; border: 2px solid transparent; color: var(--dark);
+      font-family: var(--font-body); font-size: 13px; font-weight: 600;
+      padding: 5px 10px; border-radius: 6px; cursor: pointer; transition: all 0.3s;
+    }
+    .nav-lang-btn.active {
+      background: var(--sky-blue); color: var(--white); border-color: var(--sky-blue);
+    }
+    .nav-lang-btn:not(.active):hover {
+      border-color: var(--sky-blue); color: var(--sky-blue);
+    }
+    .navbar__cta {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--sun-orange); color: var(--white); font-family: var(--font-body);
+      font-size: 13px; font-weight: 700; padding: 12px 28px; border-radius: 50px;
+      transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+    .navbar__cta:hover { transform: scale(1.05); box-shadow: 0 4px 16px rgba(232,148,74,0.35); background: var(--sun-orange-dark); }
+    .navbar__hamburger {
+      display: none; background: none; border: none; font-size: 24px;
+      color: var(--dark); cursor: pointer;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      position: relative; overflow: hidden;
+      min-height: 660px;
+      display: flex; align-items: center;
+      padding: 100px 0 200px;
+      background: linear-gradient(135deg, var(--sky-blue) 0%, var(--sky-blue-dark) 60%, #3D7A9E 100%);
+    }
+    /* Desert mountain silhouette as background element */
+    .hero__desert-bg {
+      position: absolute; bottom: 160px; left: 50%;
+      transform: translateX(-50%);
+      width: 120%; max-width: 1800px;
+      opacity: 0.08;
+      pointer-events: none; z-index: 0;
+    }
+    .hero__desert-bg img {
+      width: 100%; height: auto;
+    }
+    .hero .container { position: relative; z-index: 2; display: flex; align-items: center; gap: 40px; }
+    .hero__content { flex: 0 0 55%; }
+    .hero__badge {
+      display: inline-block; font-family: var(--font-body); font-size: 12px;
+      font-weight: 600; color: var(--white); text-transform: uppercase; letter-spacing: 2.5px;
+      background: rgba(255,255,255,0.12); padding: 10px 24px; border-radius: 50px;
+      margin-bottom: 28px; backdrop-filter: blur(4px);
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+    .hero h1 {
+      font-family: var(--font-heading); font-size: 52px; font-weight: 700;
+      color: var(--white); line-height: 1.1; margin-bottom: 22px;
+    }
+    .hero__sub {
+      font-size: 17px; line-height: 1.8; color: rgba(255,255,255,0.9);
+      margin-bottom: 40px; max-width: 520px;
+    }
+    .hero__buttons { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 44px; }
+    .hero__trust-badges {
+      display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
+    }
+    .hero__trust-badges img {
+      height: 28px; width: auto; object-fit: contain;
+      opacity: 0.85; filter: brightness(0) invert(1);
+      transition: opacity 0.3s;
+    }
+    .hero__trust-badges img:hover { opacity: 1; }
+
+    .hero__media { flex: 0 0 45%; display: flex; justify-content: center; align-items: center; }
+    .hero__product-img {
+      max-width: 420px; width: 100%;
+      filter: drop-shadow(0 20px 50px rgba(0,0,0,0.3));
+      animation: heroFloat 4s ease-in-out infinite;
+    }
+    .hero__product-img img {
+      width: 100%; height: auto; object-fit: contain;
+    }
+    @keyframes heroFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+
+    /* ===== HERO WAVES (brand color layers) ===== */
+    .hero-waves {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 160px;
+      z-index: 3;
+      pointer-events: none;
+    }
+
+    /* ===== PRODUCT SHOWCASE (THE SYSTEM) ===== */
+    .product-showcase { padding: 100px 0 90px; background: var(--cream); }
+    .product-showcase .container { text-align: center; }
+    .product-showcase__intro { max-width: 720px; margin: 0 auto 60px; }
+    .product-showcase__grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 60px;
+      align-items: center; text-align: left;
+    }
+    .product-showcase__image {
+      border-radius: 16px; overflow: hidden;
+      background: var(--white);
+      padding: 20px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.06);
+    }
+    .product-showcase__image img {
+      width: 100%; object-fit: contain;
+    }
+    .product-showcase__layers { }
+    .product-showcase__layer {
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(192,120,80,0.15);
+    }
+    .product-showcase__layer:last-child { border-bottom: none; }
+    .product-showcase__layer h3 {
+      font-family: var(--font-heading); font-size: 18px; font-weight: 600;
+      color: var(--dark); margin-bottom: 6px;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .product-showcase__layer h3 .layer-num {
+      width: 28px; height: 28px; border-radius: 50%;
+      background: var(--sun-orange); color: var(--white);
+      font-family: var(--font-body);
+      font-size: 13px; font-weight: 700;
+      display: inline-flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .product-showcase__layer p {
+      font-size: 15px; line-height: 1.7; color: var(--text);
+      padding-left: 38px;
+    }
+    .product-showcase__tagline {
+      margin-top: 40px; font-family: var(--font-heading);
+      font-size: 17px; font-weight: 400; color: var(--dark);
+      text-align: center; padding: 20px 24px;
+      background: rgba(192,120,80,0.08); border-radius: 12px;
+      border-left: 4px solid var(--terracotta);
+    }
+
+    /* ===== WHOLE HOME SOLUTION ===== */
+    .whole-home { padding: 100px 0 90px; background: var(--white); }
+    .whole-home .container { text-align: center; }
+    .whole-home__intro { max-width: 720px; margin: 0 auto 50px; }
+    .whole-home__image {
+      max-width: 650px; margin: 0 auto 40px;
+      border-radius: 16px; overflow: hidden;
+      box-shadow: 0 12px 48px rgba(0,0,0,0.08);
+    }
+    .whole-home__image img {
+      width: 100%; object-fit: contain; display: block;
+    }
+    .whole-home__text {
+      max-width: 680px; margin: 0 auto 36px;
+      font-size: 16px; line-height: 1.85; color: var(--text);
+    }
+
+    /* ===== CERTIFICATION BADGE BAR ===== */
+    .badge-bar { padding: 60px 0; background: var(--light-blue); }
+    .badge-bar .container {
+      display: flex; align-items: center; justify-content: center;
+      gap: 40px; flex-wrap: wrap;
+    }
+    .badge-bar__item {
+      transition: filter 0.4s ease, transform 0.3s ease;
+      filter: grayscale(0.4);
+    }
+    .badge-bar__item:hover {
+      filter: grayscale(0);
+      transform: scale(1.08);
+    }
+    .badge-bar__item img {
+      height: 55px; width: auto; object-fit: contain;
+    }
+
+    /* ===== WATER HARDNESS ===== */
+    .hardness { padding: 100px 0 90px; background: var(--cream); }
+    .hardness .container { text-align: center; }
+    .hardness__intro { max-width: 820px; margin: 0 auto 50px; }
+    .hardness__map {
+      max-width: 700px; margin: 0 auto 50px;
+      border-radius: 16px; overflow: hidden;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.08);
+    }
+    .hardness__map img { width: 100%; display: block; }
+    .hardness__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-bottom: 50px; }
+    .hardness__card {
+      background: var(--white); border-radius: 16px; padding: 36px 28px;
+      border: 1px solid rgba(0,0,0,0.05); text-align: left; transition: box-shadow 0.3s, transform 0.3s;
+    }
+    .hardness__card:hover { box-shadow: 0 12px 40px rgba(0,0,0,0.08); transform: translateY(-4px); }
+    .hardness__card--extreme { border-top: 4px solid var(--terracotta); }
+    .hardness__card--moderate { border-top: 4px solid var(--sun-orange); }
+    .hardness__card--soft { border-top: 4px solid var(--sky-blue); }
+    .hardness__score {
+      font-family: var(--font-heading); font-size: 48px; font-weight: 700; margin-bottom: 4px;
+    }
+    .hardness__card--extreme .hardness__score { color: var(--terracotta); }
+    .hardness__card--moderate .hardness__score { color: var(--sun-orange); }
+    .hardness__card--soft .hardness__score { color: var(--sky-blue); }
+    .hardness__card h3 {
+      font-family: var(--font-heading); font-size: 20px; font-weight: 600;
+      color: var(--dark); margin-bottom: 8px;
+    }
+    .hardness__card .region {
+      font-size: 13px; color: var(--text); opacity: 0.7; margin-bottom: 16px;
+      font-style: italic;
+    }
+    .hardness__card ul { padding-left: 0; }
+    .hardness__card ul li {
+      font-size: 14px; line-height: 1.9; padding-left: 22px; position: relative;
+    }
+    .hardness__card ul li::before {
+      content: '\f00c'; font-family: 'Font Awesome 6 Free'; font-weight: 900;
+      position: absolute; left: 0; font-size: 11px;
+    }
+    .hardness__card--extreme ul li::before { color: var(--terracotta); }
+    .hardness__card--moderate ul li::before { color: var(--sun-orange); }
+    .hardness__card--soft ul li::before { color: var(--sky-blue); }
+
+    /* ===== MEET SOLIT ===== */
+    .meet-solit {
+      padding: 100px 0; position: relative;
+      background: var(--white);
+    }
+    .meet-solit .container { position: relative; z-index: 1; display: flex; align-items: center; gap: 60px; }
+    .meet-solit__photo { flex: 0 0 380px; position: relative; }
+    .meet-solit__img-wrap {
+      width: 380px; height: 460px; border-radius: 20px;
+      position: relative; overflow: hidden;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+      border: 4px solid var(--terracotta);
+    }
+    .meet-solit__img-wrap img {
+      width: 100%; height: 100%; object-fit: cover;
+    }
+    .meet-solit__badge-overlay {
+      position: absolute; bottom: 20px; left: 20px; right: 20px;
+      background: var(--sun-orange); color: var(--white); padding: 12px 20px;
+      border-radius: 12px; font-family: var(--font-body); font-size: 13px;
+      font-weight: 700; text-align: center; letter-spacing: 1px;
+    }
+    .meet-solit__content { flex: 1; }
+    .meet-solit__content .section-label { color: var(--terracotta); }
+    .meet-solit__quote {
+      border-left: 4px solid var(--terracotta); padding: 22px 28px; margin: 28px 0;
+      background: rgba(192,120,80,0.06); border-radius: 0 14px 14px 0;
+      font-family: var(--font-heading); font-style: italic;
+      font-size: 17px; line-height: 1.75; color: var(--dark);
+    }
+    .meet-solit__content p { font-size: 15px; line-height: 1.8; margin-bottom: 18px; }
+
+    /* ===== HOW IT WORKS ===== */
+    .how-it-works { padding: 100px 0; background: var(--cream); }
+    .how-it-works .container { text-align: center; }
+    .steps { display: flex; justify-content: center; gap: 60px; margin-top: 56px; flex-wrap: wrap; }
+    .step { text-align: center; max-width: 300px; }
+    .step__number {
+      width: 76px; height: 76px; border-radius: 50%; background: var(--sky-blue);
+      color: var(--white); font-family: var(--font-heading); font-size: 30px;
+      font-weight: 700; display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 22px; position: relative;
+      box-shadow: 0 6px 20px rgba(91,164,201,0.3);
+    }
+    .step__icon {
+      width: 80px; height: 80px; border-radius: 50%;
+      background: rgba(91,164,201,0.1); margin: 0 auto 22px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .step__icon i { font-size: 32px; color: var(--sky-blue); }
+    .step h3 {
+      font-family: var(--font-heading); font-size: 22px; font-weight: 600;
+      color: var(--dark); margin-bottom: 12px;
+    }
+    .step p { font-size: 15px; line-height: 1.75; }
+
+    /* ===== TESTIMONIALS ===== */
+    .testimonials { padding: 100px 0; background: var(--white); }
+    .testimonials .container { text-align: center; }
+    .testimonials .swiper { margin-top: 44px; padding-bottom: 50px; }
+    .testimonial-card {
+      background: var(--white); border-radius: 16px; padding: 36px 28px;
+      text-align: left; border-left: 4px solid var(--terracotta);
+      box-shadow: 0 2px 16px rgba(0,0,0,0.04);
+    }
+    .testimonial-card__stars { color: var(--sun-orange); font-size: 16px; margin-bottom: 16px; }
+    .testimonial-card__quote {
+      font-size: 15px; line-height: 1.75; font-style: italic;
+      color: var(--text); margin-bottom: 20px;
+    }
+    .testimonial-card__author {
+      font-family: var(--font-heading); font-size: 14px; font-weight: 700;
+      color: var(--dark);
+    }
+    .testimonial-card__location { font-size: 12px; color: #999; margin-top: 2px; }
+    .testimonials .swiper-pagination-bullet { background: var(--sky-blue); }
+    .testimonials .swiper-pagination-bullet-active { background: var(--sun-orange); }
+    .testimonials__disclaimer {
+      font-size: 12px; color: #999; margin-top: 16px; font-style: italic;
+    }
+
+    /* ===== CONTACT ===== */
+    .contact {
+      padding: 100px 0;
+      background: linear-gradient(135deg, var(--terracotta) 0%, var(--terracotta-dark) 50%, #8B5A3A 100%);
+    }
+    .contact .container { display: flex; gap: 60px; align-items: flex-start; }
+    .contact__info { flex: 1; color: var(--white); }
+    .contact__info h2 {
+      font-family: var(--font-heading); font-size: 38px; font-weight: 700;
+      line-height: 1.15; margin-bottom: 30px; color: var(--white);
+    }
+    .contact__checklist { margin-bottom: 40px; }
+    .contact__checklist li {
+      display: flex; align-items: center; gap: 14px;
+      font-size: 16px; color: rgba(255,255,255,0.9); padding: 10px 0;
+    }
+    .contact__checklist li i { color: var(--sun-orange); font-size: 18px; }
+    .contact__phone {
+      display: flex; align-items: center; gap: 14px; margin-bottom: 18px;
+    }
+    .contact__phone i {
+      width: 48px; height: 48px; border-radius: 50%; background: var(--sun-orange);
+      color: var(--white); display: flex; align-items: center; justify-content: center;
+      font-size: 20px;
+    }
+    .contact__phone a {
+      font-family: var(--font-heading); font-size: 28px; font-weight: 700;
+      color: var(--white);
+    }
+    .contact__serving {
+      font-size: 14px; color: rgba(255,255,255,0.6); margin-top: 8px;
+    }
+
+    .contact__form-card {
+      flex: 0 0 460px; background: var(--white); border-radius: 20px;
+      padding: 40px 36px; box-shadow: 0 12px 48px rgba(0,0,0,0.25);
+    }
+    .contact__form-card h3 {
+      font-family: var(--font-heading); font-size: 24px; font-weight: 600;
+      color: var(--dark); margin-bottom: 24px; text-align: center;
+    }
+    .form-group { margin-bottom: 16px; }
+    .form-group label {
+      display: block; font-size: 13px; font-weight: 600; color: var(--dark);
+      margin-bottom: 6px; font-family: var(--font-body);
+    }
+    .form-group input, .form-group select {
+      width: 100%; padding: 12px 16px; border: 1px solid #ddd; border-radius: 10px;
+      font-size: 14px; font-family: var(--font-body); color: var(--text);
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+    .form-group input:focus, .form-group select:focus {
+      outline: none; border-color: var(--sky-blue); box-shadow: 0 0 0 3px rgba(91,164,201,0.15);
+    }
+    .form-disclaimer {
+      font-size: 11px; color: #999; line-height: 1.6; margin: 16px 0;
+    }
+    .form-submit {
+      width: 100%; padding: 16px; background: var(--sun-orange); color: var(--white);
+      font-family: var(--font-body); font-size: 16px; font-weight: 700;
+      border: none; border-radius: 50px; cursor: pointer; transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+      letter-spacing: 0.5px;
+    }
+    .form-submit:hover { transform: scale(1.03); box-shadow: 0 6px 20px rgba(232,148,74,0.35); background: var(--sun-orange-dark); }
+    .form-links {
+      text-align: center; margin-top: 14px; font-size: 11px;
+    }
+    .form-links a { color: var(--sky-blue); margin: 0 6px; }
+    .form-success {
+      display: none; text-align: center; padding: 40px 20px;
+    }
+    .form-success i { font-size: 48px; color: var(--sun-orange); margin-bottom: 16px; }
+    .form-success h3 {
+      font-family: var(--font-heading); font-size: 22px; color: var(--dark);
+      margin-bottom: 8px;
+    }
+    .form-success p { font-size: 14px; color: var(--text); }
+
+    /* ===== FOOTER ===== */
+    .footer { background: var(--dark); padding: 70px 0 0; color: rgba(255,255,255,0.7); }
+    .footer__grid {
+      display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 48px;
+      padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .footer__brand p { font-size: 13px; line-height: 1.8; margin: 16px 0; }
+    .footer__brand-logo img {
+      height: 40px; width: auto; object-fit: contain;
+      margin-bottom: 4px;
+    }
+    .footer__partner-line {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 12px; color: rgba(255,255,255,0.5); margin-top: 8px;
+    }
+    .footer__partner-line img {
+      width: 16px; height: 16px; object-fit: contain;
+      opacity: 0.7;
+    }
+    .footer__social { display: flex; gap: 10px; margin-top: 16px; }
+    .footer__social a {
+      width: 38px; height: 38px; border-radius: 50%;
+      background: rgba(255,255,255,0.08); color: var(--white);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 14px; transition: background 0.3s;
+    }
+    .footer__social a:hover { background: var(--sun-orange); }
+    .footer h4 {
+      font-family: var(--font-heading); font-size: 16px; font-weight: 600;
+      color: var(--white); margin-bottom: 22px;
+    }
+    .footer ul li { padding: 5px 0; }
+    .footer ul li a { font-size: 13px; transition: color 0.3s; }
+    .footer ul li a:hover { color: var(--sun-orange); }
+    .footer__certs p { font-size: 13px; line-height: 1.8; }
+    .footer__mini-form input {
+      width: 100%; padding: 11px 14px; border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 10px; background: rgba(255,255,255,0.06); color: var(--white);
+      font-size: 13px; margin-bottom: 10px; font-family: var(--font-body);
+    }
+    .footer__mini-form input::placeholder { color: rgba(255,255,255,0.4); }
+    .footer__mini-form button {
+      width: 100%; padding: 11px; background: var(--sun-orange); color: var(--white);
+      border: none; border-radius: 50px; font-family: var(--font-body);
+      font-size: 13px; font-weight: 600; cursor: pointer; transition: transform 0.3s, background 0.3s;
+    }
+    .footer__mini-form button:hover { transform: scale(1.03); background: var(--sun-orange-dark); }
+    .footer__bottom {
+      padding: 24px 0; text-align: center; font-size: 12px; color: rgba(255,255,255,0.4);
+    }
+    .footer__bottom a { color: rgba(255,255,255,0.5); margin: 0 8px; }
+    .footer__bottom a:hover { color: var(--sun-orange); }
+
+    /* ===== MOBILE STICKY CTA ===== */
+    .mobile-cta {
+      display: none; position: fixed; bottom: 0; left: 0; right: 0;
+      z-index: 999; padding: 12px 16px; background: var(--white);
+      box-shadow: 0 -4px 20px rgba(0,0,0,0.1);
+    }
+    .mobile-cta .btn-orange { width: 100%; justify-content: center; font-size: 16px; padding: 16px; }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 992px) {
+      .hero .container { flex-direction: column; text-align: center; }
+      .hero__content { flex: 1; }
+      .hero__sub { margin-left: auto; margin-right: auto; }
+      .hero__buttons { justify-content: center; }
+      .hero__trust-badges { justify-content: center; }
+      .hero__media { flex: 1; width: 100%; max-width: 360px; }
+      .hero h1 { font-size: 40px; }
+      .hero { padding: 80px 0 180px; }
+      .product-showcase__grid { grid-template-columns: 1fr; gap: 40px; }
+      .product-showcase__image { max-width: 500px; margin: 0 auto; }
+      .hardness__grid { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto 40px; }
+      .meet-solit .container { flex-direction: column; }
+      .meet-solit__photo { flex: none; width: 100%; max-width: 380px; margin: 0 auto; }
+      .meet-solit__img-wrap { width: 100%; }
+      .contact .container { flex-direction: column; }
+      .contact__form-card { flex: none; width: 100%; }
+      .footer__grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .top-bar__info { gap: 12px; }
+      .navbar__links { display: none; }
+      .navbar__links.open {
+        display: flex; flex-direction: column;
+        position: absolute; top: 72px; left: 0; right: 0;
+        background: var(--white); box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+        z-index: 99;
+      }
+      .navbar__links.open a { padding: 16px 24px; border-bottom: 1px solid #f0f0f0; }
+      .navbar__cta { display: none; }
+      .navbar__lang { display: none; }
+      .navbar__hamburger { display: block; }
+      .hero h1 { font-size: 34px; }
+      .hero__sub { font-size: 15px; }
+      .section-title { font-size: 30px; }
+      .steps { flex-direction: column; align-items: center; }
+      .footer__grid { grid-template-columns: 1fr; }
+      .badge-bar .container { gap: 24px; }
+      .badge-bar__item img { height: 40px; }
+      .mobile-cta { display: block; }
+      body { padding-bottom: 70px; }
+    }
+
+    @media (max-width: 480px) {
+      .top-bar__right { display: none; }
+      .hero { padding: 60px 0 160px; min-height: auto; }
+      .hero h1 { font-size: 28px; }
+      .hero__trust-badges { gap: 12px; }
+      .hero__trust-badges img { height: 24px; }
+      .hero__buttons { flex-direction: column; }
+      .hero__buttons .btn-orange, .hero__buttons .btn-outline { width: 100%; justify-content: center; }
+      .hero-waves { height: 100px; }
+      .badge-bar__item img { height: 35px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== TOP BAR ===== -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-bar__info">
+        <a href="tel:+16026034006"><i class="fas fa-phone"></i> (602) 603-4006</a>
+        <a href="mailto:info@azwatercheck.com"><i class="fas fa-envelope"></i> info@azwatercheck.com</a>
+      </div>
+      <div class="top-bar__right">
+        <div class="top-bar__social">
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+        <div class="top-bar__lang" id="langToggle">
+          <button onclick="setLang('en')" class="lang-btn active" id="langEN">EN</button>
+          <span style="opacity:0.4">|</span>
+          <button onclick="setLang('es')" class="lang-btn" id="langES">ES</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="#" class="navbar__logo">
+        <img src="assets/brand/AZWC-LOGO-BLUE.png" alt="AZ Water Check" loading="lazy">
+      </a>
+      <div class="navbar__links" id="navLinks">
+        <a href="#hero">Home</a>
+        <a href="#meet-solit">About</a>
+        <a href="#product-showcase">Our System</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="navbar__right">
+        <div class="navbar__lang" id="navLangToggle">
+          <button onclick="setLang('en')" class="nav-lang-btn active" id="navLangEN"><i class="fas fa-globe"></i> EN</button>
+          <button onclick="setLang('es')" class="nav-lang-btn" id="navLangES">ES</button>
+        </div>
+        <a href="#contact" class="navbar__cta"><i class="fas fa-droplet"></i> <span data-en="FREE WATER TEST" data-es="PRUEBA GRATIS">FREE WATER TEST</span></a>
+      </div>
+      <button class="navbar__hamburger" id="hamburgerBtn" aria-label="Toggle menu">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="hero">
+    <!-- Desert graphic logo as faint background -->
+    <div class="hero__desert-bg">
+      <img src="assets/brand/AZWC-LOGO-GRAPHIC-CENTERED.png" alt="" aria-hidden="true">
+    </div>
+    <div class="container">
+      <div class="hero__content fade-up">
+        <div class="hero__badge" data-en="Arizona's Only Dual-Tank Specialist" data-es="El Unico Especialista de Doble Tanque en Arizona">Arizona's Only Dual-Tank Specialist</div>
+        <h1 data-en="You Deserve Clean Water." data-es="Usted Merece Agua Limpia.">You Deserve Clean Water.</h1>
+        <p class="hero__sub" data-en="Free home water quality test for Arizona homeowners. Find out exactly what's in your water in 15 minutes." data-es="Prueba gratuita de calidad del agua para propietarios de Arizona. Descubra exactamente que hay en su agua en 15 minutos.">Free home water quality test for Arizona homeowners. Find out exactly what's in your water in 15 minutes.</p>
+        <div class="hero__buttons">
+          <a href="#contact" class="btn-orange"><i class="fas fa-calendar-check"></i> <span data-en="Book Your Free Test" data-es="Reserve Su Prueba Gratis">Book Your Free Test</span></a>
+          <a href="#product-showcase" class="btn-outline"><i class="fas fa-arrow-down"></i> <span data-en="Learn More" data-es="Mas Informacion">Learn More</span></a>
+        </div>
+        <div class="hero__trust-badges">
+          <img src="assets/brand/NSF-ANSI-44.png" alt="NSF ANSI 44 Certified" loading="lazy">
+          <img src="assets/brand/Acredited_Business-BBB.png" alt="BBB Accredited Business" loading="lazy">
+          <img src="assets/brand/Proudly-MADE-IN-USA.png" alt="Proudly Made in USA" loading="lazy">
+          <img src="assets/brand/Lifetime-Warranty.png" alt="Lifetime Warranty" loading="lazy">
+        </div>
+      </div>
+      <div class="hero__media fade-up">
+        <div class="hero__product-img">
+          <img src="assets/brand/Sistema-2Unidades.png" alt="Aquafeel Dual-Tank Water Purification System" loading="lazy">
+        </div>
+      </div>
+    </div>
+
+    <!-- 3-Layer Wave Transition (brand colors) -->
+    <div class="hero-waves">
+      <svg viewBox="0 0 1440 160" preserveAspectRatio="none" style="width:100%;height:100%;position:absolute;bottom:0">
+        <!-- Layer 1: Sky blue (back) -->
+        <path fill="#5BA4C9" opacity="0.5" d="M0,60 C180,90 360,30 540,55 C720,80 900,25 1080,50 C1200,65 1350,40 1440,55 L1440,160 L0,160 Z"/>
+        <!-- Layer 2: Terracotta (middle, thin) -->
+        <path fill="#C07850" opacity="0.25" d="M0,85 C240,110 480,60 720,90 C960,120 1140,70 1320,95 C1380,100 1420,90 1440,92 L1440,160 L0,160 Z"/>
+        <!-- Layer 3: Cream (front, transition) -->
+        <path fill="#F5EDE3" opacity="0.6" d="M0,110 C200,130 400,95 600,115 C800,135 1000,100 1200,120 C1340,128 1400,118 1440,122 L1440,160 L0,160 Z"/>
+        <!-- Layer 4: Cream solid (transition to content) -->
+        <path fill="#F5EDE3" d="M0,130 C300,148 600,125 900,140 C1100,148 1300,132 1440,138 L1440,160 L0,160 Z"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ===== PRODUCT SHOWCASE: THE SYSTEM ===== -->
+  <section class="product-showcase" id="product-showcase">
+    <div class="container">
+      <div class="product-showcase__intro fade-up">
+        <div class="section-label">The System</div>
+        <h2 class="section-title" data-en="Built for Arizona Water" data-es="Disenado para el Agua de Arizona">Built for Arizona Water</h2>
+      </div>
+
+      <div class="product-showcase__grid">
+        <div class="product-showcase__image fade-up">
+          <img src="assets/brand/Features_Benefits.png" alt="Aquafeel filtration system cross-section showing Pre-Filter, KDF, Catalytic Carbon, and Ion Exchange Resin layers" loading="lazy">
+        </div>
+        <div class="product-showcase__layers fade-up">
+          <div class="product-showcase__layer">
+            <h3><span class="layer-num">1</span> Pre-Filter</h3>
+            <p>Catches sediment and large particles before they enter the system.</p>
+          </div>
+          <div class="product-showcase__layer">
+            <h3><span class="layer-num">2</span> KDF Media</h3>
+            <p>Removes chlorine, heavy metals, and bacteria using electrochemical oxidation.</p>
+          </div>
+          <div class="product-showcase__layer">
+            <h3><span class="layer-num">3</span> Catalytic Carbon</h3>
+            <p>Eliminates chemicals, pesticides, and organic compounds.</p>
+          </div>
+          <div class="product-showcase__layer">
+            <h3><span class="layer-num">4</span> Ion Exchange Resin</h3>
+            <p>Softens water by removing calcium and magnesium, the minerals that cause hard water damage.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-showcase__tagline fade-up">
+        The only system in Arizona with all four stages in a dual-tank configuration.
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WHOLE HOME SOLUTION ===== -->
+  <section class="whole-home" id="whole-home">
+    <div class="container">
+      <div class="whole-home__intro fade-up">
+        <div class="section-label">Whole Home Protection</div>
+        <h2 class="section-title" data-en="Every Tap. Every Faucet. Every Drop." data-es="Cada Grifo. Cada Llave. Cada Gota.">Every Tap. Every Faucet. Every Drop.</h2>
+      </div>
+      <div class="whole-home__image fade-up">
+        <img src="assets/brand/Aquafeel_Household_Treatment.png" alt="Aquafeel whole-home water treatment infographic showing kitchen, bathroom, and laundry protection" loading="lazy">
+      </div>
+      <p class="whole-home__text fade-up">From the kitchen sink where you fill your glass, to the shower where you start your day, to the washing machine that cleans your clothes. One system protects your entire home.</p>
+      <a href="#contact" class="btn-orange fade-up"><i class="fas fa-calendar-check"></i> Book Your Free Water Test</a>
+    </div>
+  </section>
+
+  <!-- ===== CERTIFICATION BADGE BAR ===== -->
+  <section class="badge-bar">
+    <div class="container fade-up">
+      <div class="badge-bar__item">
+        <img src="assets/brand/NSF-ANSI-44.png" alt="NSF ANSI 44 Certified" loading="lazy">
+      </div>
+      <div class="badge-bar__item">
+        <img src="assets/brand/NSF-ANSI-42.png" alt="NSF ANSI 42 Certified" loading="lazy">
+      </div>
+      <div class="badge-bar__item">
+        <img src="assets/brand/NSF-ANSI-61_372.png" alt="NSF ANSI 61/372 Certified" loading="lazy">
+      </div>
+      <div class="badge-bar__item">
+        <img src="assets/brand/Acredited_Business-BBB.png" alt="BBB Accredited Business" loading="lazy">
+      </div>
+      <div class="badge-bar__item">
+        <img src="assets/brand/Proudly-MADE-IN-USA.png" alt="Proudly Made in USA" loading="lazy">
+      </div>
+      <div class="badge-bar__item">
+        <img src="assets/brand/Lifetime-Warranty.png" alt="Lifetime Warranty" loading="lazy">
+      </div>
+      <div class="badge-bar__item">
+        <img src="assets/brand/Vortech-Tech.png" alt="Vortech Technology" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WATER HARDNESS ===== -->
+  <section class="hardness" id="hardness">
+    <div class="container">
+      <div class="hardness__intro fade-up">
+        <div class="section-label">Arizona Water Hardness Levels</div>
+        <h2 class="section-title" data-en="Why Phoenix Metro Has Some of the Hardest Water in America" data-es="Por Que el Area de Phoenix Tiene Una de las Aguas Mas Duras de America">Why Phoenix Metro Has Some of the Hardest Water in America</h2>
+        <p class="section-text" style="margin: 0 auto;">Here in Arizona, especially in Phoenix Metro, the average water hardness is among the highest in the United States. Many homes measure between 15-25 grains per gallon, far exceeding the 7+ threshold that the Water Quality Association classifies as "very hard." This means your water is loaded with dissolved minerals, chemicals, and sediments that affect everything from your skin to your pipes.</p>
+      </div>
+
+      <!-- Arizona Water Hardness Map -->
+      <div class="hardness__map fade-up">
+        <img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/mAiX71CmqY5JEU2Wrtwt/media/6910b66f84ec2a1d09f24fe3.png" alt="Arizona Water Hardness Map showing hard water levels across the state" loading="lazy">
+      </div>
+
+      <div class="hardness__grid">
+        <!-- Extremely Hard -->
+        <div class="hardness__card hardness__card--extreme fade-up">
+          <div class="hardness__score">10-40</div>
+          <h3>Extremely Hard</h3>
+          <p class="region">Common in Phoenix, Mesa, Chandler, Gilbert, Scottsdale, Glendale, Peoria</p>
+          <ul>
+            <li>Chalky white residue on faucets and showerheads</li>
+            <li>Dry, itchy skin after showering</li>
+            <li>Soap and shampoo won't lather properly</li>
+            <li>Cloudy buildup inside pipes and water heater</li>
+            <li>Clogged fixtures and reduced water pressure</li>
+            <li>Stiff, rough-feeling clothes after washing</li>
+            <li>Spotted dishes and glassware</li>
+            <li>Higher energy bills from scale buildup</li>
+          </ul>
+        </div>
+
+        <!-- Moderately Hard -->
+        <div class="hardness__card hardness__card--moderate fade-up">
+          <div class="hardness__score">50-80</div>
+          <h3>Moderately Hard</h3>
+          <p class="region">Tucson, Flagstaff, some Northern AZ regions</p>
+          <ul>
+            <li>Some mineral spotting on dishes</li>
+            <li>Occasional dry skin symptoms</li>
+            <li>Mild soap efficiency reduction</li>
+            <li>Gradual buildup in water heater</li>
+            <li>Slight impact on appliance lifespan</li>
+          </ul>
+        </div>
+
+        <!-- Soft -->
+        <div class="hardness__card hardness__card--soft fade-up">
+          <div class="hardness__score">90-100</div>
+          <h3>Soft Water</h3>
+          <p class="region">Rare in Arizona -- mostly found in homes with filtration systems</p>
+          <ul>
+            <li>Smooth, hydrated skin and hair</li>
+            <li>Soap lathers easily, less product needed</li>
+            <li>Spotless dishes and glassware</li>
+            <li>Extended appliance lifespan</li>
+            <li>Lower energy bills</li>
+            <li>Cleaner, softer laundry</li>
+          </ul>
+        </div>
+      </div>
+
+      <a href="#contact" class="btn-orange"><i class="fas fa-calendar-check"></i> Schedule My Free Test</a>
+    </div>
+  </section>
+
+  <!-- ===== MEET SOLIT ===== -->
+  <section class="meet-solit" id="meet-solit">
+    <div class="container">
+      <div class="meet-solit__photo fade-up">
+        <div class="meet-solit__img-wrap">
+          <img src="assets/brand/Solit-Headshot-2.jpeg" alt="Solit, Arizona water quality specialist with 15+ years of experience" loading="lazy">
+          <div class="meet-solit__badge-overlay">15+ Years / Arizona Specialist</div>
+        </div>
+      </div>
+      <div class="meet-solit__content fade-up">
+        <div class="section-label">The Person Behind Your Water</div>
+        <h2 class="section-title" data-en="Meet Solit" data-es="Conoce a Solit">Meet Solit</h2>
+        <div class="meet-solit__quote">
+          "I don't sell water systems. I ask questions. And when people see what's in their water, they make the decision for themselves."
+        </div>
+        <p>Solit's approach is simple: curiosity first. She starts by asking "Have you ever done a water test?" Then "Which water do you cook with?" People start thinking. They start wondering. And that's enough.</p>
+        <p>With 90%+ engagement from this approach, Solit doesn't need a sales pitch. She switched to the dual-tank system because it's the only one she'd put in her own home. When you book a test, you're getting someone who genuinely cares about your water quality -- not a salesperson reading a script.</p>
+        <a href="#contact" class="btn-orange"><i class="fas fa-calendar-check"></i> Book a Test With Solit</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== HOW IT WORKS ===== -->
+  <section class="how-it-works" id="how-it-works">
+    <div class="container">
+      <div class="section-label">Simple Process</div>
+      <h2 class="section-title" data-en="Three Steps to Clean Water" data-es="Tres Pasos Para Agua Limpia">Three Steps to Clean Water</h2>
+      <div class="steps">
+        <div class="step fade-up">
+          <div class="step__number">1</div>
+          <div class="step__icon"><i class="fas fa-vial"></i></div>
+          <h3>We Test</h3>
+          <p>Free 15-minute test at your kitchen sink. We check for chlorine, ammonia, hardness, heavy metals, and more.</p>
+        </div>
+        <div class="step fade-up">
+          <div class="step__number">2</div>
+          <div class="step__icon"><i class="fas fa-clipboard-check"></i></div>
+          <h3>You Decide</h3>
+          <p>No pressure, no sales pitch. We show you the results and explain what they mean. The choice is yours.</p>
+        </div>
+        <div class="step fade-up">
+          <div class="step__number">3</div>
+          <div class="step__icon"><i class="fas fa-wrench"></i></div>
+          <h3>We Install</h3>
+          <p>Professional installation by certified technicians. Lifetime warranty. One maintenance visit every 10 years.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-label">Real Stories</div>
+      <h2 class="section-title" data-en="Trusted by Arizona Families" data-es="Confiado por Familias de Arizona">Trusted by Arizona Families</h2>
+      <div class="swiper testimonials-swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="testimonial-card">
+              <div class="testimonial-card__stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              </div>
+              <p class="testimonial-card__quote">"I had no idea how bad our water was until I saw the test results. Solit was so patient explaining everything. The difference in our water after installation was immediate. My skin feels completely different."</p>
+              <p class="testimonial-card__author">Maria G.</p>
+              <p class="testimonial-card__location">Chandler, AZ</p>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="testimonial-card">
+              <div class="testimonial-card__stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              </div>
+              <p class="testimonial-card__quote">"We were spending $60/month on bottled water for our family. Now we drink straight from the tap and it tastes better than any bottle we ever bought. Wish we'd done this years ago."</p>
+              <p class="testimonial-card__author">James & Linda T.</p>
+              <p class="testimonial-card__location">Mesa, AZ</p>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="testimonial-card">
+              <div class="testimonial-card__stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              </div>
+              <p class="testimonial-card__quote">"The installation was quick and professional. What really sold me was the dual-tank technology. No salt, no chemicals, just clean water. And the lifetime warranty sealed the deal."</p>
+              <p class="testimonial-card__author">Roberto M.</p>
+              <p class="testimonial-card__location">Gilbert, AZ</p>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="testimonial-card">
+              <div class="testimonial-card__stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              </div>
+              <p class="testimonial-card__quote">"My daughter had eczema for years. Three weeks after installing the system, her skin started clearing up. I cried. This wasn't just about water -- it changed our lives."</p>
+              <p class="testimonial-card__author">Daniela S.</p>
+              <p class="testimonial-card__location">Phoenix, AZ</p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+      <p class="testimonials__disclaimer">* Individual results may vary. These testimonials reflect personal experiences.</p>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact__info fade-up">
+        <h2 data-en="Your Family's Water.<br>Tested. Treated. Protected." data-es="El Agua de Su Familia.<br>Analizada. Tratada. Protegida.">Your Family's Water.<br>Tested. Treated. Protected.</h2>
+        <ul class="contact__checklist">
+          <li><i class="fas fa-circle-check"></i> Free 15-minute in-home water test</li>
+          <li><i class="fas fa-circle-check"></i> NSF-certified dual-tank system</li>
+          <li><i class="fas fa-circle-check"></i> Lifetime warranty included</li>
+          <li><i class="fas fa-circle-check"></i> Bilingual service (English & Spanish)</li>
+        </ul>
+        <div class="contact__phone">
+          <i class="fas fa-phone"></i>
+          <a href="tel:+16026034006">(602) 603-4006</a>
+        </div>
+        <p class="contact__serving">Serving the greater Phoenix / Arizona metro area</p>
+      </div>
+
+      <div class="contact__form-card fade-up">
+        <div id="contactFormContainer">
+          <h3>Get Your Free Water Test</h3>
+          <form id="contactForm">
+            <div class="form-group">
+              <label for="name">Name *</label>
+              <input type="text" id="name" name="name" required placeholder="Your full name">
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone *</label>
+              <input type="tel" id="phone" name="phone" required placeholder="(xxx) xxx-xxxx">
+            </div>
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" required placeholder="you@email.com">
+            </div>
+            <div class="form-group">
+              <label for="zip">Zip Code *</label>
+              <input type="text" id="zip" name="zip" required placeholder="85xxx">
+            </div>
+            <div class="form-group">
+              <label for="waterSource">Water Source</label>
+              <select id="waterSource" name="waterSource">
+                <option value="">Select...</option>
+                <option value="city">City Water</option>
+                <option value="well">Well Water</option>
+                <option value="not-sure">Not Sure</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="homeowner">Are you the Homeowner?</label>
+              <select id="homeowner" name="homeowner">
+                <option value="">Select...</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+                <option value="renting">Renting</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="bestTime">Best Time to Contact You?</label>
+              <select id="bestTime" name="bestTime">
+                <option value="">Select...</option>
+                <option value="morning">Morning</option>
+                <option value="afternoon">Afternoon</option>
+                <option value="evening">Evening</option>
+                <option value="anytime">Anytime</option>
+              </select>
+            </div>
+            <p class="form-disclaimer">By submitting this form, I agree to receive text messages and phone calls from AZ Water Check at the phone number provided. Message & data rates may apply. Reply STOP to opt out. This is not a condition of purchase.</p>
+            <button type="submit" class="form-submit">SUBMIT</button>
+          </form>
+          <div class="form-links">
+            <a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a>
+          </div>
+        </div>
+        <div class="form-success" id="formSuccess">
+          <i class="fas fa-circle-check"></i>
+          <h3>Thank You!</h3>
+          <p>We received your request. A water specialist will contact you within 24 hours to schedule your free test.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <!-- Col 1: Brand -->
+        <div class="footer__brand">
+          <div class="footer__brand-logo">
+            <img src="assets/brand/AZWC-LOGO-WHITE.png" alt="AZ Water Check" loading="lazy">
+          </div>
+          <p>Arizona's only dual-tank water purification specialist. Free home water quality tests. Lifetime warranty.</p>
+          <div class="footer__partner-line">
+            <img src="assets/brand/Aquafeel_Isotipo.png" alt="Aquafeel" loading="lazy"> Authorized Aquafeel Solutions Partner
+          </div>
+          <div class="footer__social">
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div>
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#product-showcase">Our System</a></li>
+            <li><a href="#meet-solit">About</a></li>
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Certifications -->
+        <div class="footer__certs">
+          <h4>Certifications</h4>
+          <p>
+            <i class="fas fa-certificate" style="color: var(--sun-orange);"></i> NSF/ANSI 44<br>
+            <i class="fas fa-certificate" style="color: var(--sun-orange);"></i> NSF/ANSI 42<br>
+            <i class="fas fa-certificate" style="color: var(--sun-orange);"></i> NSF/ANSI 61/372<br>
+            <i class="fas fa-certificate" style="color: var(--sun-orange);"></i> BBB Accredited<br>
+            <i class="fas fa-flag-usa" style="color: var(--sun-orange);"></i> Made in USA
+          </p>
+          <p style="margin-top: 12px; font-size: 12px;">Water Quality Association member</p>
+        </div>
+
+        <!-- Col 4: Mini Lead Form -->
+        <div>
+          <h4>Quick Contact</h4>
+          <form class="footer__mini-form" onsubmit="event.preventDefault(); this.innerHTML='<p style=color:var(--sun-orange);font-weight:600>Sent! We\'ll be in touch.</p>';">
+            <input type="text" placeholder="Name" required>
+            <input type="email" placeholder="Email" required>
+            <input type="tel" placeholder="Phone" required>
+            <button type="submit">Send</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p>&copy; 2025 AZ Water Check, a division of Sol Deja Vu. Certified members of the Water Quality Association.</p>
+        <p><a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== MOBILE STICKY CTA ===== -->
+  <div class="mobile-cta">
+    <a href="#contact" class="btn-orange"><i class="fas fa-calendar-check"></i> Book Free Water Test</a>
+  </div>
+
+  <!-- ===== SWIPER JS ===== -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+  <script>
+    // ===== Swiper Testimonials =====
+    new Swiper('.testimonials-swiper', {
+      slidesPerView: 1,
+      spaceBetween: 24,
+      autoplay: { delay: 6000, disableOnInteraction: false },
+      pagination: { el: '.swiper-pagination', clickable: true },
+      breakpoints: {
+        640: { slidesPerView: 2 },
+        1024: { slidesPerView: 3 }
+      }
+    });
+
+    // ===== Fade-Up on Scroll =====
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    // ===== Mobile Hamburger =====
+    document.getElementById('hamburgerBtn').addEventListener('click', function() {
+      const links = document.getElementById('navLinks');
+      links.classList.toggle('open');
+      const icon = this.querySelector('i');
+      icon.classList.toggle('fa-bars');
+      icon.classList.toggle('fa-xmark');
+    });
+
+    // Close mobile nav on link click
+    document.querySelectorAll('#navLinks a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById('navLinks').classList.remove('open');
+        const icon = document.querySelector('#hamburgerBtn i');
+        icon.classList.add('fa-bars');
+        icon.classList.remove('fa-xmark');
+      });
+    });
+
+    // ===== Form Submit =====
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      document.getElementById('contactFormContainer').querySelector('form').style.display = 'none';
+      document.getElementById('contactFormContainer').querySelector('h3').style.display = 'none';
+      document.getElementById('contactFormContainer').querySelector('.form-links').style.display = 'none';
+      document.getElementById('contactFormContainer').querySelector('.form-disclaimer').style.display = 'none';
+      document.getElementById('formSuccess').style.display = 'block';
+    });
+
+    // ===== Language Toggle =====
+    function setLang(lang) {
+      // Update all elements with data-en and data-es
+      document.querySelectorAll('[data-en][data-es]').forEach(el => {
+        el.innerHTML = el.getAttribute('data-' + lang);
+      });
+
+      // Toggle active state on all language buttons
+      document.querySelectorAll('.lang-btn, .nav-lang-btn').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      if (lang === 'en') {
+        document.getElementById('langEN').classList.add('active');
+        document.getElementById('navLangEN').classList.add('active');
+      } else {
+        document.getElementById('langES').classList.add('active');
+        document.getElementById('navLangES').classList.add('active');
+      }
+
+      // Store preference
+      localStorage.setItem('azwc-lang', lang);
+    }
+
+    // Check stored language preference
+    const savedLang = localStorage.getItem('azwc-lang');
+    if (savedLang === 'es') setLang('es');
+  </script>
+
+</body>
+</html>
