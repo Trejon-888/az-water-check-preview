@@ -204,10 +204,10 @@
     /* ===== HERO (V5 Redesign) ===== */
     .hero {
       position: relative; overflow: hidden;
-      min-height: 520px;
-      max-height: 620px;
+      min-height: 600px;
+      max-height: 720px;
       display: flex; align-items: center;
-      padding: 80px 0 160px;
+      padding: 100px 0 180px;
     }
     .hero__bg {
       position: absolute; top: 0; left: 0; right: 0; bottom: 0;
@@ -233,7 +233,7 @@
       font-weight: 600; color: var(--white); text-transform: uppercase; letter-spacing: 2.5px;
       background: rgba(255,255,255,0.15); backdrop-filter: blur(8px);
       padding: 8px 22px; border-radius: 50px; border: 1px solid rgba(255,255,255,0.25);
-      margin-bottom: 24px;
+      margin-bottom: 32px;
     }
     .hero-title {
       font-family: 'Playfair Display', serif; font-size: 56px; font-weight: 700;
@@ -479,14 +479,25 @@
     /* ===== THE SYSTEM (Product Section) ===== */
     .the-system { padding: 100px 0; background: var(--white); }
     .the-system .container { max-width: var(--container); }
-    .the-system__grid {
+    .the-system__layout {
       display: grid; grid-template-columns: 1fr 1fr; gap: 60px;
       align-items: center; margin-top: 40px;
     }
-    .the-system__image img {
-      width: 100%; border-radius: 16px;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+    /* Product image slider */
+    .system-slider { border-radius: 20px; overflow: hidden; box-shadow: 0 12px 40px rgba(0,0,0,0.1); }
+    .system-slider .swiper-slide { background: #f0f4f8; display: flex; align-items: center; justify-content: center; padding: 24px; }
+    .system-slider .swiper-slide img { width: 100%; height: auto; max-height: 500px; object-fit: contain; }
+    .system-slider .swiper-pagination { position: relative; margin-top: 16px; }
+    .system-slider .swiper-pagination-bullet { background: var(--terracotta); opacity: 0.3; width: 10px; height: 10px; }
+    .system-slider .swiper-pagination-bullet-active { opacity: 1; width: 28px; border-radius: 5px; }
+    .system-slider .swiper-button-next,
+    .system-slider .swiper-button-prev {
+      color: var(--sky-blue); width: 40px; height: 40px; background: rgba(255,255,255,0.9);
+      border-radius: 50%; box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
+    .system-slider .swiper-button-next::after,
+    .system-slider .swiper-button-prev::after { font-size: 16px; font-weight: 700; }
+    .the-system__details { }
     .the-system__details ul {
       list-style: none; padding: 0; margin: 0 0 28px;
     }
@@ -504,7 +515,7 @@
     }
     .the-system__details .system-link:hover { color: var(--sky-dark); }
     @media (max-width: 768px) {
-      .the-system__grid { grid-template-columns: 1fr; gap: 32px; }
+      .the-system__layout { grid-template-columns: 1fr; gap: 32px; }
     }
 
     /* ===== HOW IT WORKS ===== */
@@ -849,7 +860,7 @@
                   fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/>
           </svg>
         </div>
-        <p class="hero__sub" data-en="The water in your home might look clean. It's not. Your family drinks it, cooks with it, and bathes in it every day. Find out what's really in it." data-es="El agua de su hogar puede parecer limpia. No lo es. Su familia la bebe, cocina y se bana con ella todos los dias. Descubra lo que realmente contiene.">The water in your home might look clean. It's not. Your family drinks it, cooks with it, and bathes in it every day. Find out what's really in it.</p>
+        <p class="hero__sub" data-en="What if the water your family drinks, cooks with, and bathes in every day isn't as clean as it looks? Most Arizona homes have water that carries things you can't see. A free 15-minute test shows you exactly what's there." data-es="Y si el agua que su familia bebe, cocina y se bana todos los dias no fuera tan limpia como parece? La mayoria de los hogares en Arizona tienen agua que lleva cosas que no se pueden ver. Una prueba gratuita de 15 minutos le muestra exactamente lo que hay.">What if the water your family drinks, cooks with, and bathes in every day isn't as clean as it looks? Most Arizona homes have water that carries things you can't see. A free 15-minute test shows you exactly what's there.</p>
         <div class="hero__buttons">
           <a href="#contact" class="btn-orange"><i class="fas fa-calendar-check"></i> <span data-en="Book Your Free Test" data-es="Reserve Su Prueba Gratis">Book Your Free Test</span></a>
           <a href="#hardness" class="btn-outline"><i class="fas fa-arrow-down"></i> <span data-en="Learn More" data-es="Mas Informacion">Learn More</span></a>
@@ -1123,10 +1134,24 @@
         <h2 class="section-title" data-en="Aquafeel Dual-Tank Water Purification" data-es="Purificacion de Agua de Doble Tanque Aquafeel">Aquafeel Dual-Tank Water Purification</h2>
       </div>
       <p style="text-align:center; color: var(--terracotta); font-weight: 600; font-size: 14px; margin-bottom: 40px; letter-spacing: 1px;">Authorized Aquafeel Solutions Partner — Arizona</p>
-      <div class="the-system__grid">
-        <div class="the-system__image fade-up">
-          <img src="assets/brand/Features_Benefits.png" alt="Aquafeel dual-tank system cross-section: Pre-Filter, KDF, Catalytic Carbon, Ion Exchange Resin" loading="lazy" style="margin-bottom: 24px;">
-          <img src="assets/brand/Aquafeel_Household_Treatment.png" alt="Whole home water treatment diagram showing system protecting every room" loading="lazy" style="border-radius: 12px;">
+      <div class="the-system__layout">
+        <div class="fade-up">
+          <div class="system-slider swiper system-swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="assets/brand/Features_Benefits.png" alt="Aquafeel dual-tank system cross-section showing Pre-Filter, KDF, Catalytic Carbon, and Ion Exchange Resin layers" loading="lazy">
+              </div>
+              <div class="swiper-slide">
+                <img src="assets/brand/Aquafeel_Household_Treatment.png" alt="Whole home water treatment: system protects kitchen, bathroom, laundry, and every tap" loading="lazy">
+              </div>
+              <div class="swiper-slide">
+                <img src="assets/brand/Sistema-2Unidades.png" alt="Aquafeel dual-tank system product photo" loading="lazy">
+              </div>
+            </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-pagination"></div>
+          </div>
         </div>
         <div class="the-system__details fade-up">
           <ul>
@@ -1442,11 +1467,23 @@
       slidesPerView: 1,
       spaceBetween: 24,
       autoplay: { delay: 6000, disableOnInteraction: false },
-      pagination: { el: '.swiper-pagination', clickable: true },
+      pagination: { el: '.testimonials-swiper .swiper-pagination', clickable: true },
       breakpoints: {
         640: { slidesPerView: 2 },
         1024: { slidesPerView: 3 }
       }
+    });
+
+    // ===== System Product Slider =====
+    new Swiper('.system-swiper', {
+      slidesPerView: 1,
+      spaceBetween: 0,
+      loop: true,
+      autoplay: { delay: 4000, disableOnInteraction: false },
+      effect: 'fade',
+      fadeEffect: { crossFade: true },
+      navigation: { nextEl: '.system-swiper .swiper-button-next', prevEl: '.system-swiper .swiper-button-prev' },
+      pagination: { el: '.system-swiper .swiper-pagination', clickable: true }
     });
 
     // ===== Hero Title Character Animation =====
