@@ -246,38 +246,8 @@
     }
     .hero__title-accent { display: none; }
 
-    /* Hero water drop + orange ripple animation */
-    .hero__droplet {
-      position: relative; width: 140px; height: 70px; margin: 20px auto 32px;
-    }
-    .hero__drop {
-      position: absolute; left: 50%; top: -20px;
-      width: 8px; height: 12px; margin-left: -4px;
-      background: rgba(255,255,255,0.85);
-      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-      animation: dropFall 3.5s ease-in infinite;
-      visibility: hidden;
-    }
-    .hero__ripple-ring {
-      position: absolute; bottom: 6px; left: 50%; transform: translateX(-50%);
-      width: 0; height: 0; border-radius: 50%;
-      border: 2px solid var(--sun-orange);
-      animation: rippleExpand 3.5s ease-out infinite;
-    }
-    .hero__ripple-ring:nth-child(2) { animation-delay: 0.15s; }
-    .hero__ripple-ring:nth-child(3) { animation-delay: 0.3s; }
-    @keyframes dropFall {
-      0% { top: -20px; opacity: 0; visibility: visible; }
-      8% { top: 0; opacity: 0.9; }
-      50% { top: 48px; opacity: 0.8; }
-      55% { opacity: 0; visibility: hidden; }
-      100% { opacity: 0; top: -20px; visibility: hidden; }
-    }
-    @keyframes rippleExpand {
-      0%, 52% { width: 0; height: 0; opacity: 0; }
-      56% { width: 6px; height: 3px; opacity: 0.8; }
-      100% { width: 120px; height: 24px; opacity: 0; }
-    }
+    /* Hero spacer (animation removed) */
+    .hero__droplet { display: none; }
 
     .hero__sub {
       font-size: 17px; line-height: 1.8; color: rgba(255,255,255,0.82);
