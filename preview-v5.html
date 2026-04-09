@@ -251,12 +251,12 @@
       position: relative; width: 140px; height: 70px; margin: 20px auto 32px;
     }
     .hero__drop {
-      position: absolute; left: 50%; top: 0;
+      position: absolute; left: 50%; top: -20px;
       width: 8px; height: 12px; margin-left: -4px;
       background: rgba(255,255,255,0.85);
       border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
       animation: dropFall 3.5s ease-in infinite;
-      opacity: 0;
+      visibility: hidden;
     }
     .hero__ripple-ring {
       position: absolute; bottom: 6px; left: 50%; transform: translateX(-50%);
@@ -267,11 +267,11 @@
     .hero__ripple-ring:nth-child(2) { animation-delay: 0.15s; }
     .hero__ripple-ring:nth-child(3) { animation-delay: 0.3s; }
     @keyframes dropFall {
-      0% { top: 0; opacity: 0; }
-      8% { opacity: 0.9; }
+      0% { top: -20px; opacity: 0; visibility: visible; }
+      8% { top: 0; opacity: 0.9; }
       50% { top: 48px; opacity: 0.8; }
-      55% { opacity: 0; }
-      100% { opacity: 0; top: 48px; }
+      55% { opacity: 0; visibility: hidden; }
+      100% { opacity: 0; top: -20px; visibility: hidden; }
     }
     @keyframes rippleExpand {
       0%, 52% { width: 0; height: 0; opacity: 0; }
@@ -906,7 +906,7 @@
       <div class="hero__content">
         <div class="hero__badge" data-en="Arizona's Only Dual-Tank Specialist" data-es="El Unico Especialista de Doble Tanque en Arizona">Arizona's Only Dual-Tank Specialist</div>
         <h1 class="hero-title" aria-label="You Deserve Clean Water." data-en="You Deserve Clean Water." data-es="Usted Merece Agua Limpia.">You Deserve Clean Water.</h1>
-        <!-- Water droplet + ripple animation -->
+        <!-- Water droplet + orange ripple animation -->
         <div class="hero__droplet">
           <div class="hero__drop"></div>
           <div class="hero__ripple-ring"></div>
