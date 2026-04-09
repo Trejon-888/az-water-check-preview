@@ -632,9 +632,29 @@
       font-size: 12px; color: #999; margin-top: 16px; font-style: italic;
     }
 
-    /* ===== BADGES BAR ===== */
-    .badges { }
-    .badges__item { }
+    /* ===== CERTIFICATION BADGES BAR ===== */
+    .cert-bar {
+      padding: 48px 0; background: var(--light-blue);
+      border-top: 1px solid rgba(91,164,201,0.1);
+      border-bottom: 1px solid rgba(91,164,201,0.1);
+    }
+    .cert-bar .container {
+      display: flex; align-items: center; justify-content: center;
+      gap: 40px; flex-wrap: wrap;
+    }
+    .cert-bar__item {
+      height: 56px; display: flex; align-items: center; justify-content: center;
+      filter: grayscale(40%); opacity: 0.8;
+      transition: filter 0.4s, opacity 0.4s, transform 0.3s;
+    }
+    .cert-bar__item:hover {
+      filter: grayscale(0%); opacity: 1; transform: scale(1.08);
+    }
+    .cert-bar__item img { height: 52px; width: auto; object-fit: contain; }
+    @media (max-width: 768px) {
+      .cert-bar .container { gap: 24px; }
+      .cert-bar__item img { height: 40px; }
+    }
 
     /* ===== CONTACT ===== */
     .contact {
@@ -885,7 +905,6 @@
       <div class="hero__content">
         <div class="hero__badge" data-en="Arizona's Only Dual-Tank Specialist" data-es="El Unico Especialista de Doble Tanque en Arizona">Arizona's Only Dual-Tank Specialist</div>
         <h1 class="hero-title" aria-label="You Deserve Clean Water." data-en="You Deserve Clean Water." data-es="Usted Merece Agua Limpia.">You Deserve Clean Water.</h1>
-        <span class="hero__title-accent"></span>
         <!-- Water droplet + ripple animation -->
         <div class="hero__droplet">
           <div class="hero__drop"></div>
@@ -1172,10 +1191,10 @@
           <div class="system-slider swiper system-swiper">
             <div class="swiper-wrapper">
               <div class="swiper-slide">
-                <img src="assets/brand/Features_Benefits.png" alt="Aquafeel dual-tank system cross-section showing Pre-Filter, KDF, Catalytic Carbon, and Ion Exchange Resin layers" loading="lazy">
+                <img src="assets/brand/Aquafeel_Household_Treatment.png" alt="Whole home water treatment: system protects kitchen, bathroom, laundry, and every tap" loading="lazy">
               </div>
               <div class="swiper-slide">
-                <img src="assets/brand/Aquafeel_Household_Treatment.png" alt="Whole home water treatment: system protects kitchen, bathroom, laundry, and every tap" loading="lazy">
+                <img src="assets/brand/Features_Benefits.png" alt="Aquafeel dual-tank system cross-section showing Pre-Filter, KDF, Catalytic Carbon, and Ion Exchange Resin layers" loading="lazy">
               </div>
               <div class="swiper-slide">
                 <img src="assets/brand/Sistema-2Unidades.png" alt="Aquafeel dual-tank system product photo" loading="lazy">
@@ -1199,6 +1218,19 @@
           <a href="#contact" class="btn-orange"><i class="fas fa-calendar-check"></i> <span data-en="Book Your Free Water Test" data-es="Reserve Su Prueba Gratuita">Book Your Free Water Test</span></a>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- ===== CERTIFICATION BADGES ===== -->
+  <section class="cert-bar">
+    <div class="container">
+      <div class="cert-bar__item"><img src="assets/brand/NSF-ANSI-44.png" alt="NSF ANSI 44 Certified" title="NSF/ANSI 44 — Water Softening"></div>
+      <div class="cert-bar__item"><img src="assets/brand/NSF-ANSI-42.png" alt="NSF ANSI 42 Certified" title="NSF/ANSI 42 — Taste & Odor"></div>
+      <div class="cert-bar__item"><img src="assets/brand/NSF-ANSI-61_372.png" alt="NSF ANSI 61/372 Certified" title="NSF/ANSI 61/372 — Lead Free"></div>
+      <div class="cert-bar__item"><img src="assets/brand/Acredited_Business-BBB.png" alt="BBB Accredited Business" title="BBB Accredited Business"></div>
+      <div class="cert-bar__item"><img src="assets/brand/Proudly-MADE-IN-USA.png" alt="Proudly Made in USA" title="Proudly Made in USA"></div>
+      <div class="cert-bar__item"><img src="assets/brand/Lifetime-Warranty.png" alt="Lifetime Warranty" title="Lifetime Warranty"></div>
+      <div class="cert-bar__item"><img src="assets/brand/Vortech-Tech.png" alt="Vortech Technology" title="VortechTM Technology"></div>
     </div>
   </section>
 
