@@ -9,7 +9,7 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;6..12,500;6..12,600;6..12,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;6..12,500;6..12,600;6..12,700&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- Custom Font: Palmore -->
   <style>
@@ -210,8 +210,8 @@
     }
     .hero__bg {
       position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-      background-image: url('assets/brand/hero-v5.jpg');
-      background-size: cover; background-position: center 45%;
+      background-image: url('assets/brand/mood-1.jpeg');
+      background-size: cover; background-position: center 30%;
       z-index: 0;
     }
     .hero__bg::after {
@@ -235,9 +235,9 @@
       margin-bottom: 24px;
     }
     .hero-title {
-      font-family: var(--font-heading); font-size: 52px; font-weight: 700;
-      color: var(--white); line-height: 1.15; margin-bottom: 12px;
-      text-transform: uppercase; letter-spacing: 2px;
+      font-family: 'Playfair Display', serif; font-size: 56px; font-weight: 700;
+      color: var(--white); line-height: 1.1; margin-bottom: 16px;
+      letter-spacing: -0.5px;
     }
     .hero-title .char {
       display: inline-block;
@@ -468,10 +468,10 @@
     }
     .meet-solit__content { flex: 1; }
     .meet-solit__quote {
-      border-left: 4px solid var(--terracotta); padding: 22px 28px; margin: 28px 0;
+      border-left: 5px solid var(--terracotta); padding: 28px 32px; margin: 32px 0;
       background: rgba(192,120,80,0.06); border-radius: 0 14px 14px 0;
-      font-style: italic; font-size: 17px; line-height: 1.75; color: var(--dark);
-      font-family: var(--font-body); font-weight: 400;
+      font-style: italic; font-size: 22px; line-height: 1.7; color: var(--dark);
+      font-family: 'Playfair Display', serif; font-weight: 500;
     }
     .meet-solit__content p { font-size: 15px; line-height: 1.8; margin-bottom: 18px; }
 
@@ -815,7 +815,7 @@
       <div class="navbar__links" id="navLinks">
         <a href="#hero">Home</a>
         <a href="#meet-solit">About</a>
-        <a href="#pillars">Our System</a>
+        <a href="#the-system">Our System</a>
         <a href="#how-it-works">How It Works</a>
         <a href="#testimonials">Testimonials</a>
         <a href="#contact">Contact</a>
@@ -837,7 +837,7 @@
     <div class="container">
       <div class="hero__content">
         <div class="hero__badge" data-en="Arizona's Only Dual-Tank Specialist" data-es="El Unico Especialista de Doble Tanque en Arizona">Arizona's Only Dual-Tank Specialist</div>
-        <h1 class="hero-title" aria-label="YOU DESERVE CLEAN WATER." data-en="YOU DESERVE CLEAN WATER." data-es="USTED MERECE AGUA LIMPIA.">YOU DESERVE CLEAN WATER.</h1>
+        <h1 class="hero-title" aria-label="You Deserve Clean Water." data-en="You Deserve Clean Water." data-es="Usted Merece Agua Limpia.">You Deserve Clean Water.</h1>
         <span class="hero__title-accent"></span>
         <!-- SVG Water Surface Animation -->
         <div class="hero__water-surface">
@@ -1121,14 +1121,17 @@
         <div class="section-label" data-en="THE SYSTEM" data-es="EL SISTEMA">THE SYSTEM</div>
         <h2 class="section-title" data-en="Aquafeel Dual-Tank Water Purification" data-es="Purificacion de Agua de Doble Tanque Aquafeel">Aquafeel Dual-Tank Water Purification</h2>
       </div>
+      <p style="text-align:center; color: var(--terracotta); font-weight: 600; font-size: 14px; margin-bottom: 40px; letter-spacing: 1px;">Authorized Aquafeel Solutions Partner — Arizona</p>
       <div class="the-system__grid">
         <div class="the-system__image fade-up">
-          <img src="assets/brand/Features_Benefits.png" alt="Aquafeel dual-tank water purification system cross-section diagram" loading="lazy">
+          <img src="assets/brand/Features_Benefits.png" alt="Aquafeel dual-tank system cross-section: Pre-Filter, KDF, Catalytic Carbon, Ion Exchange Resin" loading="lazy" style="margin-bottom: 24px;">
+          <img src="assets/brand/Aquafeel_Household_Treatment.png" alt="Whole home water treatment diagram showing system protecting every room" loading="lazy" style="border-radius: 12px;">
         </div>
         <div class="the-system__details fade-up">
           <ul>
-            <li>Dual-tank technology designed for Arizona's hard water</li>
+            <li>Dual-tank technology designed specifically for Arizona's hard water</li>
             <li>Pre-Filter, KDF, Catalytic Carbon, and Ion Exchange Resin</li>
+            <li>Protects every tap, faucet, and appliance in your home</li>
             <li>Lifetime warranty with maintenance every 10 years</li>
             <li>NSF ANSI 44, 42, 61/372 certified</li>
             <li>Made in USA with 25+ year track record</li>
@@ -1343,7 +1346,7 @@
             <button type="submit" class="form-submit">SUBMIT</button>
           </form>
           <div class="form-links">
-            <a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a>
+            <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms & Conditions</a>
           </div>
         </div>
         <div class="form-success" id="formSuccess">
@@ -1379,7 +1382,7 @@
           <ul>
             <li><a href="#hero">Home</a></li>
             <li><a href="#meet-solit">About</a></li>
-            <li><a href="#pillars">Our System</a></li>
+            <li><a href="#the-system">Our System</a></li>
             <li><a href="#how-it-works">How It Works</a></li>
             <li><a href="#testimonials">Testimonials</a></li>
             <li><a href="#contact">Contact</a></li>
@@ -1413,7 +1416,7 @@
 
       <div class="footer__bottom">
         <p>&copy; 2025 AZ Water Check, a division of Sol Deja Vu. Certified members of the Water Quality Association.</p>
-        <p><a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a></p>
+        <p><a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms & Conditions</a></p>
       </div>
     </div>
   </footer>
