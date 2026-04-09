@@ -111,10 +111,7 @@
       width: 100%; height: 2px; background: var(--terracotta); opacity: 0.3;
     }
 
-    /* ===== ANIMATIONS (base states for GSAP) ===== */
-    .fade-up {
-      opacity: 0; transform: translateY(30px);
-    }
+    /* GSAP handles all animation states via JS - no CSS hiding */
 
     /* ===== TOP BAR ===== */
     .top-bar {
@@ -1453,35 +1450,43 @@
 
     // ===== Section Titles: slide up + fade =====
     gsap.utils.toArray('.section-title').forEach(function(title) {
-      gsap.from(title, {
-        y: 40, opacity: 0, duration: 0.8, ease: 'power3.out',
-        scrollTrigger: { trigger: title, start: 'top 85%', toggleActions: 'play none none none' }
-      });
+      gsap.fromTo(title,
+        { y: 40, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.8, ease: 'power3.out',
+          scrollTrigger: { trigger: title, start: 'top 90%', toggleActions: 'play none none reverse' }
+        }
+      );
     });
 
     // ===== Section Labels: slide in from left =====
     gsap.utils.toArray('.section-label').forEach(function(label) {
-      gsap.from(label, {
-        x: -30, opacity: 0, duration: 0.6, ease: 'power2.out',
-        scrollTrigger: { trigger: label, start: 'top 85%', toggleActions: 'play none none none' }
-      });
+      gsap.fromTo(label,
+        { x: -30, opacity: 0 },
+        { x: 0, opacity: 1, duration: 0.6, ease: 'power2.out',
+          scrollTrigger: { trigger: label, start: 'top 90%', toggleActions: 'play none none reverse' }
+        }
+      );
     });
 
     // ===== Cards / fade-up elements: stagger from bottom =====
     gsap.utils.toArray('.fade-up').forEach(function(el, i) {
-      gsap.from(el, {
-        y: 50, opacity: 0, duration: 0.7, ease: 'power2.out',
-        delay: (i % 3) * 0.15,
-        scrollTrigger: { trigger: el, start: 'top 88%', toggleActions: 'play none none none' }
-      });
+      gsap.fromTo(el,
+        { y: 40, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.7, ease: 'power2.out',
+          delay: (i % 3) * 0.1,
+          scrollTrigger: { trigger: el, start: 'top 92%', toggleActions: 'play none none reverse' }
+        }
+      );
     });
 
-    // ===== Product images: scale from 0.92 =====
+    // ===== Product images: scale from 0.95 =====
     gsap.utils.toArray('img[loading="lazy"]').forEach(function(img) {
-      gsap.from(img, {
-        scale: 0.92, opacity: 0, duration: 0.8, ease: 'power2.out',
-        scrollTrigger: { trigger: img, start: 'top 85%', toggleActions: 'play none none none' }
-      });
+      gsap.fromTo(img,
+        { scale: 0.95, opacity: 0 },
+        { scale: 1, opacity: 1, duration: 0.8, ease: 'power2.out',
+          scrollTrigger: { trigger: img, start: 'top 90%', toggleActions: 'play none none reverse' }
+        }
+      );
     });
 
     // ===== Solit headshot: subtle parallax =====
@@ -1496,20 +1501,23 @@
     }
 
     // ===== Badge bar: slide in from right, staggered =====
-    gsap.utils.toArray('.badges__item').forEach(function() {
-      // only runs if badges__item elements exist
-    });
-    gsap.from('.badges__item', {
-      x: 40, opacity: 0, duration: 0.5, stagger: 0.1, ease: 'power2.out',
-      scrollTrigger: { trigger: '.badges', start: 'top 85%', toggleActions: 'play none none none' }
-    });
+    if (document.querySelector('.badges__item')) {
+      gsap.fromTo('.badges__item',
+        { x: 40, opacity: 0 },
+        { x: 0, opacity: 1, duration: 0.5, stagger: 0.1, ease: 'power2.out',
+          scrollTrigger: { trigger: '.badges', start: 'top 90%', toggleActions: 'play none none reverse' }
+        }
+      );
+    }
 
     // ===== Hardness cards: stagger animation =====
     gsap.utils.toArray('.hardness-card').forEach(function(card) {
-      gsap.from(card, {
-        y: 30, opacity: 0, duration: 0.6, ease: 'power2.out',
-        scrollTrigger: { trigger: card, start: 'top 85%', toggleActions: 'play none none none' }
-      });
+      gsap.fromTo(card,
+        { y: 30, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.6, ease: 'power2.out',
+          scrollTrigger: { trigger: card, start: 'top 90%', toggleActions: 'play none none reverse' }
+        }
+      );
     });
 
     // ===== Smooth Scroll for Anchor Links =====
