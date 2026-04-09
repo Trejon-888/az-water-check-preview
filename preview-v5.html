@@ -256,6 +256,7 @@
       background: rgba(255,255,255,0.85);
       border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
       animation: dropFall 3.5s ease-in infinite;
+      opacity: 0;
     }
     .hero__ripple-ring {
       position: absolute; bottom: 6px; left: 50%; transform: translateX(-50%);
@@ -835,7 +836,7 @@
       .hero__buttons { flex-direction: column; }
       .hero__buttons .btn-orange, .hero__buttons .btn-outline { width: 100%; justify-content: center; }
       .hero-waves { height: 100px; }
-      .hero__title-accent { margin: 8px 0 18px; }
+      .hero__title-accent { display: none; }
     }
   </style>
 </head>
@@ -1574,11 +1575,6 @@
     // Hero badge fade in
     gsap.from('.hero__badge', {
       opacity: 0, y: -15, duration: 0.6, ease: 'power2.out', delay: 0.2
-    });
-
-    // Hero accent line
-    gsap.from('.hero__title-accent', {
-      scaleX: 0, duration: 0.8, ease: 'power2.out', delay: 1.2
     });
 
     // Hero sub text
