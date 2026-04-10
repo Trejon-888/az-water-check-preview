@@ -246,10 +246,36 @@
     }
     .hero__title-accent { display: none; }
 
-    /* Hero GSAP water animation container */
+    /* Hero water drop + orange ripple (CSS) */
     .hero__water-anim {
       position: relative; width: 140px; height: 70px; margin: 20px auto 28px;
       pointer-events: none;
+    }
+    .hero__drop {
+      position: absolute; left: 50%; top: -20px;
+      width: 8px; height: 12px; margin-left: -4px;
+      background: rgba(255,255,255,0.85);
+      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+      animation: dropFall 3.5s ease-in infinite;
+    }
+    .hero__ripple-ring {
+      position: absolute; bottom: 6px; left: 50%; transform: translateX(-50%);
+      width: 0; height: 0; border-radius: 50%;
+      border: 2px solid var(--sun-orange);
+      animation: rippleExpand 3.5s ease-out infinite;
+    }
+    .hero__ripple-ring:nth-child(3) { animation-delay: 0.15s; }
+    .hero__ripple-ring:nth-child(4) { animation-delay: 0.3s; }
+    @keyframes dropFall {
+      0% { top: -20px; opacity: 0; }
+      8% { top: 0; opacity: 0.9; }
+      50% { top: 48px; opacity: 0.8; }
+      55%, 100% { top: 48px; opacity: 0; }
+    }
+    @keyframes rippleExpand {
+      0%, 52% { width: 0; height: 0; opacity: 0; }
+      56% { width: 6px; height: 3px; opacity: 0.8; }
+      100% { width: 120px; height: 24px; opacity: 0; }
     }
 
     .hero__sub {
@@ -879,7 +905,12 @@
       <div class="hero__content">
         <div class="hero__badge" data-en="Arizona's Only Dual-Tank Specialist" data-es="El Unico Especialista de Doble Tanque en Arizona">Arizona's Only Dual-Tank Specialist</div>
         <h1 class="hero-title" aria-label="You Deserve Clean Water" data-en="You Deserve Clean Water" data-es="Usted Merece Agua Limpia">You Deserve Clean Water</h1>
-        <div class="hero__water-anim" id="waterAnim"></div>
+        <div class="hero__water-anim">
+          <div class="hero__drop"></div>
+          <div class="hero__ripple-ring"></div>
+          <div class="hero__ripple-ring"></div>
+          <div class="hero__ripple-ring"></div>
+        </div>
         <p class="hero__sub" data-en="What if the water your family drinks, cooks with, and bathes in every day isn't as clean as it looks? Most Arizona homes have water that carries chlorine, heavy metals, and mineral buildup that cause dry skin, damaged hair, and long-term health concerns. A free 15-minute test shows you exactly what's there." data-es="Y si el agua que su familia bebe, cocina y se bana todos los dias no fuera tan limpia como parece? La mayoria de los hogares en Arizona tienen agua con cloro, metales pesados y minerales que causan piel seca, cabello danado y problemas de salud. Una prueba gratuita de 15 minutos le muestra exactamente lo que hay.">What if the water your family drinks, cooks with, and bathes in every day isn't as clean as it looks? Most Arizona homes have water that carries chlorine, heavy metals, and mineral buildup that cause dry skin, damaged hair, and long-term health concerns. A free 15-minute test shows you exactly what's there.</p>
         <div class="hero__buttons">
           <a href="#contact" class="btn-orange"><i class="fas fa-calendar-check"></i> <span data-en="Book Your Free Test" data-es="Reserve Su Prueba Gratis">Book Your Free Test</span></a>
@@ -1729,49 +1760,6 @@
     var savedLang = localStorage.getItem('azwc-lang');
     if (savedLang === 'es') setLang('es');
 
-    // ===== GSAP Water Drop + Orange Ripple Animation =====
-    (function() {
-      var container = document.getElementById('waterAnim');
-      if (!container) return;
-
-      // Create elements via JS so nothing is in the DOM at rest
-      function runDrop() {
-        // Create drop
-        var drop = document.createElement('div');
-        drop.style.cssText = 'position:absolute;left:50%;top:-10px;width:8px;height:12px;margin-left:-4px;background:rgba(255,255,255,0.85);border-radius:50% 50% 50% 50%/60% 60% 40% 40%;opacity:0;';
-        container.appendChild(drop);
-
-        // Animate drop falling
-        gsap.to(drop, {
-          top: 48, opacity: 0.9, duration: 0.7, ease: 'power1.in',
-          onComplete: function() {
-            // Remove drop
-            gsap.to(drop, { opacity: 0, duration: 0.15, onComplete: function() { drop.remove(); } });
-
-            // Create 3 orange ripple rings
-            for (var i = 0; i < 3; i++) {
-              (function(delay) {
-                var ring = document.createElement('div');
-                ring.style.cssText = 'position:absolute;bottom:12px;left:50%;transform:translateX(-50%);width:0;height:0;border-radius:50%;border:2px solid #E8944A;opacity:0;';
-                container.appendChild(ring);
-                gsap.to(ring, {
-                  width: 110, height: 22, opacity: 0.7, duration: 0.15, delay: delay * 0.12,
-                  ease: 'power2.out',
-                  onComplete: function() {
-                    gsap.to(ring, { width: 140, height: 28, opacity: 0, duration: 0.8, ease: 'power1.out', onComplete: function() { ring.remove(); } });
-                  }
-                });
-              })(i);
-            }
-          }
-        });
-      }
-
-      // First drop after page load
-      setTimeout(runDrop, 1800);
-      // Loop
-      setInterval(runDrop, 3500);
-    })();
   </script>
 
 </body>
