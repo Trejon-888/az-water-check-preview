@@ -859,10 +859,10 @@
       </div>
       <div class="top-bar__right">
         <div class="top-bar__social">
-          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="https://www.instagram.com/azwatercheck/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.facebook.com/AZWaterCheck" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.tiktok.com/@azwatercheck" target="_blank" rel="noopener" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+          <a href="https://www.youtube.com/@azwatercheck" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
         </div>
         <div class="top-bar__lang" id="langToggle">
           <button onclick="setLang('en')" class="lang-btn active" id="langEN">EN</button>
@@ -904,7 +904,7 @@
     <div class="container">
       <div class="hero__content">
         <div class="hero__badge" data-en="Arizona's Only Dual-Tank Specialist" data-es="El Unico Especialista de Doble Tanque en Arizona">Arizona's Only Dual-Tank Specialist</div>
-        <h1 class="hero-title" aria-label="You Deserve Clean Water" data-en="You Deserve Clean Water" data-es="Usted Merece Agua Limpia">You Deserve Clean Water</h1>
+        <h1 class="hero-title" aria-label="You Deserve Clean Water" data-en="You Deserve Clean Water" data-es="Mereces Agua Limpia">You Deserve Clean Water</h1>
         <div class="hero__water-anim">
           <div class="hero__drop"></div>
           <div class="hero__ripple-ring"></div>
@@ -952,6 +952,16 @@
       <!-- Arizona Water Hardness Map -->
       <div class="hardness__map fade-up">
         <img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/mAiX71CmqY5JEU2Wrtwt/media/6910b66f84ec2a1d09f24fe3.png" alt="Arizona Water Hardness Map showing hard water levels across the state" loading="lazy">
+      </div>
+
+      <!-- Video (EN/ES toggle) -->
+      <div class="hardness__video fade-up" style="max-width: 700px; margin: 40px auto; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.08);">
+        <div class="video-en" style="position: relative; padding-bottom: 56.25%; height: 0;">
+          <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" src="https://www.youtube.com/embed/enfS4fhatQw?si=I2V02GYATGdG0HO0" title="AZ Water Check - English" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <div class="video-es" style="position: relative; padding-bottom: 56.25%; height: 0; display: none;">
+          <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" src="https://www.youtube.com/embed/vUrF3MU0mHs?si=e6iwe_-vxU0W6OA2" title="AZ Water Check - Espanol" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
       </div>
 
       <div class="hardness__grid">
@@ -1459,10 +1469,10 @@
           </div>
           <p data-en="Arizona's only dual-tank water purification specialist. Free home water quality tests. Lifetime warranty." data-es="El unico especialista en purificacion de agua de doble tanque en Arizona. Pruebas gratuitas de calidad del agua a domicilio. Garantia de por vida.">Arizona's only dual-tank water purification specialist. Free home water quality tests. Lifetime warranty.</p>
           <div class="footer__social">
-            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.instagram.com/azwatercheck/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/AZWaterCheck" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.tiktok.com/@azwatercheck" target="_blank" rel="noopener" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.youtube.com/@azwatercheck" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
           </div>
         </div>
 
@@ -1750,6 +1760,14 @@
       } else {
         document.getElementById('langES').classList.add('active');
         document.getElementById('navLangES').classList.add('active');
+      }
+
+      // Toggle video iframes (EN/ES)
+      var videoEn = document.querySelector('.video-en');
+      var videoEs = document.querySelector('.video-es');
+      if (videoEn && videoEs) {
+        videoEn.style.display = lang === 'en' ? 'block' : 'none';
+        videoEs.style.display = lang === 'es' ? 'block' : 'none';
       }
 
       // Store preference
