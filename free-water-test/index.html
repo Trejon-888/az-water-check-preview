@@ -313,14 +313,21 @@
         btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
       });
       document.documentElement.lang = lang;
-      localStorage.setItem('azwc-lang', lang);
+      // No localStorage persistence - always respect URL/manual toggle only
     }
 
-    // Auto-detect language from URL param ?lang=es
+    // Clear any old saved language preference from previous visits
+    try { localStorage.removeItem('azwc-lang'); } catch(e) {}
+
+    // Language detection: URL param ALWAYS wins.
+    // (QR codes explicitly set the language — we must respect that.)
     var urlParams = new URLSearchParams(window.location.search);
     var langParam = urlParams.get('lang');
-    var savedLang = localStorage.getItem('azwc-lang');
-    if (langParam === 'es' || savedLang === 'es') setLang('es');
+    if (langParam === 'es') {
+      setLang('es');
+    } else {
+      setLang('en'); // default = English
+    }
 
     // Build calendar (next 14 days, weekdays + Saturday)
     function buildCalendar() {
