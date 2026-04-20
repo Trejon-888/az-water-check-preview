@@ -39,8 +39,55 @@
     .text-input { width: 100%; padding: 12px 14px; border: 2px solid #e5e5e5; border-radius: 10px; font-size: 15px; font-family: inherit; margin-top: 10px; }
     .text-input:focus { border-color: #5BA4C9; outline: none; }
 
-    .qualified { background: linear-gradient(135deg, #4CAF50 0%, #43a047 100%); color: #fff; padding: 18px 20px; border-radius: 14px; text-align: center; font-weight: 700; font-size: 16px; margin: 24px 0; box-shadow: 0 6px 20px rgba(76,175,80,0.25); }
-    .qualified__sub { font-size: 13px; font-weight: 400; opacity: 0.95; margin-top: 4px; }
+    /* Qualified banner - hidden until all questions answered, then animates in */
+    .qualified {
+      display: none; opacity: 0; max-height: 0; margin: 0;
+      background: linear-gradient(135deg, #4CAF50 0%, #43a047 100%);
+      color: #fff; padding: 0 20px; border-radius: 14px;
+      text-align: center; font-weight: 700; font-size: 16px;
+      box-shadow: 0 6px 20px rgba(76,175,80,0.25);
+      overflow: hidden; transform: scale(0.95);
+      transition: opacity 0.5s ease, max-height 0.5s ease, padding 0.5s ease, margin 0.5s ease, transform 0.5s ease;
+    }
+    .qualified.show {
+      display: block; opacity: 1; max-height: 200px; padding: 20px;
+      margin: 24px 0; transform: scale(1);
+      animation: pulseGlow 2s ease-in-out 0.6s;
+    }
+    .qualified__icon {
+      display: inline-block; width: 32px; height: 32px; border-radius: 50%;
+      background: rgba(255,255,255,0.25); line-height: 32px;
+      margin-bottom: 10px; font-size: 18px;
+    }
+    .qualified__sub { font-size: 13px; font-weight: 500; opacity: 0.95; margin-top: 6px; }
+    @keyframes pulseGlow {
+      0%, 100% { box-shadow: 0 6px 20px rgba(76,175,80,0.25); }
+      50% { box-shadow: 0 10px 40px rgba(76,175,80,0.55); }
+    }
+    /* Progress indicator */
+    .progress-track {
+      position: sticky; top: 0; z-index: 10;
+      background: #F5EDE3; padding: 10px 20px 6px; margin: -32px -20px 20px;
+    }
+    .progress-bar {
+      height: 6px; background: rgba(0,0,0,0.08); border-radius: 10px; overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%; background: linear-gradient(90deg, #5BA4C9 0%, #4CAF50 100%);
+      width: 0%; border-radius: 10px;
+      transition: width 0.4s ease;
+    }
+    .progress-label {
+      text-align: center; font-size: 11px; color: #666; margin-top: 4px; font-weight: 600;
+    }
+    /* Contact & calendar sections start hidden */
+    .contact-section, .calendar-section, .submit-section {
+      display: none; opacity: 0; max-height: 0; overflow: hidden;
+      transition: opacity 0.5s ease, max-height 0.6s ease;
+    }
+    .contact-section.show, .calendar-section.show, .submit-section.show {
+      display: block; opacity: 1; max-height: 2000px;
+    }
 
     .calendar { background: #fff; border-radius: 14px; padding: 20px; margin-top: 16px; box-shadow: 0 2px 12px rgba(0,0,0,0.04); }
     .calendar__title { font-weight: 700; font-size: 15px; margin-bottom: 14px; color: #1a1a2e; text-align: center; }
@@ -91,6 +138,12 @@
   <div class="container">
     <h1 class="hero-title" data-en="Help us check your water" data-es="Ayudenos a revisar su agua">Help us check your water</h1>
     <p class="hero-sub" data-en="(Takes less than 30 seconds)" data-es="(Toma menos de 30 segundos)">(Takes less than 30 seconds)</p>
+
+    <!-- Progress bar -->
+    <div class="progress-track">
+      <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+      <div class="progress-label" id="progressLabel" data-en-template="Step %1 of 6" data-es-template="Paso %1 de 6">Step 0 of 6</div>
+    </div>
 
     <form id="bookingForm">
 
@@ -154,21 +207,23 @@
         </div>
       </div>
 
-      <!-- Qualified banner -->
-      <div class="qualified">
-        <div data-en="Perfect — based on your answers, your home qualifies for a free water check" data-es="Perfecto — con lo que nos comenta, su hogar califica para una revision gratuita">Perfect — based on your answers, your home qualifies for a free water check</div>
+      <!-- Qualified banner (hidden until all questions answered) -->
+      <div class="qualified" id="qualifiedBanner">
+        <div class="qualified__icon">&#10003;</div>
+        <div data-en="You qualify for a free water check" data-es="Usted califica para una revision gratuita">You qualify for a free water check</div>
+        <div class="qualified__sub" data-en="Last step: share your contact info and pick a time below." data-es="Ultimo paso: comparta sus datos y elija un horario abajo.">Last step: share your contact info and pick a time below.</div>
       </div>
 
-      <!-- Contact info -->
-      <div class="step">
+      <!-- Contact info (hidden until qualified) -->
+      <div class="step contact-section" id="contactSection">
         <div><span class="step__title" data-en="Contact Information" data-es="Informacion de contacto">Contact Information</span></div>
         <input type="text" name="name" class="text-input" placeholder="Name" data-en-placeholder="Name" data-es-placeholder="Nombre" required>
         <input type="tel" name="phone" class="text-input" placeholder="Phone" data-en-placeholder="Phone" data-es-placeholder="Telefono" required>
         <input type="text" name="address" class="text-input" placeholder="Address" data-en-placeholder="Address" data-es-placeholder="Direccion" required>
       </div>
 
-      <!-- Calendar -->
-      <div class="calendar">
+      <!-- Calendar (hidden until qualified) -->
+      <div class="calendar calendar-section" id="calendarSection">
         <div class="calendar__title" data-en="Select the best available time" data-es="Seleccione el mejor horario disponible">Select the best available time</div>
         <div class="cal-month" id="calMonth"></div>
         <div class="cal-grid" id="calGrid"></div>
@@ -184,6 +239,7 @@
         </div>
       </div>
 
+      <div class="submit-section" id="submitSection">
       <button type="submit" class="submit-btn" data-en="BOOK MY FREE WATER TEST" data-es="RESERVAR MI PRUEBA GRATUITA">BOOK MY FREE WATER TEST</button>
 
       <div class="consent-text">
@@ -191,6 +247,7 @@
         <br><br>
         <a href="/privacy-policy/" data-en="Privacy Policy" data-es="Politica de Privacidad">Privacy Policy</a> | <a href="/terms-and-conditions/" data-en="Terms" data-es="Terminos">Terms</a>
       </div>
+      </div><!-- end submit-section -->
     </form>
 
     <!-- Call CTA -->
@@ -289,6 +346,56 @@
         this.classList.add('selected');
       });
     });
+
+    // ===== Progressive disclosure: track 6 questions =====
+    var REQUIRED_QUESTIONS = ['water_type', 'water_quality', 'has_filter', 'homeowner', 'bottled_water'];
+    // Note: "issues" (step 3) is a checkbox group, we consider it optional but include in progress count
+    // Actually let's require at least one issue OR allow skip after checking any visible behavior
+    // Simpler: require 5 radio groups. Issues (step 3) is optional but contributes to progress feel.
+
+    var qualifiedShown = false;
+
+    function updateProgress() {
+      var form = document.getElementById('bookingForm');
+      var answered = 0;
+      var total = 6;
+
+      // Radio groups
+      REQUIRED_QUESTIONS.forEach(function(name) {
+        if (form.querySelector('input[name="' + name + '"]:checked')) answered++;
+      });
+
+      // Step 3: any issue checkbox or user has interacted (we'll count as answered if any checked OR all radios above done)
+      var anyIssue = form.querySelectorAll('input[name^="issue_"]:checked').length > 0;
+      // Count step 3 as "answered" if user has engaged with it (any checked) OR if they've moved past it (3+ other questions done)
+      if (anyIssue || answered >= 4) answered = Math.min(total, answered + (anyIssue ? 1 : (answered >= 4 ? 1 : 0)));
+
+      var percent = Math.min(100, Math.round((answered / total) * 100));
+      document.getElementById('progressFill').style.width = percent + '%';
+
+      var label = document.getElementById('progressLabel');
+      var lang = document.documentElement.lang || 'en';
+      var template = label.getAttribute('data-' + lang + '-template') || 'Step %1 of 6';
+      label.textContent = template.replace('%1', answered);
+
+      // When all 6 questions answered -> reveal
+      if (answered >= total && !qualifiedShown) {
+        qualifiedShown = true;
+        setTimeout(function() {
+          document.getElementById('qualifiedBanner').classList.add('show');
+          setTimeout(function() {
+            document.getElementById('contactSection').classList.add('show');
+            document.getElementById('calendarSection').classList.add('show');
+            document.getElementById('submitSection').classList.add('show');
+            // Scroll to the banner smoothly
+            document.getElementById('qualifiedBanner').scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }, 400);
+        }, 250);
+      }
+    }
+
+    // Listen to all form changes
+    document.getElementById('bookingForm').addEventListener('change', updateProgress);
 
     // Form submit
     document.getElementById('bookingForm').addEventListener('submit', function(e) {
