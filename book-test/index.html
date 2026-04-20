@@ -11,9 +11,22 @@
     body { font-family: 'Nunito Sans', sans-serif; color: #2d2d2d; background: #F5EDE3; line-height: 1.6; }
     .top-bar { background: #1a1a2e; color: #fff; padding: 12px 20px; text-align: center; font-size: 14px; }
     .top-bar a { color: #5BA4C9; font-weight: 700; text-decoration: none; }
-    .lang-switch { display: flex; justify-content: center; gap: 8px; padding: 12px; background: #fff; border-bottom: 1px solid #eee; }
-    .lang-btn { background: none; border: 2px solid #5BA4C9; color: #5BA4C9; font-family: inherit; font-size: 13px; font-weight: 700; padding: 6px 14px; border-radius: 50px; cursor: pointer; }
+
+    .brand-header {
+      background: #fff; padding: 16px 20px;
+      display: flex; align-items: center; justify-content: space-between;
+      border-bottom: 1px solid #eee;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+    }
+    .brand-logo { height: 44px; width: auto; display: block; }
+
+    .lang-switch { display: flex; gap: 6px; }
+    .lang-btn { background: none; border: 2px solid #5BA4C9; color: #5BA4C9; font-family: inherit; font-size: 12px; font-weight: 700; padding: 5px 12px; border-radius: 50px; cursor: pointer; }
     .lang-btn.active { background: #5BA4C9; color: #fff; }
+
+    @media (max-width: 480px) {
+      .brand-logo { height: 36px; }
+    }
 
     .container { max-width: 640px; margin: 0 auto; padding: 32px 20px 60px; }
     .hero-title { font-family: 'Playfair Display', serif; font-size: 32px; line-height: 1.2; color: #1a1a2e; text-align: center; margin-bottom: 8px; }
@@ -130,9 +143,12 @@
     <a href="tel:+16026034006">(602) 603-4006</a>
   </div>
 
-  <div class="lang-switch">
-    <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
-    <button class="lang-btn" data-lang="es" onclick="setLang('es')">ES</button>
+  <div class="brand-header">
+    <a href="/"><img src="/assets/brand/AZWC-LOGO-BLUE.png" alt="AZ Water Check" class="brand-logo"></a>
+    <div class="lang-switch">
+      <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" data-lang="es" onclick="setLang('es')">ES</button>
+    </div>
   </div>
 
   <div class="container">
