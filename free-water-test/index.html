@@ -9,8 +9,8 @@
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: 'Nunito Sans', sans-serif; color: #2d2d2d; background: #F5EDE3; line-height: 1.6; }
-    .top-bar { background: #1a1a2e; color: #fff; padding: 12px 20px; text-align: center; font-size: 14px; }
-    .top-bar a { color: #5BA4C9; font-weight: 700; text-decoration: none; }
+    .top-bar { background: #1a1a2e; color: #fff; padding: 14px 20px; text-align: center; }
+    .top-bar__label { font-size: 12px; opacity: 0.8; margin-bottom: 10px; font-weight: 600; letter-spacing: 0.3px; }
     .call-btn {
       display: inline-flex; align-items: center; justify-content: center; gap: 10px;
       background: #E8944A; color: #fff !important; text-decoration: none;
@@ -169,8 +169,11 @@
 <body>
 
   <div class="top-bar">
-    <span data-en="Or call us directly:" data-es="O llame directamente:">Or call us directly:</span>
-    <a href="tel:+16026034006">(602) 603-4006</a>
+    <div class="top-bar__label" data-en="Or call us directly" data-es="O llame directamente">Or call us directly</div>
+    <a href="tel:+16026034006" class="call-btn">
+      <span class="call-btn__icon">&#9742;</span>
+      <span>(602) 603-4006</span>
+    </a>
   </div>
 
   <div class="brand-header">
