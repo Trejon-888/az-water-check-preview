@@ -9,11 +9,8 @@
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: 'Nunito Sans', sans-serif; color: #2d2d2d; background: #F5EDE3; line-height: 1.6; }
-    /* Primary call CTA - top strip */
-    .call-strip {
-      background: #1a1a2e; color: #fff; padding: 14px 16px; text-align: center;
-    }
-    .call-strip__label { font-size: 12px; opacity: 0.85; margin-bottom: 8px; letter-spacing: 0.5px; }
+    .top-bar { background: #1a1a2e; color: #fff; padding: 12px 20px; text-align: center; font-size: 14px; }
+    .top-bar a { color: #5BA4C9; font-weight: 700; text-decoration: none; }
     .call-btn {
       display: inline-flex; align-items: center; justify-content: center; gap: 10px;
       background: #E8944A; color: #fff !important; text-decoration: none;
@@ -26,7 +23,6 @@
       width: 30px; height: 30px; border-radius: 50%; background: rgba(255,255,255,0.22);
       display: inline-flex; align-items: center; justify-content: center; font-size: 14px;
     }
-    .call-strip__hint { font-size: 11px; opacity: 0.6; margin-top: 8px; letter-spacing: 0.3px; }
     @media (max-width: 480px) {
       .call-btn { font-size: 18px; padding: 12px 20px; }
     }
@@ -172,14 +168,9 @@
 </head>
 <body>
 
-  <!-- Primary action: CALL (preferred) -->
-  <div class="call-strip">
-    <div class="call-strip__label" data-en="FASTEST WAY TO BOOK — CALL US" data-es="LA FORMA MAS RAPIDA — LLAMENOS">FASTEST WAY TO BOOK — CALL US</div>
-    <a href="tel:+16026034006" class="call-btn">
-      <span class="call-btn__icon">&#9742;</span>
-      <span>(602) 603-4006</span>
-    </a>
-    <div class="call-strip__hint" data-en="Or fill out the form below" data-es="O llene el formulario abajo">Or fill out the form below</div>
+  <div class="top-bar">
+    <span data-en="Or call us directly:" data-es="O llame directamente:">Or call us directly:</span>
+    <a href="tel:+16026034006">(602) 603-4006</a>
   </div>
 
   <div class="brand-header">
@@ -308,7 +299,7 @@
 
     <!-- Call CTA -->
     <div class="call-cta">
-      <div class="call-cta__label" data-en="Want your test scheduled faster? Call us now" data-es="Quiere su prueba agendada mas rapido? Llamenos ahora">Want your test scheduled faster? Call us now</div>
+      <div class="call-cta__label" data-en="Prefer to call?" data-es="Prefiere llamar?">Prefer to call?</div>
       <a href="tel:+16026034006" class="call-btn">
         <span class="call-btn__icon">&#9742;</span>
         <span>(602) 603-4006</span>
