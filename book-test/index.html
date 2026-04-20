@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Your Free Water Test | AZ Water Check</title>
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700;6..12,800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Nunito Sans', sans-serif; color: #2d2d2d; background: #F5EDE3; line-height: 1.6; }
+    .top-bar { background: #1a1a2e; color: #fff; padding: 12px 20px; text-align: center; font-size: 14px; }
+    .top-bar a { color: #5BA4C9; font-weight: 700; text-decoration: none; }
+    .lang-switch { display: flex; justify-content: center; gap: 8px; padding: 12px; background: #fff; border-bottom: 1px solid #eee; }
+    .lang-btn { background: none; border: 2px solid #5BA4C9; color: #5BA4C9; font-family: inherit; font-size: 13px; font-weight: 700; padding: 6px 14px; border-radius: 50px; cursor: pointer; }
+    .lang-btn.active { background: #5BA4C9; color: #fff; }
+
+    .container { max-width: 640px; margin: 0 auto; padding: 32px 20px 60px; }
+    .hero-title { font-family: 'Playfair Display', serif; font-size: 32px; line-height: 1.2; color: #1a1a2e; text-align: center; margin-bottom: 8px; }
+    .hero-sub { text-align: center; color: #666; font-size: 14px; margin-bottom: 32px; }
+
+    .step { background: #fff; border-radius: 14px; padding: 22px 20px; margin-bottom: 16px; box-shadow: 0 2px 12px rgba(0,0,0,0.04); }
+    .step__number { display: inline-block; background: #5BA4C9; color: #fff; width: 26px; height: 26px; border-radius: 50%; text-align: center; line-height: 26px; font-weight: 700; font-size: 14px; margin-right: 8px; }
+    .step__title { font-weight: 700; font-size: 16px; color: #1a1a2e; display: inline; }
+    .step__hint { font-size: 12px; color: #999; margin-top: 4px; }
+
+    .options { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+    .option { flex: 1; min-width: 100px; }
+    .option input { display: none; }
+    .option label { display: block; padding: 12px 14px; border: 2px solid #e5e5e5; border-radius: 10px; text-align: center; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+    .option input:checked + label { border-color: #5BA4C9; background: rgba(91,164,201,0.08); color: #1a1a2e; }
+
+    .checks { margin-top: 14px; }
+    .check { display: flex; align-items: flex-start; gap: 10px; padding: 10px 12px; border: 2px solid #e5e5e5; border-radius: 10px; margin-bottom: 8px; cursor: pointer; transition: all 0.2s; }
+    .check input { width: 18px; height: 18px; accent-color: #5BA4C9; margin-top: 2px; cursor: pointer; }
+    .check span { font-size: 14px; }
+    .check:has(input:checked) { border-color: #5BA4C9; background: rgba(91,164,201,0.06); }
+
+    .text-input { width: 100%; padding: 12px 14px; border: 2px solid #e5e5e5; border-radius: 10px; font-size: 15px; font-family: inherit; margin-top: 10px; }
+    .text-input:focus { border-color: #5BA4C9; outline: none; }
+
+    .qualified { background: linear-gradient(135deg, #4CAF50 0%, #43a047 100%); color: #fff; padding: 18px 20px; border-radius: 14px; text-align: center; font-weight: 700; font-size: 16px; margin: 24px 0; box-shadow: 0 6px 20px rgba(76,175,80,0.25); }
+    .qualified__sub { font-size: 13px; font-weight: 400; opacity: 0.95; margin-top: 4px; }
+
+    .calendar { background: #fff; border-radius: 14px; padding: 20px; margin-top: 16px; box-shadow: 0 2px 12px rgba(0,0,0,0.04); }
+    .calendar__title { font-weight: 700; font-size: 15px; margin-bottom: 14px; color: #1a1a2e; text-align: center; }
+    .cal-month { text-align: center; font-size: 13px; color: #666; margin-bottom: 10px; font-weight: 600; }
+    .cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; margin-bottom: 16px; }
+    .cal-day-label { text-align: center; font-size: 11px; color: #999; font-weight: 700; padding: 4px 0; }
+    .cal-day { text-align: center; padding: 10px 0; font-size: 14px; border-radius: 8px; cursor: pointer; transition: all 0.2s; }
+    .cal-day:hover:not(.disabled) { background: rgba(91,164,201,0.1); }
+    .cal-day.disabled { color: #ccc; cursor: not-allowed; }
+    .cal-day.selected { background: #5BA4C9; color: #fff; font-weight: 700; }
+    .cal-day.empty { cursor: default; }
+
+    .time-slots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 12px; }
+    .time-slot { padding: 10px; border: 2px solid #e5e5e5; border-radius: 8px; text-align: center; font-size: 13px; cursor: pointer; transition: all 0.2s; font-weight: 600; }
+    .time-slot:hover { border-color: #5BA4C9; }
+    .time-slot.selected { background: #5BA4C9; color: #fff; border-color: #5BA4C9; }
+
+    .submit-btn { width: 100%; padding: 16px; background: #E8944A; color: #fff; border: none; border-radius: 50px; font-size: 16px; font-weight: 700; font-family: inherit; cursor: pointer; margin-top: 20px; transition: background 0.3s; }
+    .submit-btn:hover { background: #d4823a; }
+
+    .consent-text { font-size: 11px; color: #888; line-height: 1.5; margin-top: 16px; padding: 14px; background: rgba(91,164,201,0.06); border-radius: 10px; border-left: 3px solid #5BA4C9; }
+    .consent-text a { color: #5BA4C9; }
+
+    .call-cta { background: #1a1a2e; color: #fff; padding: 18px; border-radius: 14px; text-align: center; margin: 16px 0; }
+    .call-cta__label { font-size: 12px; opacity: 0.7; margin-bottom: 4px; }
+    .call-cta a { color: #fff; font-size: 22px; font-weight: 800; text-decoration: none; }
+
+    .success { display: none; text-align: center; padding: 60px 20px; background: #fff; border-radius: 14px; }
+    .success .check-mark { font-size: 64px; color: #4CAF50; margin-bottom: 16px; }
+    .success h2 { color: #1a1a2e; margin-bottom: 8px; }
+
+    .footer { text-align: center; padding: 24px 20px; font-size: 12px; color: #999; }
+    .footer a { color: #5BA4C9; }
+  </style>
+</head>
+<body>
+
+  <div class="top-bar">
+    <span data-en="Or call us directly:" data-es="O llame directamente:">Or call us directly:</span>
+    <a href="tel:+16026034006">(602) 603-4006</a>
+  </div>
+
+  <div class="lang-switch">
+    <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
+    <button class="lang-btn" data-lang="es" onclick="setLang('es')">ES</button>
+  </div>
+
+  <div class="container">
+    <h1 class="hero-title" data-en="Help us check your water" data-es="Ayudenos a revisar su agua">Help us check your water</h1>
+    <p class="hero-sub" data-en="(Takes less than 30 seconds)" data-es="(Toma menos de 30 segundos)">(Takes less than 30 seconds)</p>
+
+    <form id="bookingForm">
+
+      <!-- Step 1 -->
+      <div class="step">
+        <div><span class="step__number">1</span><span class="step__title" data-en="Water type" data-es="Tipo de agua">Water type</span></div>
+        <div class="options">
+          <div class="option"><input type="radio" name="water_type" value="city" id="wt-city"><label for="wt-city" data-en="City" data-es="Ciudad">City</label></div>
+          <div class="option"><input type="radio" name="water_type" value="well" id="wt-well"><label for="wt-well" data-en="Well" data-es="Pozo">Well</label></div>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="step">
+        <div><span class="step__number">2</span><span class="step__title" data-en="How would you rate your home's water?" data-es="Como califica el agua de su hogar?">How would you rate your home's water?</span></div>
+        <div class="options">
+          <div class="option"><input type="radio" name="water_quality" value="good" id="wq-good"><label for="wq-good" data-en="Good" data-es="Buena">Good</label></div>
+          <div class="option"><input type="radio" name="water_quality" value="fair" id="wq-fair"><label for="wq-fair" data-en="Fair" data-es="Regular">Fair</label></div>
+          <div class="option"><input type="radio" name="water_quality" value="poor" id="wq-poor"><label for="wq-poor" data-en="Poor" data-es="Mala">Poor</label></div>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="step">
+        <div><span class="step__number">3</span><span class="step__title" data-en="Have you noticed any of these issues?" data-es="Ha notado alguno de estos problemas?">Have you noticed any of these issues?</span></div>
+        <div class="step__hint" data-en="(Select all that apply)" data-es="(Seleccione todos los que apliquen)">(Select all that apply)</div>
+        <div class="checks">
+          <label class="check"><input type="checkbox" name="issue_skin"><span data-en="Skin irritation or ALLERGIES" data-es="Irritacion o ALERGIAS EN LA PIEL">Skin irritation or ALLERGIES</span></label>
+          <label class="check"><input type="checkbox" name="issue_dry_skin"><span data-en="Dry skin" data-es="Piel seca">Dry skin</span></label>
+          <label class="check"><input type="checkbox" name="issue_hair"><span data-en="Hair loss or dryness" data-es="Caida del cabello o resequedad">Hair loss or dryness</span></label>
+          <label class="check"><input type="checkbox" name="issue_scale"><span data-en="Scale or buildup on faucets/showerheads" data-es="Sarro o manchas en llaves/regaderas">Scale or buildup on faucets/showerheads</span></label>
+          <label class="check"><input type="checkbox" name="issue_taste"><span data-en="Bad taste or odor" data-es="Mal sabor u olor">Bad taste or odor</span></label>
+        </div>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="step">
+        <div><span class="step__number">4</span><span class="step__title" data-en="Do you have a filtration system?" data-es="Tiene sistema de filtracion?">Do you have a filtration system?</span></div>
+        <div class="options">
+          <div class="option"><input type="radio" name="has_filter" value="yes" id="hf-yes"><label for="hf-yes" data-en="Yes" data-es="Si">Yes</label></div>
+          <div class="option"><input type="radio" name="has_filter" value="no" id="hf-no"><label for="hf-no" data-en="No" data-es="No">No</label></div>
+        </div>
+        <input type="text" name="filter_brand" class="text-input" placeholder="System / Brand (optional)" data-en-placeholder="System / Brand (optional)" data-es-placeholder="Sistema / Marca (opcional)">
+      </div>
+
+      <!-- Step 5 -->
+      <div class="step">
+        <div><span class="step__number">5</span><span class="step__title" data-en="Are you the homeowner?" data-es="Es usted dueno de la casa?">Are you the homeowner?</span></div>
+        <div class="options">
+          <div class="option"><input type="radio" name="homeowner" value="yes" id="ho-yes"><label for="ho-yes" data-en="Yes" data-es="Si">Yes</label></div>
+          <div class="option"><input type="radio" name="homeowner" value="no" id="ho-no"><label for="ho-no" data-en="No" data-es="No">No</label></div>
+        </div>
+      </div>
+
+      <!-- Step 6 -->
+      <div class="step">
+        <div><span class="step__number">6</span><span class="step__title" data-en="Do you buy bottled or jug water?" data-es="Compra agua en botellas o garrafon?">Do you buy bottled or jug water?</span></div>
+        <div class="options">
+          <div class="option"><input type="radio" name="bottled_water" value="yes" id="bw-yes"><label for="bw-yes" data-en="Yes" data-es="Si">Yes</label></div>
+          <div class="option"><input type="radio" name="bottled_water" value="no" id="bw-no"><label for="bw-no" data-en="No" data-es="No">No</label></div>
+        </div>
+      </div>
+
+      <!-- Qualified banner -->
+      <div class="qualified">
+        <div data-en="Perfect — based on your answers, your home qualifies for a free water check" data-es="Perfecto — con lo que nos comenta, su hogar califica para una revision gratuita">Perfect — based on your answers, your home qualifies for a free water check</div>
+      </div>
+
+      <!-- Contact info -->
+      <div class="step">
+        <div><span class="step__title" data-en="Contact Information" data-es="Informacion de contacto">Contact Information</span></div>
+        <input type="text" name="name" class="text-input" placeholder="Name" data-en-placeholder="Name" data-es-placeholder="Nombre" required>
+        <input type="tel" name="phone" class="text-input" placeholder="Phone" data-en-placeholder="Phone" data-es-placeholder="Telefono" required>
+        <input type="text" name="address" class="text-input" placeholder="Address" data-en-placeholder="Address" data-es-placeholder="Direccion" required>
+      </div>
+
+      <!-- Calendar -->
+      <div class="calendar">
+        <div class="calendar__title" data-en="Select the best available time" data-es="Seleccione el mejor horario disponible">Select the best available time</div>
+        <div class="cal-month" id="calMonth"></div>
+        <div class="cal-grid" id="calGrid"></div>
+
+        <div data-en="Pick a time:" data-es="Elija una hora:" style="font-weight: 700; font-size: 13px; margin-top: 8px;">Pick a time:</div>
+        <div class="time-slots">
+          <div class="time-slot" data-time="8:00 AM">8:00 AM</div>
+          <div class="time-slot" data-time="10:00 AM">10:00 AM</div>
+          <div class="time-slot" data-time="12:00 PM">12:00 PM</div>
+          <div class="time-slot" data-time="2:00 PM">2:00 PM</div>
+          <div class="time-slot" data-time="4:00 PM">4:00 PM</div>
+          <div class="time-slot" data-time="6:00 PM">6:00 PM</div>
+        </div>
+      </div>
+
+      <button type="submit" class="submit-btn" data-en="BOOK MY FREE WATER TEST" data-es="RESERVAR MI PRUEBA GRATUITA">BOOK MY FREE WATER TEST</button>
+
+      <div class="consent-text">
+        <span data-en="By submitting this form, I consent to receive SMS notifications and phone calls from AZ Water Check, a division of Sol Deja Vu, regarding my water test appointment. Msg frequency varies. Msg & data rates may apply. Reply STOP to unsubscribe. Reply HELP for help. No mobile information will be shared with third parties. Consent is not a condition of purchase." data-es="Al enviar este formulario, consiento recibir notificaciones SMS y llamadas de AZ Water Check, una division de Sol Deja Vu, sobre mi cita de prueba de agua. La frecuencia de mensajes varia. Pueden aplicar tarifas. Responda STOP para cancelar. Responda HELP para ayuda. No se compartira informacion movil con terceros.">By submitting this form, I consent to receive SMS notifications and phone calls from AZ Water Check, a division of Sol Deja Vu, regarding my water test appointment. Msg frequency varies. Msg & data rates may apply. Reply STOP to unsubscribe. Reply HELP for help. No mobile information will be shared with third parties. Consent is not a condition of purchase.</span>
+        <br><br>
+        <a href="/privacy-policy/" data-en="Privacy Policy" data-es="Politica de Privacidad">Privacy Policy</a> | <a href="/terms-and-conditions/" data-en="Terms" data-es="Terminos">Terms</a>
+      </div>
+    </form>
+
+    <!-- Call CTA -->
+    <div class="call-cta">
+      <div class="call-cta__label" data-en="Prefer to call?" data-es="Prefiere llamar?">Prefer to call?</div>
+      <a href="tel:+16026034006">(602) 603-4006</a>
+    </div>
+
+    <!-- Success state -->
+    <div class="success" id="successBox">
+      <div class="check-mark">&#10003;</div>
+      <h2 data-en="Thank you!" data-es="Gracias!">Thank you!</h2>
+      <p data-en="Your free water test is booked. Solit will contact you to confirm." data-es="Su prueba gratuita esta reservada. Solit la contactara para confirmar.">Your free water test is booked. Solit will contact you to confirm.</p>
+    </div>
+  </div>
+
+  <div class="footer">
+    AZ Water Check, a division of Sol Deja Vu<br>
+    1916 N Pennington Dr, Chandler, AZ 85224
+  </div>
+
+  <script>
+    // Language toggle
+    function setLang(lang) {
+      document.querySelectorAll('[data-en][data-es]').forEach(function(el) {
+        el.innerHTML = el.getAttribute('data-' + lang);
+      });
+      document.querySelectorAll('[data-en-placeholder]').forEach(function(el) {
+        el.placeholder = el.getAttribute('data-' + lang + '-placeholder');
+      });
+      document.querySelectorAll('.lang-btn').forEach(function(btn) {
+        btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+      });
+      document.documentElement.lang = lang;
+      localStorage.setItem('azwc-lang', lang);
+    }
+
+    // Auto-detect language from URL param ?lang=es
+    var urlParams = new URLSearchParams(window.location.search);
+    var langParam = urlParams.get('lang');
+    var savedLang = localStorage.getItem('azwc-lang');
+    if (langParam === 'es' || savedLang === 'es') setLang('es');
+
+    // Build calendar (next 14 days, weekdays + Saturday)
+    function buildCalendar() {
+      var grid = document.getElementById('calGrid');
+      var monthLabel = document.getElementById('calMonth');
+      var today = new Date();
+      var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+      monthLabel.textContent = months[today.getMonth()] + ' ' + today.getFullYear();
+
+      var dayLabels = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+      dayLabels.forEach(function(d) {
+        var el = document.createElement('div');
+        el.className = 'cal-day-label';
+        el.textContent = d;
+        grid.appendChild(el);
+      });
+
+      // First day of current month
+      var firstDay = new Date(today.getFullYear(), today.getMonth(), 1);
+      var lastDay = new Date(today.getFullYear(), today.getMonth() + 1, 0);
+      var startDay = firstDay.getDay();
+
+      // Empty cells before day 1
+      for (var i = 0; i < startDay; i++) {
+        var empty = document.createElement('div');
+        empty.className = 'cal-day empty';
+        grid.appendChild(empty);
+      }
+
+      // Days of the month
+      for (var d = 1; d <= lastDay.getDate(); d++) {
+        var dayDate = new Date(today.getFullYear(), today.getMonth(), d);
+        var cell = document.createElement('div');
+        cell.className = 'cal-day';
+        cell.textContent = d;
+        // Disable past dates and Sundays
+        if (dayDate < today.setHours(0,0,0,0) || dayDate.getDay() === 0) {
+          cell.classList.add('disabled');
+        } else {
+          cell.addEventListener('click', function() {
+            document.querySelectorAll('.cal-day.selected').forEach(function(c) { c.classList.remove('selected'); });
+            this.classList.add('selected');
+          });
+        }
+        grid.appendChild(cell);
+      }
+    }
+    buildCalendar();
+
+    // Time slot selection
+    document.querySelectorAll('.time-slot').forEach(function(slot) {
+      slot.addEventListener('click', function() {
+        document.querySelectorAll('.time-slot.selected').forEach(function(s) { s.classList.remove('selected'); });
+        this.classList.add('selected');
+      });
+    });
+
+    // Form submit
+    document.getElementById('bookingForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      this.style.display = 'none';
+      document.querySelector('.call-cta').style.display = 'none';
+      document.getElementById('successBox').style.display = 'block';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+
+</body>
+</html>
