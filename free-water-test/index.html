@@ -9,8 +9,27 @@
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: 'Nunito Sans', sans-serif; color: #2d2d2d; background: #F5EDE3; line-height: 1.6; }
-    .top-bar { background: #1a1a2e; color: #fff; padding: 12px 20px; text-align: center; font-size: 14px; }
-    .top-bar a { color: #5BA4C9; font-weight: 700; text-decoration: none; }
+    /* Primary call CTA - top strip */
+    .call-strip {
+      background: #1a1a2e; color: #fff; padding: 14px 16px; text-align: center;
+    }
+    .call-strip__label { font-size: 12px; opacity: 0.85; margin-bottom: 8px; letter-spacing: 0.5px; }
+    .call-btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      background: #E8944A; color: #fff !important; text-decoration: none;
+      padding: 14px 24px; border-radius: 50px; font-size: 20px; font-weight: 800;
+      box-shadow: 0 4px 16px rgba(232,148,74,0.35); transition: all 0.2s;
+      font-family: inherit;
+    }
+    .call-btn:hover, .call-btn:active { background: #d4823a; transform: translateY(-1px); }
+    .call-btn__icon {
+      width: 30px; height: 30px; border-radius: 50%; background: rgba(255,255,255,0.22);
+      display: inline-flex; align-items: center; justify-content: center; font-size: 14px;
+    }
+    .call-strip__hint { font-size: 11px; opacity: 0.6; margin-top: 8px; letter-spacing: 0.3px; }
+    @media (max-width: 480px) {
+      .call-btn { font-size: 18px; padding: 12px 20px; }
+    }
 
     .brand-header {
       background: #fff; padding: 16px 20px;
@@ -135,9 +154,13 @@
     .consent-text { font-size: 11px; color: #888; line-height: 1.5; margin-top: 16px; padding: 14px; background: rgba(91,164,201,0.06); border-radius: 10px; border-left: 3px solid #5BA4C9; }
     .consent-text a { color: #5BA4C9; }
 
-    .call-cta { background: #1a1a2e; color: #fff; padding: 18px; border-radius: 14px; text-align: center; margin: 16px 0; }
-    .call-cta__label { font-size: 12px; opacity: 0.7; margin-bottom: 4px; }
-    .call-cta a { color: #fff; font-size: 22px; font-weight: 800; text-decoration: none; }
+    .call-cta {
+      background: linear-gradient(135deg, #1a1a2e 0%, #2d2d4a 100%);
+      color: #fff; padding: 22px 18px; border-radius: 14px;
+      text-align: center; margin: 20px 0;
+      box-shadow: 0 6px 20px rgba(26,26,46,0.2);
+    }
+    .call-cta__label { font-size: 13px; opacity: 0.85; margin-bottom: 12px; font-weight: 600; letter-spacing: 0.3px; }
 
     .success { display: none; text-align: center; padding: 60px 20px; background: #fff; border-radius: 14px; }
     .success .check-mark { font-size: 64px; color: #4CAF50; margin-bottom: 16px; }
@@ -149,9 +172,14 @@
 </head>
 <body>
 
-  <div class="top-bar">
-    <span data-en="Or call us directly:" data-es="O llame directamente:">Or call us directly:</span>
-    <a href="tel:+16026034006">(602) 603-4006</a>
+  <!-- Primary action: CALL (preferred) -->
+  <div class="call-strip">
+    <div class="call-strip__label" data-en="FASTEST WAY TO BOOK — CALL US" data-es="LA FORMA MAS RAPIDA — LLAMENOS">FASTEST WAY TO BOOK — CALL US</div>
+    <a href="tel:+16026034006" class="call-btn">
+      <span class="call-btn__icon">&#9742;</span>
+      <span>(602) 603-4006</span>
+    </a>
+    <div class="call-strip__hint" data-en="Or fill out the form below" data-es="O llene el formulario abajo">Or fill out the form below</div>
   </div>
 
   <div class="brand-header">
@@ -280,8 +308,11 @@
 
     <!-- Call CTA -->
     <div class="call-cta">
-      <div class="call-cta__label" data-en="Prefer to call?" data-es="Prefiere llamar?">Prefer to call?</div>
-      <a href="tel:+16026034006">(602) 603-4006</a>
+      <div class="call-cta__label" data-en="Want your test scheduled faster? Call us now" data-es="Quiere su prueba agendada mas rapido? Llamenos ahora">Want your test scheduled faster? Call us now</div>
+      <a href="tel:+16026034006" class="call-btn">
+        <span class="call-btn__icon">&#9742;</span>
+        <span>(602) 603-4006</span>
+      </a>
     </div>
 
     <!-- Success state -->
