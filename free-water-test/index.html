@@ -12,19 +12,19 @@
     .top-bar { background: #1a1a2e; color: #fff; padding: 14px 20px; text-align: center; }
     .top-bar__label { font-size: 12px; opacity: 0.8; margin-bottom: 10px; font-weight: 600; letter-spacing: 0.3px; }
     .call-btn {
-      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
       background: #E8944A; color: #fff !important; text-decoration: none;
-      padding: 14px 24px; border-radius: 50px; font-size: 20px; font-weight: 800;
-      box-shadow: 0 4px 16px rgba(232,148,74,0.35); transition: all 0.2s;
+      padding: 10px 20px; border-radius: 50px; font-size: 16px; font-weight: 700;
+      box-shadow: 0 3px 10px rgba(232,148,74,0.3); transition: all 0.2s;
       font-family: inherit;
     }
     .call-btn:hover, .call-btn:active { background: #d4823a; transform: translateY(-1px); }
     .call-btn__icon {
-      width: 30px; height: 30px; border-radius: 50%; background: rgba(255,255,255,0.22);
-      display: inline-flex; align-items: center; justify-content: center; font-size: 14px;
+      width: 24px; height: 24px; border-radius: 50%; background: rgba(255,255,255,0.22);
+      display: inline-flex; align-items: center; justify-content: center; font-size: 12px;
     }
     @media (max-width: 480px) {
-      .call-btn { font-size: 18px; padding: 12px 20px; }
+      .call-btn { font-size: 15px; padding: 9px 16px; }
     }
 
     .brand-header {
@@ -149,14 +149,6 @@
 
     .consent-text { font-size: 11px; color: #888; line-height: 1.5; margin-top: 16px; padding: 14px; background: rgba(91,164,201,0.06); border-radius: 10px; border-left: 3px solid #5BA4C9; }
     .consent-text a { color: #5BA4C9; }
-
-    .call-cta {
-      background: linear-gradient(135deg, #1a1a2e 0%, #2d2d4a 100%);
-      color: #fff; padding: 22px 18px; border-radius: 14px;
-      text-align: center; margin: 20px 0;
-      box-shadow: 0 6px 20px rgba(26,26,46,0.2);
-    }
-    .call-cta__label { font-size: 13px; opacity: 0.85; margin-bottom: 12px; font-weight: 600; letter-spacing: 0.3px; }
 
     .success { display: none; text-align: center; padding: 60px 20px; background: #fff; border-radius: 14px; }
     .success .check-mark { font-size: 64px; color: #4CAF50; margin-bottom: 16px; }
@@ -300,14 +292,6 @@
       </div><!-- end submit-section -->
     </form>
 
-    <!-- Call CTA -->
-    <div class="call-cta">
-      <div class="call-cta__label" data-en="Prefer to call?" data-es="Prefiere llamar?">Prefer to call?</div>
-      <a href="tel:+16026034006" class="call-btn">
-        <span class="call-btn__icon">&#9742;</span>
-        <span>(602) 603-4006</span>
-      </a>
-    </div>
 
     <!-- Success state -->
     <div class="success" id="successBox">
@@ -454,7 +438,6 @@
     document.getElementById('bookingForm').addEventListener('submit', function(e) {
       e.preventDefault();
       this.style.display = 'none';
-      document.querySelector('.call-cta').style.display = 'none';
       document.getElementById('successBox').style.display = 'block';
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
