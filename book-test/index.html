@@ -61,7 +61,14 @@
       box-shadow: 0 6px 20px rgba(76,175,80,0.25);
       overflow: hidden; transform: scale(0.95);
       transition: opacity 0.5s ease, max-height 0.5s ease, padding 0.5s ease, margin 0.5s ease, transform 0.5s ease;
+      position: relative;
     }
+    .qualified__brand {
+      position: absolute; top: 12px; right: 14px;
+      background: rgba(255,255,255,0.95); padding: 4px 8px; border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    }
+    .qualified__brand img { height: 20px; width: auto; display: block; opacity: 0.9; }
     .qualified.show {
       display: block; opacity: 1; max-height: 200px; padding: 20px;
       margin: 24px 0; transform: scale(1);
@@ -225,6 +232,7 @@
 
       <!-- Qualified banner (hidden until all questions answered) -->
       <div class="qualified" id="qualifiedBanner">
+        <div class="qualified__brand"><img src="/assets/brand/AZWC-LOGO-BLUE.png" alt="AZ Water Check"></div>
         <div class="qualified__icon">&#10003;</div>
         <div data-en="You qualify for a FREE in-home water test" data-es="Califica para una PRUEBA GRATUITA de agua en casa">You qualify for a FREE in-home water test</div>
         <div class="qualified__sub" data-en="A certified specialist will come to your home, test your water in 15 minutes, and show you exactly what's in it. No cost. No obligation. Pick your time below." data-es="Un especialista certificado ira a su casa, analizara su agua en 15 minutos y le mostrara exactamente que contiene. Sin costo. Sin compromiso. Elija su horario abajo.">A certified specialist will come to your home, test your water in 15 minutes, and show you exactly what's in it. No cost. No obligation. Pick your time below.</div>
