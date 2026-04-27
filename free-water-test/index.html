@@ -253,9 +253,14 @@
       <!-- Contact info (hidden until qualified) -->
       <div class="step contact-section" id="contactSection">
         <div><span class="step__title" data-en="Contact Information" data-es="Informacion de contacto">Contact Information</span></div>
-        <input type="text" name="name" class="text-input" placeholder="Name" data-en-placeholder="Name" data-es-placeholder="Nombre" required>
-        <input type="tel" name="phone" class="text-input" placeholder="Phone" data-en-placeholder="Phone" data-es-placeholder="Telefono" required>
-        <input type="text" name="address" class="text-input" placeholder="Address" data-en-placeholder="Address" data-es-placeholder="Direccion" required>
+        <label style="display:block; font-size:12px; font-weight:700; color:#1a1a2e; margin-top:10px; margin-bottom:4px;" data-en="Full Name *" data-es="Nombre Completo *">Full Name *</label>
+        <input type="text" id="fullName" name="name" class="text-input" placeholder="Your name" data-en-placeholder="Your name" data-es-placeholder="Su nombre" required style="margin-top:0;">
+
+        <label style="display:block; font-size:12px; font-weight:700; color:#1a1a2e; margin-top:12px; margin-bottom:4px;" data-en="Phone Number * (required)" data-es="Numero de Telefono * (obligatorio)">Phone Number * (required)</label>
+        <input type="tel" id="phoneNum" name="phone" class="text-input" placeholder="(555) 555-5555" data-en-placeholder="(555) 555-5555" data-es-placeholder="(555) 555-5555" required pattern="[\d\s\-\(\)\+]{10,}" minlength="10" aria-required="true" style="margin-top:0;">
+
+        <label style="display:block; font-size:12px; font-weight:700; color:#1a1a2e; margin-top:12px; margin-bottom:4px;" data-en="Home Address *" data-es="Direccion *">Home Address *</label>
+        <input type="text" id="addressField" name="address" class="text-input" placeholder="Street address" data-en-placeholder="Street address" data-es-placeholder="Direccion" required style="margin-top:0;">
       </div>
 
       <!-- Calendar (hidden until qualified) -->
@@ -276,10 +281,29 @@
       </div>
 
       <div class="submit-section" id="submitSection">
+
+      <!-- TRANSACTIONAL SMS Consent (REQUIRED) -->
+      <label class="check" style="border:2px solid #5BA4C9; background:rgba(91,164,201,0.05); margin-top:8px;">
+        <input type="checkbox" id="smsTransactional" required>
+        <span>
+          <strong data-en="Transactional SMS (Required)" data-es="SMS Transaccional (Obligatorio)">Transactional SMS (Required)</strong> &mdash;
+          <span data-en="I consent to receive transactional text messages from AZ Water Check, a division of Sol Deja Vu, including appointment scheduling, confirmations, reminders, and follow-up about my free water test. Msg frequency varies. Msg & data rates may apply. Reply STOP to opt out. Reply HELP for help." data-es="Consiento recibir mensajes de texto transaccionales de AZ Water Check, una division de Sol Deja Vu, incluyendo agendamiento, confirmaciones, recordatorios y seguimiento de mi prueba gratuita. La frecuencia varia. Pueden aplicar tarifas. Responda STOP para cancelar. Responda HELP para ayuda.">I consent to receive transactional text messages from AZ Water Check, a division of Sol Deja Vu, including appointment scheduling, confirmations, reminders, and follow-up about my free water test. Msg frequency varies. Msg & data rates may apply. Reply STOP to opt out. Reply HELP for help.</span>
+        </span>
+      </label>
+
+      <!-- MARKETING SMS Consent (OPTIONAL) -->
+      <label class="check" style="margin-top:8px;">
+        <input type="checkbox" id="smsMarketing">
+        <span>
+          <strong data-en="Marketing SMS (Optional)" data-es="SMS de Marketing (Opcional)">Marketing SMS (Optional)</strong> &mdash;
+          <span data-en="I also consent to receive promotional and marketing text messages from AZ Water Check about water quality services, special offers, and updates. This is optional and not required to book your free test. Reply STOP to opt out." data-es="Tambien consiento recibir mensajes de texto promocionales y de marketing de AZ Water Check sobre servicios, ofertas especiales y actualizaciones. Esto es opcional y no es requerido para reservar su prueba gratuita. Responda STOP para cancelar.">I also consent to receive promotional and marketing text messages from AZ Water Check about water quality services, special offers, and updates. This is optional and not required to book your free test. Reply STOP to opt out.</span>
+        </span>
+      </label>
+
       <button type="submit" class="submit-btn" data-en="BOOK MY FREE WATER TEST" data-es="RESERVAR MI PRUEBA GRATUITA">BOOK MY FREE WATER TEST</button>
 
       <div class="consent-text">
-        <span data-en="By submitting this form, I consent to receive SMS notifications and phone calls from AZ Water Check, a division of Sol Deja Vu, regarding my water test appointment. Msg frequency varies. Msg & data rates may apply. Reply STOP to unsubscribe. Reply HELP for help. No mobile information will be shared with third parties. Consent is not a condition of purchase." data-es="Al enviar este formulario, consiento recibir notificaciones SMS y llamadas de AZ Water Check, una division de Sol Deja Vu, sobre mi cita de prueba de agua. La frecuencia de mensajes varia. Pueden aplicar tarifas. Responda STOP para cancelar. Responda HELP para ayuda. No se compartira informacion movil con terceros.">By submitting this form, I consent to receive SMS notifications and phone calls from AZ Water Check, a division of Sol Deja Vu, regarding my water test appointment. Msg frequency varies. Msg & data rates may apply. Reply STOP to unsubscribe. Reply HELP for help. No mobile information will be shared with third parties. Consent is not a condition of purchase.</span>
+        <span data-en="No mobile information will be shared with third parties or affiliates for marketing or promotional purposes. Consent is not a condition of purchase." data-es="No se compartira informacion movil con terceros o afiliados para fines de marketing o promocion. El consentimiento no es condicion de compra.">No mobile information will be shared with third parties or affiliates for marketing or promotional purposes. Consent is not a condition of purchase.</span>
         <br><br>
         <a href="/privacy-policy/" data-en="Privacy Policy" data-es="Politica de Privacidad">Privacy Policy</a> | <a href="/terms-and-conditions/" data-en="Terms" data-es="Terminos">Terms</a>
       </div>
@@ -435,9 +459,34 @@
     // Listen to all form changes
     document.getElementById('bookingForm').addEventListener('change', updateProgress);
 
-    // Form submit
+    // Form submit with explicit phone + transactional-consent validation
     document.getElementById('bookingForm').addEventListener('submit', function(e) {
       e.preventDefault();
+
+      var phone = document.getElementById('phoneNum');
+      var transactional = document.getElementById('smsTransactional');
+
+      // Phone is REQUIRED with min 10 digits
+      var phoneDigits = (phone.value || '').replace(/\D/g, '');
+      if (!phone.value.trim() || phoneDigits.length < 10) {
+        phone.style.borderColor = '#e74c3c';
+        phone.focus();
+        alert(document.documentElement.lang === 'es'
+          ? 'Por favor ingrese un numero de telefono valido (10 digitos minimo).'
+          : 'Please enter a valid phone number (10 digits minimum).');
+        return;
+      } else {
+        phone.style.borderColor = '#e5e5e5';
+      }
+
+      // Transactional consent is REQUIRED
+      if (!transactional.checked) {
+        alert(document.documentElement.lang === 'es'
+          ? 'Por favor marque la casilla de SMS Transaccional para reservar su prueba.'
+          : 'Please check the Transactional SMS consent box to book your free test.');
+        return;
+      }
+
       this.style.display = 'none';
       document.getElementById('successBox').style.display = 'block';
       window.scrollTo({ top: 0, behavior: 'smooth' });
