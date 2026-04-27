@@ -143,37 +143,33 @@
             <input type="text" id="lastName" name="last_name" placeholder="Last Name">
           </div>
           <div class="form-group">
-            <label for="phone">Phone Number <span style="color:#e74c3c;">*</span></label>
-            <input type="tel" id="phone" name="phone" placeholder="(555) 555-5555" required pattern="[\d\s\-\(\)\+]{10,}" minlength="10" aria-required="true">
-            <div class="error-msg">Phone number is required to schedule your water test</div>
+            <label for="phone">Phone *</label>
+            <input type="tel" id="phone" name="phone" placeholder="Phone" required pattern="[\d\s\-\(\)\+]{10,}" minlength="10" aria-required="true">
+            <div class="error-msg">Phone is required</div>
           </div>
           <div class="form-group">
-            <label for="email">Email <span style="color:#e74c3c;">*</span></label>
-            <input type="email" id="email" name="email" placeholder="you@example.com" required aria-required="true">
-            <div class="error-msg">A valid email is required</div>
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" placeholder="Email" required aria-required="true">
+            <div class="error-msg">Email is required</div>
           </div>
 
           <!-- TRANSACTIONAL SMS Consent (REQUIRED) -->
-          <div class="consent" style="border:2px solid #5BA4C9; padding:14px; border-radius:8px; background:rgba(91,164,201,0.04); margin-top:18px; position:relative;">
-            <span style="position:absolute; top:-9px; left:14px; background:#5BA4C9; color:#fff; font-size:10px; font-weight:700; padding:2px 8px; border-radius:10px; letter-spacing:0.4px;">REQUIRED <span style="color:#fff;">*</span></span>
+          <div class="consent">
             <input type="checkbox" id="smsTransactional" required>
             <label for="smsTransactional">
-              I agree to receive text messages from AZ Water Check, a division of Sol Deja Vu, about my free water test — including appointment scheduling, confirmations, reminders, and follow-up. Msg frequency varies. Msg &amp; data rates may apply. Reply STOP to unsubscribe. Reply HELP for help.
+              I consent to receive transactional SMS notifications from AZ Water Check, a division of Sol Deja Vu, for the purpose of scheduling water tests, appointment confirmations, reminders, and follow-up. Message frequency varies. Message &amp; data rates may apply. Reply STOP to unsubscribe at any time.
+              <br><br>
+              Reply HELP for help. By submitting this form, you agree to receive text messages from us. Standard message and data rates apply.
             </label>
           </div>
 
           <!-- MARKETING SMS Consent (OPTIONAL) -->
-          <div class="consent" style="border:1px solid #ddd; padding:14px; border-radius:8px; margin-top:14px; position:relative;">
-            <span style="position:absolute; top:-9px; left:14px; background:#999; color:#fff; font-size:10px; font-weight:700; padding:2px 8px; border-radius:10px; letter-spacing:0.4px;">OPTIONAL</span>
+          <div class="consent">
             <input type="checkbox" id="smsMarketing">
             <label for="smsMarketing">
-              I'd also like to receive occasional promotional offers, water quality tips, and updates from AZ Water Check. Msg frequency varies. Msg &amp; data rates may apply. Reply STOP to unsubscribe.
+              I also consent to receive marketing and promotional SMS communications from AZ Water Check about water quality services, special offers, and updates. Message frequency varies. Message &amp; data rates may apply. Reply STOP to unsubscribe at any time.
             </label>
           </div>
-
-          <p style="font-size:11px; color:#777; margin-top:14px; line-height:1.5;">
-            No mobile information will be shared with third parties or affiliates for marketing or promotional purposes. By submitting this form, you agree to our <a href="/privacy-policy/" style="color:#5BA4C9;">Privacy Policy</a> and <a href="/terms-and-conditions/" style="color:#5BA4C9;">Terms of Service</a>. Consent is not a condition of purchase.
-          </p>
 
           <button type="submit" class="submit-btn" id="submitBtn">Submit</button>
         </form>
