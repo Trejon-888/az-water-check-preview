@@ -256,7 +256,7 @@
         <label style="display:block; font-size:12px; font-weight:700; color:#1a1a2e; margin-top:10px; margin-bottom:4px;" data-en="Full Name *" data-es="Nombre Completo *">Full Name *</label>
         <input type="text" id="fullName" name="name" class="text-input" placeholder="Your name" data-en-placeholder="Your name" data-es-placeholder="Su nombre" required style="margin-top:0;">
 
-        <label style="display:block; font-size:12px; font-weight:700; color:#1a1a2e; margin-top:12px; margin-bottom:4px;" data-en="Phone Number * (required)" data-es="Numero de Telefono * (obligatorio)">Phone Number * (required)</label>
+        <label style="display:block; font-size:12px; font-weight:700; color:#1a1a2e; margin-top:12px; margin-bottom:4px;" data-en="Phone Number *" data-es="Numero de Telefono *">Phone Number *</label>
         <input type="tel" id="phoneNum" name="phone" class="text-input" placeholder="(555) 555-5555" data-en-placeholder="(555) 555-5555" data-es-placeholder="(555) 555-5555" required pattern="[\d\s\-\(\)\+]{10,}" minlength="10" aria-required="true" style="margin-top:0;">
 
         <label style="display:block; font-size:12px; font-weight:700; color:#1a1a2e; margin-top:12px; margin-bottom:4px;" data-en="Home Address *" data-es="Direccion *">Home Address *</label>
@@ -283,21 +283,17 @@
       <div class="submit-section" id="submitSection">
 
       <!-- TRANSACTIONAL SMS Consent (REQUIRED) -->
-      <label class="check" style="border:2px solid #5BA4C9; background:rgba(91,164,201,0.05); margin-top:8px;">
+      <label class="check" style="border:2px solid #5BA4C9; background:rgba(91,164,201,0.05); margin-top:18px; position:relative;">
+        <span style="position:absolute; top:-9px; left:14px; background:#5BA4C9; color:#fff; font-size:10px; font-weight:700; padding:2px 8px; border-radius:10px; letter-spacing:0.4px;" data-en="REQUIRED *" data-es="OBLIGATORIO *">REQUIRED *</span>
         <input type="checkbox" id="smsTransactional" required>
-        <span>
-          <strong data-en="Transactional SMS (Required)" data-es="SMS Transaccional (Obligatorio)">Transactional SMS (Required)</strong> &mdash;
-          <span data-en="I consent to receive transactional text messages from AZ Water Check, a division of Sol Deja Vu, including appointment scheduling, confirmations, reminders, and follow-up about my free water test. Msg frequency varies. Msg & data rates may apply. Reply STOP to opt out. Reply HELP for help." data-es="Consiento recibir mensajes de texto transaccionales de AZ Water Check, una division de Sol Deja Vu, incluyendo agendamiento, confirmaciones, recordatorios y seguimiento de mi prueba gratuita. La frecuencia varia. Pueden aplicar tarifas. Responda STOP para cancelar. Responda HELP para ayuda.">I consent to receive transactional text messages from AZ Water Check, a division of Sol Deja Vu, including appointment scheduling, confirmations, reminders, and follow-up about my free water test. Msg frequency varies. Msg & data rates may apply. Reply STOP to opt out. Reply HELP for help.</span>
-        </span>
+        <span data-en="I agree to receive text messages from AZ Water Check, a division of Sol Deja Vu, about my free water test — including appointment scheduling, confirmations, reminders, and follow-up. Msg frequency varies. Msg & data rates may apply. Reply STOP to opt out. Reply HELP for help." data-es="Acepto recibir mensajes de texto de AZ Water Check, una division de Sol Deja Vu, sobre mi prueba gratuita — incluyendo agendamiento, confirmaciones, recordatorios y seguimiento. La frecuencia varia. Pueden aplicar tarifas. Responda STOP para cancelar. Responda HELP para ayuda.">I agree to receive text messages from AZ Water Check, a division of Sol Deja Vu, about my free water test — including appointment scheduling, confirmations, reminders, and follow-up. Msg frequency varies. Msg & data rates may apply. Reply STOP to opt out. Reply HELP for help.</span>
       </label>
 
       <!-- MARKETING SMS Consent (OPTIONAL) -->
-      <label class="check" style="margin-top:8px;">
+      <label class="check" style="margin-top:14px; position:relative;">
+        <span style="position:absolute; top:-9px; left:14px; background:#999; color:#fff; font-size:10px; font-weight:700; padding:2px 8px; border-radius:10px; letter-spacing:0.4px;" data-en="OPTIONAL" data-es="OPCIONAL">OPTIONAL</span>
         <input type="checkbox" id="smsMarketing">
-        <span>
-          <strong data-en="Marketing SMS (Optional)" data-es="SMS de Marketing (Opcional)">Marketing SMS (Optional)</strong> &mdash;
-          <span data-en="I also consent to receive promotional and marketing text messages from AZ Water Check about water quality services, special offers, and updates. This is optional and not required to book your free test. Reply STOP to opt out." data-es="Tambien consiento recibir mensajes de texto promocionales y de marketing de AZ Water Check sobre servicios, ofertas especiales y actualizaciones. Esto es opcional y no es requerido para reservar su prueba gratuita. Responda STOP para cancelar.">I also consent to receive promotional and marketing text messages from AZ Water Check about water quality services, special offers, and updates. This is optional and not required to book your free test. Reply STOP to opt out.</span>
-        </span>
+        <span data-en="I'd also like to receive occasional promotional offers, water quality tips, and updates from AZ Water Check. Msg frequency varies. Msg & data rates may apply. Reply STOP to opt out." data-es="Tambien me gustaria recibir ofertas promocionales, consejos sobre calidad del agua y actualizaciones ocasionales de AZ Water Check. La frecuencia varia. Pueden aplicar tarifas. Responda STOP para cancelar.">I'd also like to receive occasional promotional offers, water quality tips, and updates from AZ Water Check. Msg frequency varies. Msg & data rates may apply. Reply STOP to opt out.</span>
       </label>
 
       <button type="submit" class="submit-btn" data-en="BOOK MY FREE WATER TEST" data-es="RESERVAR MI PRUEBA GRATUITA">BOOK MY FREE WATER TEST</button>

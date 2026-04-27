@@ -143,29 +143,31 @@
             <input type="text" id="lastName" name="last_name" placeholder="Last Name">
           </div>
           <div class="form-group">
-            <label for="phone">Phone Number <span style="color:#e74c3c;">*</span> <span style="font-weight:400;font-size:12px;color:#888;">(required)</span></label>
+            <label for="phone">Phone Number <span style="color:#e74c3c;">*</span></label>
             <input type="tel" id="phone" name="phone" placeholder="(555) 555-5555" required pattern="[\d\s\-\(\)\+]{10,}" minlength="10" aria-required="true">
             <div class="error-msg">Phone number is required to schedule your water test</div>
           </div>
           <div class="form-group">
-            <label for="email">Email <span style="color:#e74c3c;">*</span> <span style="font-weight:400;font-size:12px;color:#888;">(required)</span></label>
+            <label for="email">Email <span style="color:#e74c3c;">*</span></label>
             <input type="email" id="email" name="email" placeholder="you@example.com" required aria-required="true">
             <div class="error-msg">A valid email is required</div>
           </div>
 
           <!-- TRANSACTIONAL SMS Consent (REQUIRED) -->
-          <div class="consent" style="border:2px solid #5BA4C9; padding:14px; border-radius:8px; background:rgba(91,164,201,0.04); margin-top:18px;">
+          <div class="consent" style="border:2px solid #5BA4C9; padding:14px; border-radius:8px; background:rgba(91,164,201,0.04); margin-top:18px; position:relative;">
+            <span style="position:absolute; top:-9px; left:14px; background:#5BA4C9; color:#fff; font-size:10px; font-weight:700; padding:2px 8px; border-radius:10px; letter-spacing:0.4px;">REQUIRED <span style="color:#fff;">*</span></span>
             <input type="checkbox" id="smsTransactional" required>
             <label for="smsTransactional">
-              <strong>Transactional SMS (Required):</strong> I consent to receive transactional text messages from AZ Water Check, a division of Sol Deja Vu, including appointment scheduling, confirmations, reminders, and follow-up information about my free water quality test. Msg frequency varies. Msg &amp; data rates may apply. Reply STOP to unsubscribe. Reply HELP for help.
+              I agree to receive text messages from AZ Water Check, a division of Sol Deja Vu, about my free water test — including appointment scheduling, confirmations, reminders, and follow-up. Msg frequency varies. Msg &amp; data rates may apply. Reply STOP to unsubscribe. Reply HELP for help.
             </label>
           </div>
 
           <!-- MARKETING SMS Consent (OPTIONAL) -->
-          <div class="consent" style="border:1px solid #ddd; padding:14px; border-radius:8px; margin-top:10px;">
+          <div class="consent" style="border:1px solid #ddd; padding:14px; border-radius:8px; margin-top:14px; position:relative;">
+            <span style="position:absolute; top:-9px; left:14px; background:#999; color:#fff; font-size:10px; font-weight:700; padding:2px 8px; border-radius:10px; letter-spacing:0.4px;">OPTIONAL</span>
             <input type="checkbox" id="smsMarketing">
             <label for="smsMarketing">
-              <strong>Marketing SMS (Optional):</strong> I also consent to receive promotional text messages and marketing communications from AZ Water Check about water quality services, special offers, and updates. Msg frequency varies. Msg &amp; data rates may apply. Reply STOP to unsubscribe. <em>This is optional and not required to book your free test.</em>
+              I'd also like to receive occasional promotional offers, water quality tips, and updates from AZ Water Check. Msg frequency varies. Msg &amp; data rates may apply. Reply STOP to unsubscribe.
             </label>
           </div>
 
