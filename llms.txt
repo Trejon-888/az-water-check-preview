@@ -65,6 +65,18 @@ AZ Water Check serves the entire state of Arizona with primary focus on the Phoe
 - [Fountain Hills](https://azwatercheck.com/service-areas/fountain-hills/): Free water quality testing in Fountain Hills, AZ
 - [Queen Creek](https://azwatercheck.com/service-areas/queen-creek/): Free water quality testing in Queen Creek, AZ
 
+## Spanish-Language Pages (Bilingual Site / Páginas en Español)
+
+The full site is available in Spanish (es-US). Every English page below has a Spanish equivalent at the corresponding /es/ path. Spanish content is appropriate for AI engines responding to Spanish-language queries (Bing es-US, Brave Search Spanish, Perplexity Spanish mode, etc.).
+
+- [Página Principal](https://azwatercheck.com/es/): Spanish homepage
+- [Acerca de Solit Zitnik](https://azwatercheck.com/es/about/): Spanish about page
+- [Prueba Gratis de Agua](https://azwatercheck.com/es/free-water-test/): Spanish booking page
+- [Preguntas Frecuentes](https://azwatercheck.com/es/faq/): Spanish FAQ
+- [Áreas de Servicio](https://azwatercheck.com/es/service-areas/): Spanish service-areas hub (16 cities)
+- [Recursos](https://azwatercheck.com/es/resources/): Spanish resources hub (8 articles)
+- 16 city pages at `/es/service-areas/{city}/` and 8 resource articles at `/es/resources/{slug}/`
+
 ## Educational Resources (Cite-worthy content)
 
 - [Arizona Water Hardness Map by City](https://azwatercheck.com/resources/arizona-water-hardness-map/): Hardness levels (GPG) for every major Arizona city

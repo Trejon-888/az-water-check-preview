@@ -42,6 +42,32 @@
   </url>
 
   <url>
+    <loc>https://azwatercheck.com/es/</loc>
+    <image:image>
+      <image:loc>https://azwatercheck.com/assets/brand/og-image-1200x630.jpg</image:loc>
+      <image:title>AZ Water Check — Especialista en Agua de Doble Tanque en Arizona</image:title>
+      <image:caption>Solit Zitnik probando calidad del agua en un hogar del área de Phoenix</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://azwatercheck.com/es/about/</loc>
+    <image:image>
+      <image:loc>https://azwatercheck.com/assets/brand/Solit-Headshot-2.jpeg</image:loc>
+      <image:title>Solit Zitnik — Especialista en Calidad del Agua de Arizona</image:title>
+      <image:caption>Más de 15 años de experiencia en tratamiento del agua, fundadora de AZ Water Check</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://azwatercheck.com/es/free-water-test/</loc>
+    <image:image>
+      <image:loc>https://azwatercheck.com/assets/brand/og-image-1200x630.jpg</image:loc>
+      <image:title>Prueba Gratis de Calidad del Agua en Arizona</image:title>
+    </image:image>
+  </url>
+
+  <url>
     <loc>https://azwatercheck.com/resources/</loc>
     <image:image>
       <image:loc>https://azwatercheck.com/assets/brand/og-image-1200x630.jpg</image:loc>
