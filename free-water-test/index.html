@@ -29,31 +29,24 @@
     "@graph": [
       {
         "@type": "Service",
+        "@id": "https://azwatercheck.com/free-water-test/#service",
         "name": "Free In-Home Water Quality Test",
         "serviceType": "Water Quality Testing",
-        "provider": {
-          "@type": "LocalBusiness",
-          "name": "AZ Water Check",
-          "telephone": "+1-602-603-4006",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "1916 N Pennington Dr",
-            "addressLocality": "Chandler",
-            "addressRegion": "AZ",
-            "postalCode": "85224",
-            "addressCountry": "US"
-          }
-        },
+        "provider": {"@id": "https://azwatercheck.com/#localbusiness"},
         "areaServed": [
           "Phoenix, AZ", "Mesa, AZ", "Chandler, AZ", "Gilbert, AZ", "Tempe, AZ",
-          "Scottsdale, AZ", "Glendale, AZ", "Peoria, AZ", "Tucson, AZ"
+          "Scottsdale, AZ", "Glendale, AZ", "Peoria, AZ", "Tucson, AZ",
+          "Surprise, AZ", "Goodyear, AZ", "Avondale, AZ", "Buckeye, AZ",
+          "Cave Creek, AZ", "Fountain Hills, AZ", "Queen Creek, AZ"
         ],
         "description": "Free 15-minute in-home water quality test by a certified water specialist. Tests for chlorine, hardness, TDS, heavy metals, and contaminants. Real-time results, no obligation.",
         "offers": {
           "@type": "Offer",
           "price": "0",
           "priceCurrency": "USD",
-          "availability": "https://schema.org/InStock"
+          "availability": "https://schema.org/InStock",
+          "validFrom": "2026-01-01",
+          "url": "https://azwatercheck.com/free-water-test/"
         }
       },
       {
