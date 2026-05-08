@@ -1018,6 +1018,40 @@
       font-size: 13px; font-weight: 600; cursor: pointer; transition: transform 0.3s;
     }
     .footer__mini-form button:hover { transform: scale(1.03); }
+    .footer__sitelinks {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding: 36px 0 8px;
+      margin-top: 40px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+    .footer__sitelinks-col h5 {
+      color: #fff;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      margin: 0 0 14px;
+    }
+    .footer__sitelinks-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 6px 14px;
+    }
+    .footer__sitelinks-grid--wide { grid-template-columns: repeat(2, 1fr); }
+    .footer__sitelinks-grid a {
+      color: rgba(255,255,255,0.6);
+      font-size: 12.5px;
+      padding: 4px 0;
+      transition: color 0.2s;
+    }
+    .footer__sitelinks-grid a:hover { color: var(--sun-orange); }
+    @media (max-width: 768px) {
+      .footer__sitelinks { grid-template-columns: 1fr; gap: 28px; }
+      .footer__sitelinks-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer__sitelinks-grid--wide { grid-template-columns: 1fr; }
+    }
     .footer__bottom {
       padding: 24px 0; text-align: center; font-size: 12px; color: rgba(255,255,255,0.4);
     }
@@ -1126,11 +1160,11 @@
         <img src="assets/brand/AZWC-LOGO-BLUE.png" alt="AZ Water Check">
       </a>
       <div class="navbar__links" id="navLinks">
-        <a href="#hero" data-en="Home" data-es="Inicio">Home</a>
-        <a href="#meet-solit" data-en="About" data-es="Acerca de">About</a>
-        <a href="#the-system" data-en="Our System" data-es="Nuestro Sistema">Our System</a>
-        <a href="#how-it-works" data-en="How It Works" data-es="Como Funciona">How It Works</a>
-        <a href="#testimonials" data-en="Testimonials" data-es="Testimonios">Testimonials</a>
+        <a href="/" data-en="Home" data-es="Inicio">Home</a>
+        <a href="/about/" data-en="About" data-es="Acerca de">About</a>
+        <a href="/service-areas/" data-en="Service Areas" data-es="Areas de Servicio">Service Areas</a>
+        <a href="/resources/" data-en="Resources" data-es="Recursos">Resources</a>
+        <a href="/faq/" data-en="FAQ" data-es="Preguntas">FAQ</a>
         <a href="#contact" data-en="Contact" data-es="Contacto">Contact</a>
       </div>
       <div class="navbar__lang" id="navLangToggle">
@@ -1731,12 +1765,13 @@
         <div>
           <h4 data-en="Quick Links" data-es="Enlaces Rapidos">Quick Links</h4>
           <ul>
-            <li><a href="#hero" data-en="Home" data-es="Inicio">Home</a></li>
-            <li><a href="#meet-solit" data-en="About" data-es="Acerca de">About</a></li>
-            <li><a href="#the-system" data-en="Our System" data-es="Nuestro Sistema">Our System</a></li>
-            <li><a href="#how-it-works" data-en="How It Works" data-es="Como Funciona">How It Works</a></li>
-            <li><a href="#testimonials" data-en="Testimonials" data-es="Testimonios">Testimonials</a></li>
-            <li><a href="#contact" data-en="Contact" data-es="Contacto">Contact</a></li>
+            <li><a href="/" data-en="Home" data-es="Inicio">Home</a></li>
+            <li><a href="/about/" data-en="About Solit" data-es="Acerca de Solit">About Solit</a></li>
+            <li><a href="/free-water-test/" data-en="Free Water Test" data-es="Prueba Gratis">Free Water Test</a></li>
+            <li><a href="/faq/" data-en="FAQ" data-es="Preguntas Frecuentes">FAQ</a></li>
+            <li><a href="/service-areas/" data-en="Service Areas" data-es="Areas de Servicio">Service Areas</a></li>
+            <li><a href="/resources/" data-en="Resources" data-es="Recursos">Resources</a></li>
+            <li><a href="/es/" data-en="Espanol" data-es="English">Espa&ntilde;ol</a></li>
           </ul>
         </div>
 
@@ -1762,6 +1797,45 @@
             <input type="tel" placeholder="Phone" required>
             <button type="submit" data-en="Send" data-es="Enviar">Send</button>
           </form>
+        </div>
+      </div>
+
+      <!-- ===== SITELINKS STRIP (SEO internal linking) ===== -->
+      <div class="footer__sitelinks">
+        <div class="footer__sitelinks-col">
+          <h5 data-en="Service Areas" data-es="Areas de Servicio">Service Areas</h5>
+          <div class="footer__sitelinks-grid">
+            <a href="/service-areas/phoenix/">Phoenix</a>
+            <a href="/service-areas/mesa/">Mesa</a>
+            <a href="/service-areas/chandler/">Chandler</a>
+            <a href="/service-areas/gilbert/">Gilbert</a>
+            <a href="/service-areas/tempe/">Tempe</a>
+            <a href="/service-areas/scottsdale/">Scottsdale</a>
+            <a href="/service-areas/glendale/">Glendale</a>
+            <a href="/service-areas/peoria/">Peoria</a>
+            <a href="/service-areas/tucson/">Tucson</a>
+            <a href="/service-areas/surprise/">Surprise</a>
+            <a href="/service-areas/goodyear/">Goodyear</a>
+            <a href="/service-areas/avondale/">Avondale</a>
+            <a href="/service-areas/buckeye/">Buckeye</a>
+            <a href="/service-areas/cave-creek/">Cave Creek</a>
+            <a href="/service-areas/fountain-hills/">Fountain Hills</a>
+            <a href="/service-areas/queen-creek/">Queen Creek</a>
+          </div>
+        </div>
+
+        <div class="footer__sitelinks-col">
+          <h5 data-en="Water Quality Guides" data-es="Guias de Calidad del Agua">Water Quality Guides</h5>
+          <div class="footer__sitelinks-grid footer__sitelinks-grid--wide">
+            <a href="/resources/arizona-water-hardness-map/" data-en="Arizona Water Hardness Map" data-es="Mapa de Dureza del Agua">Arizona Water Hardness Map</a>
+            <a href="/resources/understanding-tds-levels/" data-en="Understanding TDS Levels" data-es="Niveles de TDS">Understanding TDS Levels</a>
+            <a href="/resources/chlorine-in-tap-water/" data-en="Chlorine in Phoenix Tap Water" data-es="Cloro en el Agua">Chlorine in Phoenix Tap Water</a>
+            <a href="/resources/water-softener-vs-purifier/" data-en="Softener vs Purifier" data-es="Suavizador vs Purificador">Softener vs Purifier</a>
+            <a href="/resources/signs-your-water-needs-treatment/" data-en="10 Signs You Need Treatment" data-es="10 Senales">10 Signs You Need Treatment</a>
+            <a href="/resources/well-water-vs-city-water-arizona/" data-en="Well Water vs City Water" data-es="Agua de Pozo vs Ciudad">Well Water vs City Water</a>
+            <a href="/resources/how-to-read-your-water-quality-report/" data-en="How to Read Your CCR" data-es="Como Leer Su CCR">How to Read Your CCR</a>
+            <a href="/resources/dual-tank-vs-single-tank-water-systems/" data-en="Dual-Tank vs Single-Tank" data-es="Doble Tanque vs Tanque Sencillo">Dual-Tank vs Single-Tank</a>
+          </div>
         </div>
       </div>
 
