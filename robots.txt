@@ -1,0 +1,55 @@
+# AZ Water Check - Robots.txt
+# https://azwatercheck.com
+
+User-agent: *
+Allow: /
+
+# AI crawlers explicitly allowed
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+# Block staging/dev paths if they ever exist
+Disallow: /draft/
+Disallow: /staging/
+
+# Sitemaps
+Sitemap: https://azwatercheck.com/sitemap.xml
+
+# AI discovery
+# llms.txt: https://azwatercheck.com/llms.txt
