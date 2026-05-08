@@ -226,6 +226,10 @@
     #bookingWrap.show { display: block; animation: fadeUp 0.5s ease; }
     @keyframes fadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
     .text-input.invalid { border-color: #d93025; }
+    .qf-trust-row { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin: 18px 0 24px; }
+    .qf-trust { display: inline-flex; align-items: center; gap: 5px; background: #fff; padding: 6px 12px; border-radius: 50px; font-size: 12px; font-weight: 600; color: #1a1a2e; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+    .qf-trust-ic { color: #4CAF50; font-weight: 700; }
+    @media (max-width: 480px) { .qf-trust { font-size: 11px; padding: 5px 10px; } }
   </style>
 </head>
 <body>
@@ -244,8 +248,15 @@
   </div>
 
   <div class="container">
-    <h1 class="hero-title" data-en="Help us check your water" data-es="Ayúdenos a revisar su agua">Ayúdenos a revisar su agua</h1>
-    <p class="hero-sub" data-en="Tell us about your home so Solit comes prepared. Then pick a time." data-es="Cuéntenos sobre su hogar para que Solit venga preparada. Luego elija una hora.">Cuéntenos sobre su hogar para que Solit venga preparada. Luego elija una hora.</p>
+    <h1 class="hero-title" data-en="Free in-home water test" data-es="Prueba gratis de agua a domicilio">Prueba gratis de agua a domicilio</h1>
+    <p class="hero-sub" data-en="Tell us about your home in 30 seconds, then pick a time. Solit will visit, test your water in 15 minutes, and show you the results. No obligation, no sales pressure." data-es="Cuéntenos sobre su hogar en 30 segundos, luego elija una hora. Solit visitará, analizará su agua en 15 minutos y le mostrará los resultados. Sin compromiso, sin presión de ventas.">Cuéntenos sobre su hogar en 30 segundos, luego elija una hora. Solit visitará, analizará su agua en 15 minutos y le mostrará los resultados. Sin compromiso, sin presión de ventas.</p>
+
+    <div class="qf-trust-row">
+      <span class="qf-trust"><span class="qf-trust-ic">✓</span> <span data-en="Bilingual EN/ES" data-es="Bilingüe EN/ES">Bilingüe EN/ES</span></span>
+      <span class="qf-trust"><span class="qf-trust-ic">✓</span> <span data-en="15 minutes" data-es="15 minutos">15 minutos</span></span>
+      <span class="qf-trust"><span class="qf-trust-ic">✓</span> <span data-en="No cost" data-es="Sin costo">Sin costo</span></span>
+      <span class="qf-trust"><span class="qf-trust-ic">✓</span> <span data-en="NSF certified" data-es="Certificado NSF">Certificado NSF</span></span>
+    </div>
 
     <form id="qualifierForm" autocomplete="on" novalidate>
 
