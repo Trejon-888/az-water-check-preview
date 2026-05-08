@@ -9,8 +9,18 @@
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://azwatercheck.com/"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://azwatercheck.com/prueba-gratis/"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://azwatercheck.com/es/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://azwatercheck.com/"/>
+  </url>
+
+  <!-- Spanish Homepage -->
+  <url>
+    <loc>https://azwatercheck.com/es/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://azwatercheck.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://azwatercheck.com/"/>
   </url>
 
   <!-- Free Water Test (English booking) -->
@@ -18,22 +28,64 @@
     <loc>https://azwatercheck.com/free-water-test/</loc>
     <lastmod>2026-04-21</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.95</priority>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://azwatercheck.com/free-water-test/"/>
     <xhtml:link rel="alternate" hreflang="es-US" href="https://azwatercheck.com/prueba-gratis/"/>
   </url>
+
+  <!-- About Solit -->
+  <url>
+    <loc>https://azwatercheck.com/about/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- FAQ -->
+  <url>
+    <loc>https://azwatercheck.com/faq/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ===== SERVICE AREA CITY PAGES (16) ===== -->
+  <url><loc>https://azwatercheck.com/service-areas/phoenix/</loc><lastmod>2026-04-21</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://azwatercheck.com/service-areas/mesa/</loc><lastmod>2026-04-21</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://azwatercheck.com/service-areas/chandler/</loc><lastmod>2026-04-21</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://azwatercheck.com/service-areas/gilbert/</loc><lastmod>2026-04-21</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://azwatercheck.com/service-areas/tempe/</loc><lastmod>2026-04-21</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://azwatercheck.com/service-areas/scottsdale/</loc><lastmod>2026-04-21</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://azwatercheck.com/service-areas/glendale/</loc><lastmod>2026-04-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://azwatercheck.com/service-areas/peoria/</loc><lastmod>2026-04-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://azwatercheck.com/service-areas/tucson/</loc><lastmod>2026-04-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://azwatercheck.com/service-areas/surprise/</loc><lastmod>2026-04-21</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://azwatercheck.com/service-areas/goodyear/</loc><lastmod>2026-04-21</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://azwatercheck.com/service-areas/avondale/</loc><lastmod>2026-04-21</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://azwatercheck.com/service-areas/buckeye/</loc><lastmod>2026-04-21</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://azwatercheck.com/service-areas/cave-creek/</loc><lastmod>2026-04-21</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://azwatercheck.com/service-areas/fountain-hills/</loc><lastmod>2026-04-21</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://azwatercheck.com/service-areas/queen-creek/</loc><lastmod>2026-04-21</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+
+  <!-- ===== RESOURCE ARTICLES (8) ===== -->
+  <url><loc>https://azwatercheck.com/resources/arizona-water-hardness-map/</loc><lastmod>2026-04-21</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://azwatercheck.com/resources/understanding-tds-levels/</loc><lastmod>2026-04-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://azwatercheck.com/resources/chlorine-in-tap-water/</loc><lastmod>2026-04-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://azwatercheck.com/resources/water-softener-vs-purifier/</loc><lastmod>2026-04-21</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://azwatercheck.com/resources/signs-your-water-needs-treatment/</loc><lastmod>2026-04-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://azwatercheck.com/resources/well-water-vs-city-water-arizona/</loc><lastmod>2026-04-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://azwatercheck.com/resources/how-to-read-your-water-quality-report/</loc><lastmod>2026-04-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://azwatercheck.com/resources/dual-tank-vs-single-tank-water-systems/</loc><lastmod>2026-04-21</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
 
   <!-- Spanish booking redirect -->
   <url>
     <loc>https://azwatercheck.com/prueba-gratis/</loc>
     <lastmod>2026-04-21</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://azwatercheck.com/prueba-gratis/"/>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://azwatercheck.com/free-water-test/"/>
+    <priority>0.7</priority>
   </url>
 
-  <!-- Privacy Policy -->
+  <!-- Legal -->
   <url>
     <loc>https://azwatercheck.com/privacy-policy/</loc>
     <lastmod>2026-04-21</lastmod>
@@ -41,7 +93,6 @@
     <priority>0.3</priority>
   </url>
 
-  <!-- Terms & Conditions -->
   <url>
     <loc>https://azwatercheck.com/terms-and-conditions/</loc>
     <lastmod>2026-04-21</lastmod>

@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Water Quality Info | AZ Water Check - Arizona Water Education</title>
+  <meta name="description" content="Learn about Arizona's water quality. Education on tap water contaminants, water hardness, and why a water test matters for your home.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Water Quality Info | AZ Water Check - Arizona Water Education">
+  <meta property="og:description" content="Learn about Arizona's water quality. Education on tap water contaminants, water hardness, and why a water test matters for your home.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Favicon placeholder -->
+  <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+  <!-- Our CSS -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+  <!-- ==================== 1. UTILITY BAR ==================== -->
+  <div class="utility-bar" role="banner">
+    <div class="container">
+      <div class="utility-bar__left">
+        <span>
+          <a href="tel:+1XXXXXXXXXX" aria-label="Call us">
+            <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            (XXX) XXX-XXXX
+          </a>
+        </span>
+        <span>
+          <a href="mailto:info@azwatercheck.com" aria-label="Email us">
+            <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            info@azwatercheck.com
+          </a>
+        </span>
+      </div>
+      <div class="utility-bar__right">
+        <span>Mon-Sat 8AM-6PM MST</span>
+        <div class="utility-bar__socials">
+          <a href="#" aria-label="Instagram">
+            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="#" aria-label="Facebook">
+            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="#" aria-label="TikTok">
+            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1v-3.4a6.37 6.37 0 00-.79-.05A6.34 6.34 0 003.15 15.3a6.34 6.34 0 0010.86 4.48 6.34 6.34 0 001.83-4.48V8.72a8.19 8.19 0 004.75 1.52V6.8a4.84 4.84 0 01-1-.11z"/></svg>
+          </a>
+          <a href="#" aria-label="YouTube">
+            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ==================== 2. NAVIGATION ==================== -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <!-- Logo -->
+      <a href="index.html" class="nav__logo" aria-label="AZ Water Check Home">
+        <div style="width:40px;height:40px;background:var(--primary);border-radius:10px;display:flex;align-items:center;justify-content:center;">
+          <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3c-1.5 4-6 7-6 11a6 6 0 0012 0c0-4-4.5-7-6-11z"/>
+          </svg>
+        </div>
+        <span style="font-family:var(--font-heading);font-weight:700;font-size:1.25rem;color:var(--primary);margin-left:8px;">AZ Water Check</span>
+      </a>
+
+      <!-- Desktop Links -->
+      <div class="nav__links">
+        <a href="index.html">Home</a>
+        <a href="index.html#about">About</a>
+        <a href="water-info.html" class="active">Water Info</a>
+        <a href="index.html#how-it-works">How It Works</a>
+        <a href="index.html#faq">FAQ</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+      <!-- Actions: Lang toggle + CTA -->
+      <div class="nav__cta" style="display:flex;align-items:center;gap:12px;">
+        <div class="lang-toggle-group" style="display:flex;gap:4px;background:var(--gray-100);border-radius:8px;padding:3px;">
+          <button class="lang-toggle active" data-lang="en" style="padding:4px 10px;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;">EN</button>
+          <button class="lang-toggle" data-lang="es" style="padding:4px 10px;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;">ES</button>
+        </div>
+        <a href="contact.html" class="btn btn-primary btn-sm">Free Water Test</a>
+      </div>
+
+      <!-- Mobile Hamburger -->
+      <button class="nav__hamburger menu-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <!-- Mobile Menu Panel -->
+    <div class="nav__mobile-panel" id="mobile-menu" role="dialog" aria-label="Mobile navigation">
+      <a href="index.html">Home</a>
+      <a href="index.html#about">About</a>
+      <a href="water-info.html">Water Info</a>
+      <a href="index.html#how-it-works">How It Works</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="contact.html">Contact</a>
+      <div style="padding-top:16px;">
+        <a href="contact.html" class="btn btn-primary btn-block">Free Water Test</a>
+      </div>
+    </div>
+    <div class="nav__overlay" id="nav-overlay"></div>
+  </nav>
+
+
+  <main>
+
+    <!-- ==================== 3. HERO (SHORT) ==================== -->
+    <section class="section section-teal" aria-label="Hero" style="padding:48px 0;">
+      <div class="container" style="text-align:center;">
+        <h1 class="animate-on-scroll" style="color:var(--white);">Know Your Water</h1>
+        <p class="animate-on-scroll" style="color:rgba(180,230,230,0.9);max-width:640px;margin:16px auto 0;font-size:18px;line-height:1.6;">
+          Education is the first step to clean water. Learn what's in Arizona's water and why it matters.
+        </p>
+      </div>
+    </section>
+
+
+    <!-- ==================== 4. EDUCATIONAL ARTICLES GRID ==================== -->
+    <section class="section section-white" aria-label="Water Education">
+      <div class="container">
+        <h2 class="text-center animate-on-scroll" style="margin-bottom:48px;">Water Education</h2>
+
+        <div class="grid-3">
+
+          <!-- Article 1 -->
+          <article class="card animate-on-scroll" style="padding:0;overflow:hidden;">
+            <div style="background:var(--secondary);padding:32px 24px 24px;">
+              <h3 style="font-size:20px;margin-bottom:0;">What's in Arizona's Tap Water?</h3>
+            </div>
+            <div style="padding:24px;">
+              <p class="text-light" style="font-size:15px;">Arizona has some of the hardest water in the US. Here's what's actually flowing through your pipes.</p>
+              <a href="#" class="btn btn-ghost" style="padding-left:0;">Read More &rarr;</a>
+            </div>
+          </article>
+
+          <!-- Article 2 -->
+          <article class="card animate-on-scroll delay-100" style="padding:0;overflow:hidden;">
+            <div style="background:var(--secondary);padding:32px 24px 24px;">
+              <h3 style="font-size:20px;margin-bottom:0;">Understanding Your City's Water Report</h3>
+            </div>
+            <div style="padding:24px;">
+              <p class="text-light" style="font-size:15px;">Every year, your city publishes a water quality report. Most people throw it away. Here's what it's telling you.</p>
+              <a href="#" class="btn btn-ghost" style="padding-left:0;">Read More &rarr;</a>
+            </div>
+          </article>
+
+          <!-- Article 3 -->
+          <article class="card animate-on-scroll delay-200" style="padding:0;overflow:hidden;">
+            <div style="background:var(--secondary);padding:32px 24px 24px;">
+              <h3 style="font-size:20px;margin-bottom:0;">Bottled vs Filtered: The Real Comparison</h3>
+            </div>
+            <div style="padding:24px;">
+              <p class="text-light" style="font-size:15px;">Americans spend $15 billion a year on bottled water. Is it actually better than what comes out of your tap?</p>
+              <a href="#" class="btn btn-ghost" style="padding-left:0;">Read More &rarr;</a>
+            </div>
+          </article>
+
+          <!-- Article 4 -->
+          <article class="card animate-on-scroll" style="padding:0;overflow:hidden;">
+            <div style="background:var(--secondary);padding:32px 24px 24px;">
+              <h3 style="font-size:20px;margin-bottom:0;">Signs Your Water Needs Treatment</h3>
+            </div>
+            <div style="padding:24px;">
+              <p class="text-light" style="font-size:15px;">Dry skin, spotty dishes, bad taste? These are signs your water is working against you.</p>
+              <a href="#" class="btn btn-ghost" style="padding-left:0;">Read More &rarr;</a>
+            </div>
+          </article>
+
+          <!-- Article 5 -->
+          <article class="card animate-on-scroll delay-100" style="padding:0;overflow:hidden;">
+            <div style="background:var(--secondary);padding:32px 24px 24px;">
+              <h3 style="font-size:20px;margin-bottom:0;">Kids and Water Safety</h3>
+            </div>
+            <div style="padding:24px;">
+              <p class="text-light" style="font-size:15px;">Children are more vulnerable to water contaminants. What every parent in Arizona should know.</p>
+              <a href="#" class="btn btn-ghost" style="padding-left:0;">Read More &rarr;</a>
+            </div>
+          </article>
+
+          <!-- Article 6 -->
+          <article class="card animate-on-scroll delay-200" style="padding:0;overflow:hidden;">
+            <div style="background:var(--secondary);padding:32px 24px 24px;">
+              <h3 style="font-size:20px;margin-bottom:0;">The Future of Water in Arizona</h3>
+            </div>
+            <div style="padding:24px;">
+              <p class="text-light" style="font-size:15px;">Arizona is running dry. What that means for water quality and what you can do about it.</p>
+              <a href="#" class="btn btn-ghost" style="padding-left:0;">Read More &rarr;</a>
+            </div>
+          </article>
+
+        </div>
+
+        <p class="text-center text-light text-sm animate-on-scroll" style="margin-top:32px;font-style:italic;">
+          Full articles coming soon. <a href="contact.html" style="color:var(--primary);font-weight:500;text-decoration:underline;">Book a free water test</a> to learn about your specific water quality.
+        </p>
+      </div>
+    </section>
+
+
+    <!-- ==================== 5. ARIZONA WATER DATA ==================== -->
+    <section class="section section-sand" aria-label="Arizona Water Stats">
+      <div class="container">
+        <h2 class="text-center animate-on-scroll" style="margin-bottom:48px;">Arizona Water by the Numbers</h2>
+
+        <div class="grid-4">
+
+          <div class="stat-card animate-on-scroll">
+            <div class="stat-card__number" style="color:var(--accent);">500+ PPM</div>
+            <p class="stat-card__label">Average Total Dissolved Solids in Arizona tap water</p>
+          </div>
+
+          <div class="stat-card animate-on-scroll delay-100">
+            <div class="stat-card__number" style="color:var(--accent);">4 PPM</div>
+            <p class="stat-card__label">Chlorine levels -- the same chemical in swimming pools</p>
+          </div>
+
+          <div class="stat-card animate-on-scroll delay-200">
+            <div class="stat-card__number" style="color:var(--accent);">7-25 GPG</div>
+            <p class="stat-card__label">Grain per gallon hardness -- among the highest in the US</p>
+          </div>
+
+          <div class="stat-card animate-on-scroll delay-300">
+            <div class="stat-card__number" style="color:var(--accent);">12+</div>
+            <p class="stat-card__label">Contaminants found above health guidelines in Phoenix water</p>
+          </div>
+
+        </div>
+
+        <p class="text-center animate-on-scroll" style="margin-top:32px;">
+          <a href="https://www.ewg.org/tapwater/" target="_blank" rel="noopener noreferrer" style="color:var(--primary);font-weight:500;text-decoration:underline;">
+            Check your area's water quality at EWG.org &rarr;
+          </a>
+        </p>
+      </div>
+    </section>
+
+
+    <!-- ==================== 6. CTA ==================== -->
+    <section class="section section-teal" aria-label="Call to action">
+      <div class="container" style="text-align:center;">
+        <h2 class="animate-on-scroll" style="color:var(--white);margin-bottom:24px;">Want to Know Exactly What's in Your Water?</h2>
+        <div class="animate-on-scroll" style="display:flex;flex-direction:column;align-items:center;gap:16px;">
+          <a href="contact.html" class="btn btn-primary btn-lg">Book Your Free Water Test</a>
+          <a href="tel:+1XXXXXXXXXX" style="color:rgba(255,255,255,0.85);font-size:18px;font-weight:500;">
+            <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" style="vertical-align:middle;margin-right:6px;"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            (XXX) XXX-XXXX
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ==================== 7. FOOTER ==================== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+
+        <!-- Col 1: Brand -->
+        <div class="footer__about">
+          <div style="display:flex;align-items:center;gap:8px;">
+            <div style="width:40px;height:40px;background:var(--primary);border-radius:10px;display:flex;align-items:center;justify-content:center;">
+              <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 3c-1.5 4-6 7-6 11a6 6 0 0012 0c0-4-4.5-7-6-11z"/>
+              </svg>
+            </div>
+            <span style="font-family:var(--font-heading);font-weight:700;font-size:1.25rem;color:white;">AZ Water Check</span>
+          </div>
+          <p>Arizona's only dual-tank water purification specialist. Free home water quality tests. Lifetime warranty. Serving Phoenix, Tucson, and all of Arizona.</p>
+          <div style="display:flex;gap:8px;margin-top:16px;">
+            <a href="#" aria-label="Instagram" style="width:40px;height:40px;background:rgba(255,255,255,0.08);border-radius:10px;display:flex;align-items:center;justify-content:center;">
+              <svg width="18" height="18" fill="white" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="#" aria-label="Facebook" style="width:40px;height:40px;background:rgba(255,255,255,0.08);border-radius:10px;display:flex;align-items:center;justify-content:center;">
+              <svg width="18" height="18" fill="white" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="#" aria-label="TikTok" style="width:40px;height:40px;background:rgba(255,255,255,0.08);border-radius:10px;display:flex;align-items:center;justify-content:center;">
+              <svg width="18" height="18" fill="white" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1v-3.4a6.37 6.37 0 00-.79-.05A6.34 6.34 0 003.15 15.3a6.34 6.34 0 0010.86 4.48 6.34 6.34 0 001.83-4.48V8.72a8.19 8.19 0 004.75 1.52V6.8a4.84 4.84 0 01-1-.11z"/></svg>
+            </a>
+            <a href="#" aria-label="YouTube" style="width:40px;height:40px;background:rgba(255,255,255,0.08);border-radius:10px;display:flex;align-items:center;justify-content:center;">
+              <svg width="18" height="18" fill="white" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+            <a href="#" aria-label="LinkedIn" style="width:40px;height:40px;background:rgba(255,255,255,0.08);border-radius:10px;display:flex;align-items:center;justify-content:center;">
+              <svg width="18" height="18" fill="white" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div>
+          <h4>Quick Links</h4>
+          <ul class="footer__links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="water-info.html">Water Info</a></li>
+            <li><a href="index.html#how-it-works">How It Works</a></li>
+            <li><a href="index.html#faq">FAQ</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Certifications -->
+        <div>
+          <h4>Certifications</h4>
+          <ul class="footer__links">
+            <li>NSF ANSI 44</li>
+            <li>NSF ANSI 42</li>
+            <li>NSF ANSI 61/372</li>
+            <li>BBB Accredited</li>
+            <li>Made in USA</li>
+          </ul>
+          <div style="margin-top:24px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.1);">
+            <p style="font-size:12px;color:rgba(255,255,255,0.4);margin-bottom:4px;">Authorized Partner</p>
+            <p style="font-size:14px;font-weight:500;color:rgba(255,255,255,0.7);margin-bottom:0;">Aquafeel Solutions</p>
+          </div>
+        </div>
+
+        <!-- Col 4: Mini Lead Form -->
+        <div class="footer__mini-form">
+          <h4>Get your free water test now</h4>
+          <form>
+            <div class="form-group">
+              <input type="text" class="form-input" placeholder="Your name" required>
+            </div>
+            <div class="form-group">
+              <input type="email" class="form-input" placeholder="your@email.com" required>
+            </div>
+            <div class="form-group">
+              <input type="tel" class="form-input" placeholder="(XXX) XXX-XXXX" required>
+            </div>
+            <button type="submit" class="form-submit">Book My Free Test</button>
+          </form>
+        </div>
+
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="footer__bottom">
+        <p>&copy; 2026 AZ Water Check. All rights reserved.</p>
+        <div class="footer__bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ==================== 8. MOBILE STICKY CTA ==================== -->
+  <div class="sticky-cta" aria-label="Book free water test">
+    <a href="contact.html" class="btn btn-primary btn-block" style="font-size:18px;padding:14px;">Book Free Water Test</a>
+  </div>
+
+
+  <!-- ==================== SCRIPTS ==================== -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>
