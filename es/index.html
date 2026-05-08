@@ -717,61 +717,10 @@
       </div>
 
       <div class="contact__form-card">
-        <div id="contactFormContainer">
-          <h3>Reserve Su Prueba de Agua Gratuita</h3>
-          <form id="contactForm">
-            <div class="form-group">
-              <label for="name">Nombre *</label>
-              <input type="text" id="name" name="name" required placeholder="Su nombre completo">
-            </div>
-            <div class="form-group">
-              <label for="phone">Teléfono *</label>
-              <input type="tel" id="phone" name="phone" required placeholder="(xxx) xxx-xxxx">
-            </div>
-            <div class="form-group">
-              <label for="email">Correo Electrónico *</label>
-              <input type="email" id="email" name="email" required placeholder="usted@correo.com">
-            </div>
-            <div class="form-group">
-              <label for="zip">Código Postal *</label>
-              <input type="text" id="zip" name="zip" required placeholder="85xxx">
-            </div>
-            <div class="form-group">
-              <label for="waterSource">Fuente de Agua</label>
-              <select id="waterSource" name="waterSource">
-                <option value="">Seleccione...</option>
-                <option value="city">Agua de la Ciudad</option>
-                <option value="well">Agua de Pozo</option>
-                <option value="not-sure">No Estoy Seguro</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="homeowner">¿Es usted el propietario?</label>
-              <select id="homeowner" name="homeowner">
-                <option value="">Seleccione...</option>
-                <option value="yes">Sí</option>
-                <option value="no">No</option>
-                <option value="renting">Rentando</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="bestTime">¿Mejor hora para contactarle?</label>
-              <select id="bestTime" name="bestTime">
-                <option value="">Seleccione...</option>
-                <option value="morning">Mañana</option>
-                <option value="afternoon">Tarde</option>
-                <option value="evening">Noche</option>
-                <option value="anytime">Cualquier Hora</option>
-              </select>
-            </div>
-            <p class="form-disclaimer">Al enviar este formulario, acepto recibir mensajes de texto y llamadas telefónicas de AZ Water Check, una división de Sol Deja Vu. Entiendo que estas llamadas y mensajes pueden ser automatizados, pregrabados o usar una voz de IA, y pueden incluir comunicaciones de marketing. La frecuencia de los mensajes varía. Pueden aplicar tarifas. Responda STOP para cancelar. El consentimiento no es condición de compra. <a href="/opt-in/">Consentimiento</a> | <a href="/privacy-policy/">Privacidad</a></p>
-            <button type="submit" class="form-submit">ENVIAR</button>
-          </form>
-        </div>
-        <div class="form-success" id="formSuccess">
-          <i class="fas fa-circle-check"></i>
-          <h3>¡Gracias!</h3>
-          <p>Recibimos su solicitud. Una especialista en agua se pondrá en contacto con usted dentro de 24 horas para agendar su prueba gratuita.</p>
+        <h3 style="margin-bottom:16px;">Elija una Hora con una Especialista</h3>
+        <iframe src="https://brand.azwatercheck.com/widget/booking/7HMNc6XmChMoPq7spmku" style="width:100%;border:none;overflow:hidden;min-height:680px;" scrolling="no" id="7HMNc6XmChMoPq7spmku_es_home" title="Reserve una prueba gratis de agua a domicilio"></iframe>
+        <div class="form-links" style="margin-top:12px;">
+          <a href="/privacy-policy/">Política de Privacidad</a> | <a href="/terms-and-conditions/">Términos y Condiciones</a>
         </div>
       </div>
     </div>
@@ -925,5 +874,6 @@
       });
     }
   </script>
+  <script src="https://brand.azwatercheck.com/js/form_embed.js" type="text/javascript"></script>
 </body>
 </html>
