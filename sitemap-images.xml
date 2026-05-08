@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <url>
+    <loc>https://azwatercheck.com/</loc>
+    <image:image>
+      <image:loc>https://azwatercheck.com/assets/brand/og-image-1200x630.jpg</image:loc>
+      <image:title>AZ Water Check — Arizona's Dual-Tank Water Specialist</image:title>
+      <image:caption>Solit Zitnik testing water quality in a Phoenix-area home</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://azwatercheck.com/assets/brand/AZWC-LOGO-BLUE.png</image:loc>
+      <image:title>AZ Water Check Logo</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://azwatercheck.com/assets/brand/Aquafeel_Household_Treatment.png</image:loc>
+      <image:title>Aquafeel Household Water Treatment System</image:title>
+      <image:caption>NSF/ANSI 44, 42, 61/372 certified dual-tank purification system</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://azwatercheck.com/assets/brand/Sistema-2Unidades.png</image:loc>
+      <image:title>Aquafeel Dual-Tank Water Purification System</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://azwatercheck.com/about/</loc>
+    <image:image>
+      <image:loc>https://azwatercheck.com/assets/brand/Solit-Headshot-2.jpeg</image:loc>
+      <image:title>Solit Zitnik — Arizona Water Quality Specialist</image:title>
+      <image:caption>15+ years experience in water treatment, founder of AZ Water Check</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://azwatercheck.com/free-water-test/</loc>
+    <image:image>
+      <image:loc>https://azwatercheck.com/assets/brand/og-image-1200x630.jpg</image:loc>
+      <image:title>Free In-Home Water Quality Test in Arizona</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://azwatercheck.com/resources/</loc>
+    <image:image>
+      <image:loc>https://azwatercheck.com/assets/brand/og-image-1200x630.jpg</image:loc>
+      <image:title>Arizona Water Quality Resources</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://azwatercheck.com/service-areas/</loc>
+    <image:image>
+      <image:loc>https://azwatercheck.com/assets/brand/og-image-1200x630.jpg</image:loc>
+      <image:title>AZ Water Check Service Areas — 16 Arizona Cities</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://azwatercheck.com/resources/dual-tank-vs-single-tank-water-systems/</loc>
+    <image:image>
+      <image:loc>https://azwatercheck.com/assets/brand/Sistema-2Unidades.png</image:loc>
+      <image:title>Dual-Tank vs Single-Tank Water System Comparison</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://azwatercheck.com/resources/arizona-water-hardness-map/</loc>
+    <image:image>
+      <image:loc>https://azwatercheck.com/assets/brand/og-image-1200x630.jpg</image:loc>
+      <image:title>Arizona Water Hardness Map by City</image:title>
+    </image:image>
+  </url>
+
+</urlset>

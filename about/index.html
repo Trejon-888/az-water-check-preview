@@ -83,14 +83,16 @@
         ]
       },
       {
-        "@type": "Organization",
+        "@type": "LocalBusiness",
         "@id": "https://azwatercheck.com/#localbusiness",
         "name": "AZ Water Check",
         "alternateName": "AZ Water Check, a division of Sol Deja Vu",
+        "image": "https://azwatercheck.com/assets/brand/og-image-1200x630.jpg",
         "logo": "https://azwatercheck.com/assets/brand/AZWC-LOGO-BLUE.png",
         "url": "https://azwatercheck.com",
         "telephone": "+1-602-603-4006",
         "email": "info@azwatercheck.com",
+        "priceRange": "$",
         "founder": {"@id": "https://azwatercheck.com/#solit"},
         "address": {
           "@type": "PostalAddress",
@@ -100,8 +102,19 @@
           "postalCode": "85224",
           "addressCountry": "US"
         },
-        "areaServed": "Arizona",
-        "knowsLanguage": ["en", "es"]
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 33.3062,
+          "longitude": -111.8413
+        },
+        "areaServed": ["Phoenix", "Mesa", "Chandler", "Gilbert", "Tempe", "Scottsdale", "Glendale", "Peoria", "Tucson", "Surprise", "Goodyear", "Avondale", "Buckeye", "Cave Creek", "Fountain Hills", "Queen Creek"],
+        "knowsLanguage": ["en", "es"],
+        "openingHoursSpecification": [{
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+          "opens": "08:00",
+          "closes": "18:00"
+        }]
       },
       {
         "@type": "BreadcrumbList",

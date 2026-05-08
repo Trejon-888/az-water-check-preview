@@ -45,6 +45,23 @@
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": "WebSite",
+        "@id": "https://azwatercheck.com/#website",
+        "url": "https://azwatercheck.com/",
+        "name": "AZ Water Check",
+        "description": "Arizona's only Aquafeel dual-tank water purification dealer. Free in-home water tests across 16 cities.",
+        "publisher": {"@id": "https://azwatercheck.com/#localbusiness"},
+        "inLanguage": ["en-US","es-US"],
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://azwatercheck.com/?s={search_term_string}"
+          },
+          "query-input": "required name=search_term_string"
+        }
+      },
+      {
         "@type": "LocalBusiness",
         "@id": "https://azwatercheck.com/#localbusiness",
         "name": "AZ Water Check",
@@ -55,7 +72,7 @@
         "url": "https://azwatercheck.com",
         "telephone": "+1-602-603-4006",
         "email": "info@azwatercheck.com",
-        "priceRange": "Free consultation",
+        "priceRange": "$",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "1916 N Pennington Dr",

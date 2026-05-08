@@ -50,6 +50,7 @@ Disallow: /staging/
 
 # Sitemaps
 Sitemap: https://azwatercheck.com/sitemap.xml
+Sitemap: https://azwatercheck.com/sitemap-images.xml
 
 # AI discovery
 # llms.txt: https://azwatercheck.com/llms.txt
