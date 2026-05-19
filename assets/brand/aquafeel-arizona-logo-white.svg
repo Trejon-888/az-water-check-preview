@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 200" role="img" aria-label="Aquafeel Solutions Arizona">
+  <title>Aquafeel Solutions Arizona</title>
+  <g transform="translate(10,8)">
+    <path fill="#FFFFFF" d="M82 8 C82 8, 35 70, 35 116 C35 142, 56 162, 82 162 C108 162, 129 142, 129 116 C129 70, 82 8, 82 8 Z M82 22 C90 36, 115 80, 115 116 C115 134, 100 148, 82 148 C64 148, 49 134, 49 116 C49 80, 74 36, 82 22 Z"/>
+    <path fill="#FFFFFF" d="M58 78 L58 130 L66 130 L66 110 L74 110 L74 130 L82 130 L82 105 L82 78 Z M66 95 L74 95 L74 103 L66 103 Z"/>
+    <path fill="#FFFFFF" d="M82 78 L82 130 L90 130 L90 110 L98 110 L98 130 L106 130 L106 78 Z M90 95 L98 95 L98 103 L90 103 Z"/>
+  </g>
+  <g transform="translate(160,0)" fill="#FFFFFF">
+    <text x="0" y="80" style="font-family:'Manrope',system-ui,sans-serif;font-size:64px;font-weight:700;letter-spacing:-1.5px;">aquafeel</text>
+    <text x="4" y="118" style="font-family:'Manrope',system-ui,sans-serif;font-size:28px;font-weight:300;font-style:italic;letter-spacing:0.5px;">solutions</text>
+    <text x="4" y="152" style="font-family:'Manrope',system-ui,sans-serif;font-size:32px;font-weight:800;letter-spacing:6px;">ARIZONA</text>
+  </g>
+</svg>

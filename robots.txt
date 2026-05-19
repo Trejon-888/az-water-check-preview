@@ -1,4 +1,4 @@
-# AZ Water Check - Robots.txt
+# Aquafeel Solutions Arizona - Robots.txt
 # https://azwatercheck.com
 
 User-agent: *
