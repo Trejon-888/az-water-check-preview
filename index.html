@@ -347,6 +347,10 @@
       height: 3px; background: #2E3191; border-radius: 2px;
     }
 
+      /* Impeccable: drop hero-eyebrow-chip pattern (AI-SaaS default) */
+    .hero__badge {
+      display: none !important;
+    }
   </style>
 
   <!-- Font Awesome -->
@@ -376,7 +380,7 @@
       --terracotta: #1f2270;
       --sun-orange: #282828;
       --dark: #1a1a1a;
-      --text: #4a4a4a;
+      --text: #2d2d2d;
       --cream: #F4F5FB;
       --light-blue: #EDEFF7;
       --white: #FFFFFF;
@@ -413,7 +417,7 @@
       display: inline-flex; align-items: center; gap: 10px;
       background: transparent; color: var(--white); font-family: var(--font-body);
       font-size: 15px; font-weight: 600; padding: 16px 36px; border-radius: 50px;
-      border: 2px solid rgba(255,255,255,0.5); cursor: pointer; transition: all 0.3s;
+      border: 2px solid rgba(255,255,255,0.75); cursor: pointer; transition: all 0.3s;
     }
     .btn-outline:hover { background: var(--white); color: var(--sky-blue); border-color: var(--white); }
 
@@ -475,7 +479,7 @@
       padding-left: 12px; display: flex; align-items: center; gap: 6px;
     }
     .lang-btn {
-      background: none; border: none; color: rgba(255,255,255,0.5);
+      background: none; border: none; color: rgba(255,255,255,0.75);
       font-family: var(--font-body); font-size: 12px; font-weight: 600;
       cursor: pointer; transition: color 0.3s;
     }
@@ -974,11 +978,11 @@
       font-family: var(--font-body); font-size: 14px; font-weight: 700;
       color: var(--dark);
     }
-    .testimonial-card__location { font-size: 12px; color: #999; margin-top: 2px; }
+    .testimonial-card__location { font-size: 12px; color: #666; margin-top: 2px; }
     .testimonials .swiper-pagination-bullet { background: var(--sky-blue); }
     .testimonials .swiper-pagination-bullet-active { background: var(--sun-orange); }
     .testimonials__disclaimer {
-      font-size: 12px; color: #999; margin-top: 16px; font-style: italic;
+      font-size: 12px; color: #666; margin-top: 16px; font-style: italic;
     }
 
     /* ===== CERTIFICATION BADGES BAR ===== */
@@ -1060,7 +1064,7 @@
       outline: none; border-color: var(--sky-blue); box-shadow: 0 0 0 3px rgba(46,49,145,0.15);
     }
     .form-disclaimer {
-      font-size: 11px; color: #999; line-height: 1.6; margin: 16px 0;
+      font-size: 11px; color: #666; line-height: 1.6; margin: 16px 0;
     }
     .form-submit {
       width: 100%; padding: 16px; background: var(--sun-orange); color: var(--white);
@@ -1144,7 +1148,7 @@
     }
     .footer__sitelinks-grid--wide { grid-template-columns: repeat(2, 1fr); }
     .footer__sitelinks-grid a {
-      color: rgba(255,255,255,0.6);
+      color: rgba(255,255,255,0.8);
       font-size: 12.5px;
       padding: 4px 0;
       transition: color 0.2s;
@@ -1158,7 +1162,7 @@
     .footer__bottom {
       padding: 24px 0; text-align: center; font-size: 12px; color: rgba(255,255,255,0.4);
     }
-    .footer__bottom a { color: rgba(255,255,255,0.5); margin: 0 8px; }
+    .footer__bottom a { color: rgba(255,255,255,0.75); margin: 0 8px; }
     .footer__bottom a:hover { color: var(--sun-orange); }
 
     /* ===== MOBILE STICKY CTA ===== */
@@ -1843,7 +1847,7 @@
           <h4 data-en="Book a Free Test" data-es="Reserve Prueba Gratis">Book a Free Test</h4>
           <p style="font-size:13px;line-height:1.7;margin-bottom:14px;color:rgba(255,255,255,0.75);" data-en="Pick a time that works for you. A bilingual specialist will come to your home, test your water in 15 minutes, and show you the results. Free, no obligation." data-es="Elija una hora que le convenga. Una especialista bilingüe vendrá a su casa, analizará su agua en 15 minutos y le mostrará los resultados. Gratis, sin compromiso.">Pick a time that works for you. A bilingual specialist will come to your home, test your water in 15 minutes, and show you the results. Free, no obligation.</p>
           <a href="#contact" style="display:inline-block;background:var(--sun-orange);color:#fff;padding:12px 22px;border-radius:50px;font-size:13px;font-weight:700;letter-spacing:0.4px;" data-en="📅 PICK A TIME" data-es="📅 ELEGIR HORA">📅 PICK A TIME</a>
-          <p style="margin-top:14px;font-size:12px;color:rgba(255,255,255,0.6);" data-en="Or call <a href='tel:+16026034006' style='color:var(--sun-orange);font-weight:700;'>(602) 603-4006</a>" data-es="O llame al <a href='tel:+16026034006' style='color:var(--sun-orange);font-weight:700;'>(602) 603-4006</a>">Or call <a href="tel:+16026034006" style="color:var(--sun-orange);font-weight:700;">(602) 603-4006</a></p>
+          <p style="margin-top:14px;font-size:12px;color:rgba(255,255,255,0.8);" data-en="Or call <a href='tel:+16026034006' style='color:var(--sun-orange);font-weight:700;'>(602) 603-4006</a>" data-es="O llame al <a href='tel:+16026034006' style='color:var(--sun-orange);font-weight:700;'>(602) 603-4006</a>">Or call <a href="tel:+16026034006" style="color:var(--sun-orange);font-weight:700;">(602) 603-4006</a></p>
         </div>
       </div>
 
