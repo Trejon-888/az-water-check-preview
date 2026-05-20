@@ -146,14 +146,14 @@
             <input type="text" id="lastName" name="last_name" placeholder="Last Name">
           </div>
           <div class="form-group">
-            <label for="phone">Phone *</label>
-            <input type="tel" id="phone" name="phone" placeholder="Phone" required pattern="[\d\s\-\(\)\+]{10,}" minlength="10" aria-required="true">
-            <div class="error-msg">Phone is required</div>
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" placeholder="Phone (optional)" pattern="[\d\s\-\(\)\+]{10,}">
+            <div class="error-msg">Please enter a valid phone number</div>
           </div>
           <div class="form-group">
-            <label for="email">Email *</label>
-            <input type="email" id="email" name="email" placeholder="Email" required aria-required="true">
-            <div class="error-msg">Email is required</div>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Email (optional)">
+            <div class="error-msg">Please enter a valid email address</div>
           </div>
 
           <!-- TRANSACTIONAL SMS Consent (REQUIRED) -->
@@ -211,25 +211,25 @@
       var transactional = document.getElementById('smsTransactional');
       var valid = true;
 
-      // Phone is REQUIRED
-      var phoneDigits = phone.value.replace(/\D/g, '');
-      if (!phone.value.trim() || phoneDigits.length < 10) {
-        phone.nextElementSibling.style.display = 'block';
-        phone.style.borderColor = '#e74c3c';
-        valid = false;
-      } else {
-        phone.nextElementSibling.style.display = 'none';
-        phone.style.borderColor = '#ddd';
+      // Phone is OPTIONAL — only validate format if user provided one
+      phone.nextElementSibling.style.display = 'none';
+      phone.style.borderColor = '#ddd';
+      if (phone.value.trim()) {
+        var phoneDigits = phone.value.replace(/\D/g, '');
+        if (phoneDigits.length < 10) {
+          phone.nextElementSibling.style.display = 'block';
+          phone.style.borderColor = '#e74c3c';
+          valid = false;
+        }
       }
 
-      // Email is REQUIRED
-      if (!email.value.trim() || !email.validity.valid) {
+      // Email is OPTIONAL — only validate format if user provided one
+      email.nextElementSibling.style.display = 'none';
+      email.style.borderColor = '#ddd';
+      if (email.value.trim() && !email.validity.valid) {
         email.nextElementSibling.style.display = 'block';
         email.style.borderColor = '#e74c3c';
         valid = false;
-      } else {
-        email.nextElementSibling.style.display = 'none';
-        email.style.borderColor = '#ddd';
       }
 
       // Transactional consent is REQUIRED
