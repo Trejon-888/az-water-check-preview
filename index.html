@@ -2128,8 +2128,9 @@
         duration: 1.0
       }, 0.55)
       .from('.hero__sub', { opacity: 0, y: 18, duration: 0.7 }, '-=0.35')
-      .from('.hero__buttons', { opacity: 0, y: 18, duration: 0.6 }, '-=0.5')
-      .from('.hero__bg-product', { opacity: 0, y: 30, duration: 1.2, stagger: 0.15, ease: 'power3.out' }, 0.6);
+      .from('.hero__buttons', { opacity: 0, y: 18, duration: 0.6 }, '-=0.5');
+    // Background products: no GSAP entrance — they're ambient context, should just BE there.
+    // CSS handles their opacity (0.78 desktop / 0.6 tablet) without animation interference.
 
     // Subtle scroll parallax on the droplet — single moving element only
     if (!prefersReducedMotion) {
