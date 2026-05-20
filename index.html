@@ -614,12 +614,22 @@
 
     /* Headline — two-tone weight contrast */
     .hero-title {
+      position: relative;
       font-family: 'Core Sans G', 'Core Sans G Rounded', system-ui, sans-serif;
       font-size: clamp(44px, 7.2vw, 84px); font-weight: 700;
       color: var(--white); line-height: 1.02; margin: 0 auto 22px;
       letter-spacing: -1.5px;
       word-break: keep-all; overflow-wrap: normal;
       max-width: 14ch;
+    }
+    /* Darkening halo behind headline — ensures AA contrast over any droplet zone */
+    .hero-title::before {
+      content: ''; position: absolute;
+      left: -8%; right: -8%; top: -24px; bottom: -16px;
+      background: radial-gradient(ellipse at center, rgba(6, 50, 70, 0.55) 0%, rgba(6, 50, 70, 0.28) 45%, transparent 78%);
+      filter: blur(24px);
+      z-index: -1;
+      pointer-events: none;
     }
     .hero-title .char { display: inline-block; will-change: opacity, filter, transform; }
     .hero-title .word { display: inline-block; white-space: nowrap; }
