@@ -337,7 +337,7 @@
       --light-blue: #EDEFF7;
       --white: #FFFFFF;
       --container: 1200px;
-      --font-heading: 'Palmore', Georgia, serif;
+      --font-heading: 'Core Sans G', 'Core Sans G Rounded', system-ui, sans-serif;
       --font-body: 'Inter', 'Core Sans G', system-ui, sans-serif;
     }
 
@@ -390,8 +390,17 @@
     }
 
     /* ===== TERRACOTTA DIVIDER ===== */
+    /* Wave divider — parent-brand signature style */
     .terracotta-divider {
-      width: 100%; height: 2px; background: var(--terracotta); opacity: 0.3;
+      width: 100%; height: 48px; position: relative; overflow: hidden;
+      background: transparent;
+      margin: 0; padding: 0;
+    }
+    .terracotta-divider::before {
+      content: '';
+      position: absolute; left: 0; right: 0; top: 0; bottom: 0;
+      background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 48' preserveAspectRatio='none'%3E%3Cpath fill='%232E3191' fill-opacity='0.08' d='M0,32 C240,8 480,40 720,24 C960,8 1200,40 1440,16 L1440,48 L0,48 Z'/%3E%3Cpath fill='%232E3191' fill-opacity='0.15' d='M0,36 C300,16 600,44 900,28 C1140,16 1320,40 1440,24 L1440,48 L0,48 Z'/%3E%3C/svg%3E");
+      background-size: 100% 100%; background-repeat: no-repeat;
     }
 
     /* GSAP handles all animation states via JS - no CSS hiding */
