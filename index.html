@@ -632,18 +632,16 @@
       white-space: nowrap;
       position: relative;
     }
-    .hero-title .word--accent {
-      background: linear-gradient(95deg, #ffffff 0%, #d6e4ff 45%, #ffffff 100%);
-      background-size: 200% 100%;
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-      color: transparent;
-      animation: shimmerSweep 6s ease-in-out 2.5s infinite;
+    .hero-title .word--accent .char {
+      color: #ffffff;
+      text-shadow:
+        0 0 18px rgba(170, 200, 255, 0.55),
+        0 0 38px rgba(120, 160, 220, 0.35);
+      animation: accentGlow 5.5s ease-in-out 2.4s infinite;
     }
-    @keyframes shimmerSweep {
-      0%, 100% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
+    @keyframes accentGlow {
+      0%, 100% { text-shadow: 0 0 14px rgba(170, 200, 255, 0.45), 0 0 30px rgba(120, 160, 220, 0.28); }
+      50%      { text-shadow: 0 0 22px rgba(200, 220, 255, 0.75), 0 0 52px rgba(140, 180, 240, 0.5); }
     }
     .hero__title-accent { display: none; }
 
@@ -667,7 +665,7 @@
     }
     @media (max-width: 768px) { .hero__scroll { display: none; } }
     @media (prefers-reduced-motion: reduce) {
-      .hero-title .word--accent { animation: none; background: none; -webkit-text-fill-color: var(--white); color: var(--white); }
+      .hero-title .word--accent .char { animation: none; text-shadow: none; }
       .hero__scroll::after { animation: none; }
     }
 
