@@ -1,66 +1,33 @@
-/* Aquafeel Solutions Arizona — licensed brand fonts
- * Core Sans G (headings + UI) + Brocha (body)
- * Served self-hosted from /assets/brand/fonts/
+/* Aquafeel Solutions Arizona — brand fonts
+ * Core Sans G (headings, UI) is licensed + self-hosted.
+ * Body uses Inter (Google Fonts CDN) for guaranteed Unicode glyph coverage.
+ * Brocha freeware version had missing glyphs (em-dash, arrows) — replaced with Inter.
  */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 /* ===== Core Sans G — primary heading + UI font ===== */
 @font-face {
   font-family: 'Core Sans G';
   src: url('/assets/brand/fonts/core-sans-g/CoreSansG-Light.ttf') format('truetype');
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
+  font-weight: 300; font-style: normal; font-display: swap;
 }
 @font-face {
   font-family: 'Core Sans G';
   src: url('/assets/brand/fonts/core-sans-g/CoreSansG-Regular.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
+  font-weight: 400; font-style: normal; font-display: swap;
 }
 @font-face {
   font-family: 'Core Sans G';
   src: url('/assets/brand/fonts/core-sans-g/CoreSansG-Medium.ttf') format('truetype');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
+  font-weight: 500; font-style: normal; font-display: swap;
 }
 @font-face {
   font-family: 'Core Sans G';
   src: url('/assets/brand/fonts/core-sans-g/CoreSansG-Bold.ttf') format('truetype');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
+  font-weight: 700; font-style: normal; font-display: swap;
 }
-
-/* Core Sans G Rounded — softer variant for hero/wordmark */
 @font-face {
   font-family: 'Core Sans G Rounded';
   src: url('/assets/brand/fonts/core-sans-g/CoreSansGRounded-Medium.ttf') format('truetype');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-/* ===== Brocha — body text + secondary ===== */
-@font-face {
-  font-family: 'Brocha';
-  src: url('/assets/brand/fonts/brocha/Brocha-Light.otf') format('opentype');
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Brocha';
-  src: url('/assets/brand/fonts/brocha/Brocha-Regular.otf') format('opentype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Brocha';
-  src: url('/assets/brand/fonts/brocha/Brocha-Bold.otf') format('opentype');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
+  font-weight: 500; font-style: normal; font-display: swap;
 }

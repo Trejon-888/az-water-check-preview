@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Aquafeel Solutions Arizona | Free Home Water Quality Test in Arizona</title>
   <meta name="description" content="Arizona's only dual-tank water purification specialist. Free home water quality test. Lifetime warranty. Bilingual service.">
-  <!-- LCP image preload (hero background — fetched early for faster LCP) -->
-  <link rel="preload" as="image" href="assets/brand/hero-bg-desert-hq.jpg" fetchpriority="high">
+  <!-- LCP image preload (hero background - fetched early for faster LCP) -->
+  <link rel="preload" as="image" href="assets/brand/water-waves-bg.svg" fetchpriority="high">
   <!-- Favicons (all sizes for Google, browsers, mobile) -->
   <link rel="icon" type="image/png" sizes="48x48" href="favicon-48.png">
   <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
@@ -21,7 +21,7 @@
   <meta property="og:image" content="https://azwatercheck.com/assets/brand/og-image-1200x630.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Aquafeel Solutions Arizona — Free Home Water Quality Testing in Arizona">
+  <meta property="og:image:alt" content="Aquafeel Solutions Arizona - Free Home Water Quality Testing in Arizona">
   <meta property="og:site_name" content="Aquafeel Solutions Arizona">
   <meta property="og:locale" content="en_US">
   <meta name="twitter:card" content="summary_large_image">
@@ -262,7 +262,7 @@
         "@type": "HowTo",
         "@id": "https://azwatercheck.com/#howto-water-test",
         "name": "How a Free In-Home Water Test Works",
-        "description": "Aquafeel Solutions Arizona's certified specialist comes to your home, tests your water in 15 minutes, and shows you the results — no obligation.",
+        "description": "Aquafeel Solutions Arizona's certified specialist comes to your home, tests your water in 15 minutes, and shows you the results - no obligation.",
         "totalTime": "PT15M",
         "supply": {"@type": "HowToSupply", "name": "Tap water sample from your kitchen sink"},
         "tool": [
@@ -324,7 +324,7 @@
 
   <style>
     /* ========================================
-       DESIGN TOKENS — Aquafeel Solutions Arizona Brand
+       DESIGN TOKENS - Aquafeel Solutions Arizona Brand
        ======================================== */
     :root {
       --sky-blue: #2E3191;
@@ -338,7 +338,7 @@
       --white: #FFFFFF;
       --container: 1200px;
       --font-heading: 'Palmore', Georgia, serif;
-      --font-body: 'Brocha', 'Core Sans G', system-ui, sans-serif;
+      --font-body: 'Inter', 'Core Sans G', system-ui, sans-serif;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -492,20 +492,27 @@
     }
     .hero__bg {
       position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-      background-image: url('assets/brand/hero-bg-desert-hq.jpg');
-      background-size: cover; background-position: center center;
+      background: linear-gradient(135deg, #1b1b64 0%, #2E3191 45%, #3a3eb8 100%);
       z-index: 0;
+      overflow: hidden;
+    }
+    .hero__bg::before {
+      /* Aquafeel-aligned wave pattern overlay */
+      content: '';
+      position: absolute; left: 0; right: 0; bottom: -2px; height: 35%;
+      background-image: url('assets/brand/water-waves-bg.svg');
+      background-size: cover; background-position: center bottom;
+      background-repeat: no-repeat;
+      opacity: 0.45;
+      z-index: 1;
     }
     .hero__bg::after {
+      /* Subtle radial glow for depth + the central drop motif from parent brand */
       content: '';
-      position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-      background: linear-gradient(
-        135deg,
-        rgba(25, 35, 45, 0.92) 0%,
-        rgba(30, 50, 65, 0.85) 40%,
-        rgba(46, 49, 145, 0.3) 100%
-      );
-      z-index: 1;
+      position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(91, 164, 201, 0.25) 0%, transparent 60%);
+      z-index: 2;
     }
     .hero .container { position: relative; z-index: 3; text-align: center; max-width: 700px; }
     .hero__content { }
@@ -517,13 +524,21 @@
       margin-bottom: 32px;
     }
     .hero-title {
-      font-family: 'Core Sans G', 'Core Sans G Rounded', system-ui, sans-serif; font-size: 56px; font-weight: 700;
+      font-family: 'Core Sans G', 'Core Sans G Rounded', system-ui, sans-serif;
+      font-size: clamp(36px, 6vw, 64px); font-weight: 700;
       color: var(--white); line-height: 1.1; margin-bottom: 16px;
-      letter-spacing: -0.5px;
+      letter-spacing: -1px;
+      word-break: keep-all;
+      overflow-wrap: normal;
+      max-width: 900px; margin-left: auto; margin-right: auto;
     }
     .hero-title .char {
       display: inline-block;
       will-change: opacity, filter;
+    }
+    .hero-title .word {
+      display: inline-block;
+      white-space: nowrap;
     }
     .hero__title-accent { display: none; }
 
@@ -1504,7 +1519,7 @@
         <div class="section-label" data-en="THE SYSTEM" data-es="EL SISTEMA">THE SYSTEM</div>
         <h2 class="section-title" data-en="Aquafeel Dual-Tank Water Purification" data-es="Purificacion de Agua de Doble Tanque Aquafeel">Aquafeel Dual-Tank Water Purification</h2>
       </div>
-      <p style="text-align:center; color: var(--terracotta); font-weight: 600; font-size: 14px; margin-bottom: 40px; letter-spacing: 1px;" data-en="Authorized Aquafeel Solutions Partner — Arizona" data-es="Socio Autorizado de Aquafeel Solutions — Arizona">Authorized Aquafeel Solutions Partner — Arizona</p>
+      <p style="text-align:center; color: var(--terracotta); font-weight: 600; font-size: 14px; margin-bottom: 40px; letter-spacing: 1px;" data-en="Authorized Aquafeel Solutions Partner - Arizona" data-es="Socio Autorizado de Aquafeel Solutions - Arizona">Authorized Aquafeel Solutions Partner - Arizona</p>
       <div class="the-system__layout">
         <div class="the-system__slider-wrap fade-up">
           <div class="system-slider swiper system-swiper">
@@ -1543,9 +1558,9 @@
   <!-- ===== CERTIFICATION BADGES ===== -->
   <section class="cert-bar">
     <div class="container">
-      <div class="cert-bar__item"><img src="assets/brand/NSF-ANSI-44.png" width="150" height="150" alt="NSF ANSI 44 Certified" title="NSF/ANSI 44 — Water Softening"></div>
-      <div class="cert-bar__item"><img src="assets/brand/NSF-ANSI-42.png" width="150" height="150" alt="NSF ANSI 42 Certified" title="NSF/ANSI 42 — Taste & Odor"></div>
-      <div class="cert-bar__item"><img src="assets/brand/NSF-ANSI-61_372.png" width="150" height="150" alt="NSF ANSI 61/372 Certified" title="NSF/ANSI 61/372 — Lead Free"></div>
+      <div class="cert-bar__item"><img src="assets/brand/NSF-ANSI-44.png" width="150" height="150" alt="NSF ANSI 44 Certified" title="NSF/ANSI 44 - Water Softening"></div>
+      <div class="cert-bar__item"><img src="assets/brand/NSF-ANSI-42.png" width="150" height="150" alt="NSF ANSI 42 Certified" title="NSF/ANSI 42 - Taste & Odor"></div>
+      <div class="cert-bar__item"><img src="assets/brand/NSF-ANSI-61_372.png" width="150" height="150" alt="NSF ANSI 61/372 Certified" title="NSF/ANSI 61/372 - Lead Free"></div>
       <div class="cert-bar__item"><img src="assets/brand/Acredited_Business-BBB.png" width="150" height="150" alt="BBB Accredited Business" title="BBB Accredited Business"></div>
       <div class="cert-bar__item"><img src="assets/brand/Proudly-MADE-IN-USA.png" width="150" height="150" alt="Proudly Made in USA" title="Proudly Made in USA"></div>
       <div class="cert-bar__item"><img src="assets/brand/Lifetime-Warranty.png" width="150" height="150" alt="Lifetime Warranty" title="Lifetime Warranty"></div>
@@ -1867,13 +1882,17 @@
       });
     }
 
-    // ===== Hero Title Character Animation =====
+    // ===== Hero Title Character Animation (word-aware: no mid-word breaks) =====
     const heroTitle = document.querySelector('.hero-title');
     if (heroTitle) {
       const text = heroTitle.textContent.trim();
-      heroTitle.innerHTML = text.split('').map(char =>
-        char === ' ' ? '<span class="char">&nbsp;</span>' : '<span class="char">' + char + '</span>'
-      ).join('');
+      // Wrap each WORD in nowrap span, then chars inside for animation
+      heroTitle.innerHTML = text.split(' ').map(function(word) {
+        const chars = word.split('').map(function(c) {
+          return '<span class="char">' + c + '</span>';
+        }).join('');
+        return '<span class="word">' + chars + '</span>';
+      }).join(' ');
 
       gsap.from('.hero-title .char', {
         opacity: 0,

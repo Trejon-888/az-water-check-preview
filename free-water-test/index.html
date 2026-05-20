@@ -64,7 +64,7 @@
   <link href="/assets/brand/fonts/fonts.css" rel="stylesheet">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Brocha', 'Core Sans G', system-ui, sans-serif; color: #2d2d2d; background: #F4F5FB; line-height: 1.6; }
+    body { font-family: 'Inter', 'Core Sans G', system-ui, sans-serif; color: #2d2d2d; background: #F4F5FB; line-height: 1.6; }
     .top-bar {
       background: #1a1a2e; color: #fff; padding: 10px 20px;
       display: flex; align-items: center; justify-content: center; gap: 8px;
@@ -313,7 +313,7 @@
 
     </form>
 
-    <!-- GHL booking iframe — hidden until all 6 quiz questions answered -->
+    <!-- GHL booking iframe - hidden until all 6 quiz questions answered -->
     <div class="booking-section" id="bookingSection">
       <div class="booking-section__label" data-en="Pick your time slot below. Your quiz answers go to Solit so she comes prepared." data-es="Elija su horario abajo. Sus respuestas van a Solit para que llegue preparada.">Pick your time slot below. Your quiz answers go to Solit so she comes prepared.</div>
       <iframe id="ghlBookingFrame" style="width:100%;border:none;overflow:hidden;min-height:780px;display:block;border-radius:14px;background:#fff;box-shadow:0 2px 12px rgba(0,0,0,0.04);" scrolling="no" title="Book your free in-home water test"></iframe>
@@ -349,7 +349,7 @@
     try { localStorage.removeItem('azwc-lang'); } catch(e) {}
 
     // Language detection: URL param ALWAYS wins.
-    // (QR codes explicitly set the language — we must respect that.)
+    // (QR codes explicitly set the language - we must respect that.)
     var urlParams = new URLSearchParams(window.location.search);
     var langParam = urlParams.get('lang');
     if (langParam === 'es') {
@@ -432,7 +432,7 @@
     }
 
     document.getElementById('bookingForm').addEventListener('change', updateProgress);
-    // Form submit guard — booking happens inside the GHL iframe, not via form submit
+    // Form submit guard - booking happens inside the GHL iframe, not via form submit
     document.getElementById('bookingForm').addEventListener('submit', function(e) { e.preventDefault(); });
   </script>
   <script src="https://api.leadconnectorhq.com/js/form_embed.js" type="text/javascript"></script>
