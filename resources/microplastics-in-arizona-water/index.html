@@ -67,7 +67,18 @@
   </script>
 
   <style>
-    :root { --primary: #2E3191; --accent: #282828; --terracotta: #1f2270; --text: #2d2d2d; --cream: #F4F5FB; --muted: #6b6b6b; --border: #e6dfd4; }
+    :root {
+      /* Impeccable motion tokens (cubic-bezier, no bounce/elastic) */
+      --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+      --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+      --ease-in-expo: cubic-bezier(0.7, 0, 0.84, 0);
+      --dur-fast: 150ms;
+      --dur-base: 300ms;
+      --dur-slow: 500ms;
+      --dur-hero: 700ms;
+      /* Tinted whites/blacks (escape pure #fff/#000 AI-slop) */
+      --tint-white: oklch(99% 0.005 270);
+      --tint-black: oklch(15% 0.01 270); --primary: #2E3191; --accent: #282828; --terracotta: #1f2270; --text: #2d2d2d; --cream: #F4F5FB; --muted: #6b6b6b; --border: #e6dfd4; }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: 'Inter', 'Core Sans G', system-ui, sans-serif; color: var(--text); background: var(--cream); line-height: 1.7; -webkit-font-smoothing: antialiased; }
     a { color: var(--primary); text-decoration: none; }
@@ -110,6 +121,39 @@
     .related-card a { font-weight: 700; font-size: 14px; }
     .footer-nap { background: #1a1a1a; color: #fff; padding: 36px 20px; text-align: center; font-size: 14px; line-height: 1.8; }
     .footer-nap a { color: var(--accent); }
+  
+    /* Impeccable: focus rings (always visible for keyboard) */
+    *:focus-visible {
+      outline: 2px solid #2E3191;
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
+    /* Impeccable: reduced-motion respect */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+    /* Impeccable: navbar active page marker */
+    .navbar__links a[aria-current="page"],
+    .navbar nav a[aria-current="page"],
+    .navbar__links a.active,
+    .navbar nav a.active {
+      color: #2E3191 !important;
+      font-weight: 700;
+      position: relative;
+    }
+    .navbar__links a[aria-current="page"]::before,
+    .navbar nav a[aria-current="page"]::before,
+    .navbar__links a.active::before,
+    .navbar nav a.active::before {
+      content: ''; position: absolute; left: 0; right: 0; bottom: -4px;
+      height: 3px; background: #2E3191; border-radius: 2px;
+    }
+
   </style>
 </head>
 <body>
