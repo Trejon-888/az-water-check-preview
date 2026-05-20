@@ -589,21 +589,24 @@
         linear-gradient(180deg, #0E869C 0%, #0a6a82 50%, #074b5d 100%);
     }
 
-    /* Hero subject: photoreal water droplet (parent-brand asset, transparent PNG) */
+    /* Hero subject: photoreal water droplet — center anchor, dramatic presence */
     .hero__droplet {
       position: absolute; left: 50%;
-      bottom: 60px;
+      bottom: 50px;
       transform: translateX(-50%);
-      height: clamp(460px, 70vh, 700px);
+      height: clamp(520px, 78vh, 780px);
       width: auto; max-width: 95vw;
       z-index: 2; pointer-events: none;
-      filter: drop-shadow(0 40px 60px rgba(0, 30, 50, 0.45));
+      filter:
+        drop-shadow(0 50px 70px rgba(0, 20, 40, 0.7))
+        drop-shadow(0 0 60px rgba(93, 200, 230, 0.25))
+        drop-shadow(0 -8px 20px rgba(180, 230, 240, 0.18));
     }
     @media (max-width: 900px) {
-      .hero__droplet { bottom: 90px; height: clamp(400px, 58vh, 520px); opacity: 0.65; }
+      .hero__droplet { bottom: 80px; height: clamp(440px, 64vh, 560px); }
     }
     @media (max-width: 600px) {
-      .hero__droplet { bottom: 110px; height: clamp(320px, 46vh, 420px); opacity: 0.5; }
+      .hero__droplet { bottom: 100px; height: clamp(360px, 50vh, 440px); opacity: 0.85; }
     }
 
     /* Container sits ABOVE droplet — type layered over droplet body */
@@ -655,12 +658,12 @@
     .hero-title .char { display: inline-block; will-change: opacity, filter, transform; }
     .hero-title .word { display: inline-block; white-space: nowrap; }
     .hero-title .word--accent .char {
-      color: #7CC0F2;
+      color: #E8F7FB;
       text-shadow:
-        0 0 18px rgba(124, 192, 242, 0.85),
-        0 0 42px rgba(93, 163, 232, 0.55),
-        0 0 80px rgba(45, 130, 200, 0.35),
-        0 2px 14px rgba(0, 40, 60, 0.65);
+        0 0 24px rgba(232, 247, 251, 0.85),
+        0 0 50px rgba(140, 220, 240, 0.55),
+        0 0 96px rgba(93, 190, 220, 0.4),
+        0 2px 14px rgba(0, 40, 60, 0.55);
     }
 
     /* Sub-copy — centered, tight, no border bar */
@@ -688,75 +691,36 @@
       border-radius: 56px;
     }
 
-    /* Floating product cards — premium glass chips on the hero sides */
-    .hero__product-card {
-      position: absolute; z-index: 3;
-      width: 180px;
-      padding: 16px 14px 14px;
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(124, 192, 242, 0.35);
-      border-radius: 18px;
-      backdrop-filter: blur(16px) saturate(1.2);
-      -webkit-backdrop-filter: blur(16px) saturate(1.2);
-      box-shadow:
-        0 12px 36px rgba(0, 30, 50, 0.4),
-        inset 0 1px 0 rgba(255, 255, 255, 0.15);
-      text-align: center;
-      pointer-events: auto;
-      transition: transform 320ms cubic-bezier(0.16, 1, 0.3, 1),
-                  border-color 320ms ease,
-                  box-shadow 320ms ease;
+    /* Ambient background products — no frames, no labels, just photoreal
+       products positioned as a 3D showcase layer behind the droplet */
+    .hero__bg-product {
+      position: absolute;
+      z-index: 1;
+      pointer-events: none;
+      opacity: 0.78;
+      filter:
+        drop-shadow(0 30px 50px rgba(0, 20, 40, 0.6))
+        drop-shadow(0 0 24px rgba(93, 200, 230, 0.18));
+      transition: opacity 600ms ease, transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .hero__product-card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(124, 192, 242, 0.7);
-      box-shadow:
-        0 18px 48px rgba(0, 30, 50, 0.5),
-        0 0 24px rgba(93, 163, 232, 0.35),
-        inset 0 1px 0 rgba(255, 255, 255, 0.22);
+    .hero__bg-product--left {
+      bottom: 110px; left: 4vw;
+      height: clamp(280px, 36vh, 420px);
+      width: auto;
+      transform: perspective(1200px) rotateY(14deg) translateZ(0);
     }
-    .hero__product-card--left {
-      top: 22%; left: 3vw;
-    }
-    .hero__product-card--right {
-      top: 22%; right: 3vw;
-    }
-    .hero__product-card__img-wrap {
-      height: 130px; display: flex; align-items: center; justify-content: center;
-      margin-bottom: 10px;
-    }
-    .hero__product-card img {
-      max-height: 130px; max-width: 100%;
-      width: auto; height: auto; display: block;
-      filter: drop-shadow(0 6px 14px rgba(0, 30, 50, 0.5));
-    }
-    .hero__product-card__kicker {
-      display: inline-block;
-      font-family: var(--font-body);
-      font-size: 9px; font-weight: 700; letter-spacing: 1.8px; text-transform: uppercase;
-      color: #7CC0F2;
-      margin-bottom: 4px;
-    }
-    .hero__product-card__name {
-      font-family: var(--font-body);
-      font-size: 13px; font-weight: 700; letter-spacing: 0.4px;
-      color: var(--white);
-      line-height: 1.25;
-    }
-    .hero__product-card__name span {
-      display: block;
-      font-weight: 400; font-size: 11px;
-      color: rgba(255,255,255,0.7);
-      letter-spacing: 0;
-      margin-top: 3px;
+    .hero__bg-product--right {
+      bottom: 110px; right: 4vw;
+      height: clamp(220px, 30vh, 320px);
+      width: auto;
+      transform: perspective(1200px) rotateY(-14deg) translateZ(0);
     }
     @media (max-width: 1100px) {
-      .hero__product-card { width: 160px; padding: 14px 12px 12px; }
-      .hero__product-card__img-wrap { height: 110px; }
-      .hero__product-card img { max-height: 110px; }
+      .hero__bg-product--left { left: 1vw; height: clamp(240px, 30vh, 320px); opacity: 0.6; }
+      .hero__bg-product--right { right: 1vw; height: clamp(200px, 26vh, 280px); opacity: 0.6; }
     }
-    @media (max-width: 900px) {
-      .hero__product-card { display: none; }
+    @media (max-width: 768px) {
+      .hero__bg-product { display: none; }
     }
 
     @media (max-width: 600px) {
@@ -1461,22 +1425,9 @@
     <!-- Hero subject: photoreal water droplet (parent-brand photographic asset) -->
     <img class="hero__droplet" id="heroDroplet" src="assets/brand/aquafeel-droplet-transparent.png" alt="" aria-hidden="true" loading="eager" decoding="async" width="320" height="480">
 
-    <!-- Floating product cards — what we install -->
-    <a class="hero__product-card hero__product-card--left" href="#system" aria-label="Dual-Tank Whole-Home System">
-      <div class="hero__product-card__img-wrap">
-        <img src="assets/brand/aquafeel-dualtank-chip.png" alt="Aquafeel Dual-Tank System" loading="eager" decoding="async">
-      </div>
-      <div class="hero__product-card__kicker" data-en="We Install" data-es="Instalamos">We Install</div>
-      <div class="hero__product-card__name" data-en="Dual-Tank System<span>Whole-home softener + carbon</span>" data-es="Sistema Doble Tanque<span>Ablandador + carbon para toda la casa</span>">Dual-Tank System<span>Whole-home softener + carbon</span></div>
-    </a>
-
-    <a class="hero__product-card hero__product-card--right" href="#system" aria-label="Reverse Osmosis Drinking Water">
-      <div class="hero__product-card__img-wrap">
-        <img src="assets/brand/aquafeel-ro-transparent.png" alt="Aquafeel Reverse Osmosis System" loading="eager" decoding="async">
-      </div>
-      <div class="hero__product-card__kicker" data-en="We Install" data-es="Instalamos">We Install</div>
-      <div class="hero__product-card__name" data-en="Reverse Osmosis<span>5-stage drinking water purifier</span>" data-es="Osmosis Inversa<span>Purificador de 5 etapas</span>">Reverse Osmosis<span>5-stage drinking water purifier</span></div>
-    </a>
+    <!-- Ambient 3D product showcase layer (no labels, no frames - the products themselves) -->
+    <img class="hero__bg-product hero__bg-product--left" src="assets/brand/aquafeel-dualtank-chip.png" alt="" aria-hidden="true" loading="eager" decoding="async">
+    <img class="hero__bg-product hero__bg-product--right" src="assets/brand/aquafeel-ro-transparent.png" alt="" aria-hidden="true" loading="eager" decoding="async">
 
 
     <div class="container">
@@ -2178,7 +2129,7 @@
       }, 0.55)
       .from('.hero__sub', { opacity: 0, y: 18, duration: 0.7 }, '-=0.35')
       .from('.hero__buttons', { opacity: 0, y: 18, duration: 0.6 }, '-=0.5')
-      .from('.hero__product-card', { opacity: 0, x: function(i) { return i === 0 ? -40 : 40; }, duration: 1.0, stagger: 0.1 }, '-=0.3');
+      .from('.hero__bg-product', { opacity: 0, y: 30, duration: 1.2, stagger: 0.15, ease: 'power3.out' }, 0.6);
 
     // Subtle scroll parallax on the droplet — single moving element only
     if (!prefersReducedMotion) {
