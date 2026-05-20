@@ -655,11 +655,12 @@
     .hero-title .char { display: inline-block; will-change: opacity, filter, transform; }
     .hero-title .word { display: inline-block; white-space: nowrap; }
     .hero-title .word--accent .char {
-      color: #E0F5FA;
+      color: #7CC0F2;
       text-shadow:
-        0 0 20px rgba(224, 245, 250, 0.7),
-        0 0 44px rgba(93, 200, 230, 0.45),
-        0 2px 12px rgba(0, 40, 60, 0.4);
+        0 0 18px rgba(124, 192, 242, 0.85),
+        0 0 42px rgba(93, 163, 232, 0.55),
+        0 0 80px rgba(45, 130, 200, 0.35),
+        0 2px 14px rgba(0, 40, 60, 0.65);
     }
 
     /* Sub-copy — centered, tight, no border bar */
@@ -687,29 +688,75 @@
       border-radius: 56px;
     }
 
-    /* Hero certifications ribbon — frosted pill with full-color seals */
-    .hero__certs {
-      display: inline-flex; align-items: center; justify-content: center;
-      gap: 22px;
-      padding: 12px 26px;
+    /* Floating product cards — premium glass chips on the hero sides */
+    .hero__product-card {
+      position: absolute; z-index: 3;
+      width: 180px;
+      padding: 16px 14px 14px;
       background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.22);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border-radius: 999px;
-      margin: 0 auto;
+      border: 1px solid rgba(124, 192, 242, 0.35);
+      border-radius: 18px;
+      backdrop-filter: blur(16px) saturate(1.2);
+      -webkit-backdrop-filter: blur(16px) saturate(1.2);
+      box-shadow:
+        0 12px 36px rgba(0, 30, 50, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15);
+      text-align: center;
+      pointer-events: auto;
+      transition: transform 320ms cubic-bezier(0.16, 1, 0.3, 1),
+                  border-color 320ms ease,
+                  box-shadow 320ms ease;
     }
-    .hero__certs img {
-      height: 42px; width: auto; display: block;
-      opacity: 0.96;
-      transition: transform 240ms cubic-bezier(0.16, 1, 0.3, 1), opacity 240ms ease;
+    .hero__product-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(124, 192, 242, 0.7);
+      box-shadow:
+        0 18px 48px rgba(0, 30, 50, 0.5),
+        0 0 24px rgba(93, 163, 232, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.22);
     }
-    .hero__certs img:hover {
-      opacity: 1; transform: translateY(-2px);
+    .hero__product-card--left {
+      top: 22%; left: 3vw;
     }
-    @media (max-width: 600px) {
-      .hero__certs { gap: 14px; padding: 10px 18px; }
-      .hero__certs img { height: 32px; }
+    .hero__product-card--right {
+      top: 22%; right: 3vw;
+    }
+    .hero__product-card__img-wrap {
+      height: 130px; display: flex; align-items: center; justify-content: center;
+      margin-bottom: 10px;
+    }
+    .hero__product-card img {
+      max-height: 130px; max-width: 100%;
+      width: auto; height: auto; display: block;
+      filter: drop-shadow(0 6px 14px rgba(0, 30, 50, 0.5));
+    }
+    .hero__product-card__kicker {
+      display: inline-block;
+      font-family: var(--font-body);
+      font-size: 9px; font-weight: 700; letter-spacing: 1.8px; text-transform: uppercase;
+      color: #7CC0F2;
+      margin-bottom: 4px;
+    }
+    .hero__product-card__name {
+      font-family: var(--font-body);
+      font-size: 13px; font-weight: 700; letter-spacing: 0.4px;
+      color: var(--white);
+      line-height: 1.25;
+    }
+    .hero__product-card__name span {
+      display: block;
+      font-weight: 400; font-size: 11px;
+      color: rgba(255,255,255,0.7);
+      letter-spacing: 0;
+      margin-top: 3px;
+    }
+    @media (max-width: 1100px) {
+      .hero__product-card { width: 160px; padding: 14px 12px 12px; }
+      .hero__product-card__img-wrap { height: 110px; }
+      .hero__product-card img { max-height: 110px; }
+    }
+    @media (max-width: 900px) {
+      .hero__product-card { display: none; }
     }
 
     @media (max-width: 600px) {
@@ -1414,6 +1461,23 @@
     <!-- Hero subject: photoreal water droplet (parent-brand photographic asset) -->
     <img class="hero__droplet" id="heroDroplet" src="assets/brand/aquafeel-droplet-transparent.png" alt="" aria-hidden="true" loading="eager" decoding="async" width="320" height="480">
 
+    <!-- Floating product cards — what we install -->
+    <a class="hero__product-card hero__product-card--left" href="#system" aria-label="Dual-Tank Whole-Home System">
+      <div class="hero__product-card__img-wrap">
+        <img src="assets/brand/aquafeel-dualtank-chip.png" alt="Aquafeel Dual-Tank System" loading="eager" decoding="async">
+      </div>
+      <div class="hero__product-card__kicker" data-en="We Install" data-es="Instalamos">We Install</div>
+      <div class="hero__product-card__name" data-en="Dual-Tank System<span>Whole-home softener + carbon</span>" data-es="Sistema Doble Tanque<span>Ablandador + carbon para toda la casa</span>">Dual-Tank System<span>Whole-home softener + carbon</span></div>
+    </a>
+
+    <a class="hero__product-card hero__product-card--right" href="#system" aria-label="Reverse Osmosis Drinking Water">
+      <div class="hero__product-card__img-wrap">
+        <img src="assets/brand/aquafeel-ro-transparent.png" alt="Aquafeel Reverse Osmosis System" loading="eager" decoding="async">
+      </div>
+      <div class="hero__product-card__kicker" data-en="We Install" data-es="Instalamos">We Install</div>
+      <div class="hero__product-card__name" data-en="Reverse Osmosis<span>5-stage drinking water purifier</span>" data-es="Osmosis Inversa<span>Purificador de 5 etapas</span>">Reverse Osmosis<span>5-stage drinking water purifier</span></div>
+    </a>
+
 
     <div class="container">
       <div class="hero__badge" data-en="Arizona's Only Dual-Tank Specialist" data-es="El Unico Especialista de Doble Tanque en Arizona">Arizona's Only Dual-Tank Specialist</div>
@@ -1422,12 +1486,6 @@
       <div class="hero__buttons">
         <a href="#contact" class="btn-orange"><i class="fas fa-calendar-check"></i> <span data-en="Book Your Free Test" data-es="Reserve Su Prueba Gratis">Book Your Free Test</span></a>
         <a href="#hardness" class="btn-outline"><i class="fas fa-arrow-down"></i> <span data-en="Learn More" data-es="Mas Informacion">Learn More</span></a>
-      </div>
-      <div class="hero__certs" aria-label="Certifications">
-        <img src="assets/brand/NSF-ANSI-42.png" width="150" height="150" alt="NSF/ANSI 42 Certified" title="NSF/ANSI 42 — Aesthetic Effects">
-        <img src="assets/brand/Acredited_Business-BBB.png" width="150" height="150" alt="BBB Accredited Business" title="BBB Accredited Business">
-        <img src="assets/brand/Proudly-MADE-IN-USA.png" width="150" height="150" alt="Made in USA" title="Proudly Made in USA">
-        <img src="assets/brand/Lifetime-Warranty.png" width="150" height="150" alt="Lifetime Warranty" title="Lifetime Warranty">
       </div>
     </div>
 
@@ -2120,8 +2178,7 @@
       }, 0.55)
       .from('.hero__sub', { opacity: 0, y: 18, duration: 0.7 }, '-=0.35')
       .from('.hero__buttons', { opacity: 0, y: 18, duration: 0.6 }, '-=0.5')
-      .from('.hero__certs', { opacity: 0, y: 12, duration: 0.6 }, '-=0.4')
-      .from('.hero__certs img', { opacity: 0, scale: 0.85, stagger: 0.06, duration: 0.45, ease: 'back.out(1.6)' }, '-=0.4');
+      .from('.hero__product-card', { opacity: 0, x: function(i) { return i === 0 ? -40 : 40; }, duration: 1.0, stagger: 0.1 }, '-=0.3');
 
     // Subtle scroll parallax on the droplet — single moving element only
     if (!prefersReducedMotion) {
