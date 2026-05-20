@@ -455,7 +455,7 @@
     /* ===== SECTION SHARED ===== */
     .section-label {
       font-family: var(--font-body); font-size: 13px; font-weight: 600;
-      text-transform: uppercase; letter-spacing: 3px; color: var(--sun-orange);
+      text-transform: uppercase; letter-spacing: 3px; color: var(--brand-cyan-deep);
       margin-bottom: 14px;
     }
     .section-title {
@@ -575,9 +575,9 @@
     /* ===== HERO v9 — Parent Brand Handoff (droplet rising from waves) ===== */
     .hero {
       position: relative; overflow: hidden;
-      min-height: 820px;
+      min-height: clamp(820px, 95vh, 980px);
       display: flex; align-items: center;
-      padding: 110px 0 260px;
+      padding: 110px 0 280px;
       background:
         radial-gradient(ellipse 90% 60% at 50% 0%, #15a3bc 0%, transparent 60%),
         linear-gradient(180deg, #0E869C 0%, #0a6a82 50%, #074b5d 100%);
