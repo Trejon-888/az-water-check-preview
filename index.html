@@ -407,15 +407,16 @@
     ul { list-style: none; }
     .container { max-width: var(--container); margin: 0 auto; padding: 0 24px; }
 
-    /* ===== PILL BUTTONS ===== */
+    /* ===== PILL BUTTONS — Aquafeel sky-blue (was orange) ===== */
     .btn-orange {
       position: relative; overflow: hidden;
       display: inline-flex; align-items: center; gap: 10px;
-      background: var(--sun-orange); color: var(--white); font-family: var(--font-body);
+      background: linear-gradient(135deg, #5DA3E8 0%, #3A7BC8 100%);
+      color: var(--white); font-family: var(--font-body);
       font-size: 15px; font-weight: 600; padding: 16px 36px; border-radius: 50px;
       border: none; cursor: pointer;
       letter-spacing: 0.3px;
-      box-shadow: 0 6px 20px rgba(232, 122, 64, 0.32), 0 2px 6px rgba(40,40,40,0.18);
+      box-shadow: 0 8px 24px rgba(58, 123, 200, 0.45), 0 2px 6px rgba(10, 40, 70, 0.25);
       transition: transform 240ms cubic-bezier(0.16, 1, 0.3, 1),
                   box-shadow 240ms cubic-bezier(0.16, 1, 0.3, 1);
     }
@@ -428,7 +429,7 @@
     }
     .btn-orange:hover {
       transform: translateY(-2px);
-      box-shadow: 0 14px 36px rgba(232, 122, 64, 0.48), 0 4px 12px rgba(40,40,40,0.22);
+      box-shadow: 0 16px 40px rgba(93, 163, 232, 0.6), 0 4px 12px rgba(10, 40, 70, 0.3);
     }
     .btn-orange:hover::before { transform: translateX(120%); }
     .btn-orange:active { transform: translateY(0); transition-duration: 80ms; }
@@ -557,45 +558,59 @@
     .navbar__links a:hover::after { transform: scaleX(1); }
     .navbar__cta {
       display: inline-flex; align-items: center; gap: 8px;
-      background: var(--sun-orange); color: var(--white); font-family: var(--font-body);
+      background: linear-gradient(135deg, #5DA3E8 0%, #3A7BC8 100%);
+      color: var(--white); font-family: var(--font-body);
       font-size: 13px; font-weight: 700; padding: 12px 28px; border-radius: 50px;
       transition: transform 0.3s, box-shadow 0.3s;
       letter-spacing: 0.5px;
       text-transform: uppercase;
+      box-shadow: 0 4px 14px rgba(58, 123, 200, 0.3);
     }
-    .navbar__cta:hover { transform: scale(1.05); box-shadow: 0 4px 16px rgba(40,40,40,0.35); }
+    .navbar__cta:hover { transform: scale(1.05); box-shadow: 0 6px 20px rgba(58, 123, 200, 0.45); }
     .navbar__hamburger {
       display: none; background: none; border: none; font-size: 24px;
       color: var(--dark); cursor: pointer;
     }
 
-    /* ===== HERO v8 — Parent Brand Handoff ===== */
+    /* ===== HERO v9 — Parent Brand Handoff (droplet rising from waves) ===== */
     .hero {
       position: relative; overflow: hidden;
-      min-height: 760px;
+      min-height: 820px;
       display: flex; align-items: center;
-      padding: 110px 0 280px;
-      background: linear-gradient(180deg, #0F8AA0 0%, #0d7891 45%, #0B5F75 85%, #0B5F75 100%);
+      padding: 110px 0 260px;
+      background:
+        radial-gradient(ellipse 90% 60% at 50% 0%, #15a3bc 0%, transparent 60%),
+        linear-gradient(180deg, #0E869C 0%, #0a6a82 50%, #074b5d 100%);
     }
 
-    /* Hero subject: large SVG water droplet, photoreal */
+    /* Hero subject: large SVG water droplet — base sinks into the wave band */
     .hero__droplet {
-      position: absolute; left: 50%; top: 50%;
-      transform: translate(-50%, -52%);
-      width: clamp(360px, 46vw, 620px);
-      height: auto; z-index: 1; pointer-events: none;
-      opacity: 0.92;
-      filter: drop-shadow(0 30px 60px rgba(0,30,50,0.35));
+      position: absolute; left: 50%;
+      bottom: 80px;
+      transform: translateX(-50%);
+      width: clamp(520px, 62vw, 880px);
+      height: auto; z-index: 2; pointer-events: none;
+      opacity: 1;
+      filter: drop-shadow(0 30px 80px rgba(0, 30, 50, 0.5));
     }
-    .hero__droplet .ripple {
-      transform-origin: center 92%;
+    @media (max-width: 900px) {
+      .hero__droplet { bottom: 100px; width: 75vw; opacity: 0.85; }
+    }
+    @media (max-width: 600px) {
+      .hero__droplet { bottom: 110px; width: 90vw; opacity: 0.7; }
     }
 
-    /* Container sits ABOVE the droplet, text uses the droplet as ghost backdrop */
+    /* Container sits ABOVE droplet — type layered over droplet body */
     .hero .container {
       position: relative; z-index: 3;
       text-align: center;
       max-width: 760px;
+      width: 100%;
+      align-self: flex-start;
+      margin-top: 40px;
+    }
+    @media (max-width: 900px) {
+      .hero .container { margin-top: 20px; }
     }
 
     /* Hero badge */
@@ -1341,27 +1356,43 @@
     <!-- Hero subject: photoreal water droplet (SVG, parent-brand aligned) -->
     <svg class="hero__droplet" id="heroDroplet" viewBox="0 0 400 520" aria-hidden="true" preserveAspectRatio="xMidYMid meet">
       <defs>
-        <radialGradient id="dropletBody" cx="40%" cy="35%" r="65%">
-          <stop offset="0%" stop-color="#9FE8F5" stop-opacity="0.95"/>
-          <stop offset="40%" stop-color="#3EBED6" stop-opacity="0.85"/>
-          <stop offset="100%" stop-color="#0a4d5d" stop-opacity="0.9"/>
+        <radialGradient id="dropletBody" cx="42%" cy="38%" r="68%">
+          <stop offset="0%"   stop-color="#C7F2FA" stop-opacity="0.98"/>
+          <stop offset="22%"  stop-color="#7FDDEE" stop-opacity="0.95"/>
+          <stop offset="55%"  stop-color="#2BB0CC" stop-opacity="0.92"/>
+          <stop offset="88%"  stop-color="#0A6580" stop-opacity="0.95"/>
+          <stop offset="100%" stop-color="#053648" stop-opacity="0.98"/>
         </radialGradient>
-        <radialGradient id="dropletHighlight" cx="35%" cy="25%" r="35%">
-          <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95"/>
+        <radialGradient id="dropletHighlight" cx="35%" cy="22%" r="40%">
+          <stop offset="0%"   stop-color="#ffffff" stop-opacity="0.98"/>
+          <stop offset="40%"  stop-color="#ffffff" stop-opacity="0.45"/>
           <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
         </radialGradient>
         <radialGradient id="dropletEdgeGlow" cx="50%" cy="50%" r="55%">
-          <stop offset="80%" stop-color="#5DCDE6" stop-opacity="0"/>
-          <stop offset="92%" stop-color="#5DCDE6" stop-opacity="0.55"/>
-          <stop offset="100%" stop-color="#B8E8F5" stop-opacity="0"/>
+          <stop offset="78%"  stop-color="#5DCDE6" stop-opacity="0"/>
+          <stop offset="92%"  stop-color="#A8E5F2" stop-opacity="0.7"/>
+          <stop offset="100%" stop-color="#E0F5FA" stop-opacity="0"/>
         </radialGradient>
+        <linearGradient id="dropletBottomShadow" x1="50%" y1="60%" x2="50%" y2="100%">
+          <stop offset="0%"   stop-color="#000000" stop-opacity="0"/>
+          <stop offset="100%" stop-color="#001a26" stop-opacity="0.55"/>
+        </linearGradient>
       </defs>
-      <path d="M200,40 C200,40 80,200 80,330 C80,410 134,470 200,470 C266,470 320,410 320,330 C320,200 200,40 200,40 Z"
+      <!-- Main droplet body -->
+      <path d="M200,30 C200,30 70,195 70,335 C70,418 128,478 200,478 C272,478 330,418 330,335 C330,195 200,30 200,30 Z"
             fill="url(#dropletBody)"/>
-      <path d="M200,40 C200,40 80,200 80,330 C80,410 134,470 200,470 C266,470 320,410 320,330 C320,200 200,40 200,40 Z"
+      <!-- Bottom inner shadow for depth -->
+      <path d="M200,30 C200,30 70,195 70,335 C70,418 128,478 200,478 C272,478 330,418 330,335 C330,195 200,30 200,30 Z"
+            fill="url(#dropletBottomShadow)"/>
+      <!-- Edge rim light -->
+      <path d="M200,30 C200,30 70,195 70,335 C70,418 128,478 200,478 C272,478 330,418 330,335 C330,195 200,30 200,30 Z"
             fill="url(#dropletEdgeGlow)"/>
-      <ellipse cx="155" cy="220" rx="38" ry="65" fill="url(#dropletHighlight)" transform="rotate(-22 155 220)"/>
-      <ellipse cx="135" cy="310" rx="10" ry="22" fill="#ffffff" opacity="0.4" transform="rotate(-18 135 310)"/>
+      <!-- Primary specular highlight (upper left) -->
+      <ellipse cx="148" cy="210" rx="42" ry="72" fill="url(#dropletHighlight)" transform="rotate(-22 148 210)"/>
+      <!-- Secondary smaller highlight -->
+      <ellipse cx="128" cy="310" rx="11" ry="26" fill="#ffffff" opacity="0.45" transform="rotate(-18 128 310)"/>
+      <!-- Tiny tip highlight -->
+      <ellipse cx="200" cy="55" rx="2" ry="6" fill="#ffffff" opacity="0.8"/>
     </svg>
 
     <div class="container">
@@ -1385,13 +1416,19 @@
       </div>
     </div>
 
-    <!-- Wave separator v8 — 4 saturated bands, parent-brand chromatic break -->
+    <!-- Wave separator v9 — droplet sinks into top band, exits into cream -->
     <div class="hero-waves">
       <svg viewBox="0 0 1440 240" preserveAspectRatio="none" style="width:100%;height:100%;position:absolute;bottom:0;display:block">
-        <path fill="#0d2e4d" d="M0,80 C240,130 480,40 720,90 C960,140 1200,60 1440,100 L1440,240 L0,240 Z"/>
-        <path fill="#2E3191" d="M0,130 C200,180 460,100 720,140 C980,180 1240,110 1440,150 L1440,240 L0,240 Z"/>
-        <path fill="#5DA3E8" d="M0,178 C260,215 520,160 780,190 C1040,220 1280,170 1440,195 L1440,240 L0,240 Z"/>
-        <path fill="#F4F5FB" d="M0,210 C300,232 600,200 900,222 C1100,232 1300,210 1440,222 L1440,240 L0,240 Z"/>
+        <!-- Band 1: deep teal-navy (back) — receives the droplet -->
+        <path fill="#063e50" d="M0,70 C240,120 480,30 720,80 C960,130 1200,50 1440,90 L1440,240 L0,240 Z"/>
+        <!-- Band 2: deeper indigo (mid-back) -->
+        <path fill="#1B3A82" d="M0,125 C200,175 460,95 720,135 C980,175 1240,105 1440,145 L1440,240 L0,240 Z"/>
+        <!-- Band 3: brand sky (mid-front) -->
+        <path fill="#3A7BC8" d="M0,170 C260,205 520,150 780,180 C1040,210 1280,160 1440,185 L1440,240 L0,240 Z"/>
+        <!-- Band 4: lighter cyan -->
+        <path fill="#7CBCEC" d="M0,200 C300,222 600,190 900,212 C1100,222 1300,200 1440,212 L1440,240 L0,240 Z"/>
+        <!-- Band 5: cream handoff -->
+        <path fill="#F4F5FB" d="M0,222 C300,234 600,218 900,228 C1100,234 1300,222 1440,228 L1440,240 L0,240 Z"/>
       </svg>
     </div>
   </section>
