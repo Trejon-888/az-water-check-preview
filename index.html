@@ -407,33 +407,37 @@
     ul { list-style: none; }
     .container { max-width: var(--container); margin: 0 auto; padding: 0 24px; }
 
-    /* ===== PILL BUTTONS — Aquafeel sky-blue (was orange) ===== */
+    /* ===== PILL BUTTONS — Aquafeel deep navy primary (sophisticated, parent-aligned) ===== */
     .btn-orange {
       position: relative; overflow: hidden;
       display: inline-flex; align-items: center; gap: 10px;
-      background: linear-gradient(135deg, #5DA3E8 0%, #3A7BC8 100%);
+      background: linear-gradient(135deg, #1D3470 0%, #14254F 100%);
       color: var(--white); font-family: var(--font-body);
       font-size: 15px; font-weight: 600; padding: 16px 36px; border-radius: 50px;
-      border: none; cursor: pointer;
+      border: 1px solid rgba(93, 163, 232, 0.35); cursor: pointer;
       letter-spacing: 0.3px;
-      box-shadow: 0 8px 24px rgba(58, 123, 200, 0.45), 0 2px 6px rgba(10, 40, 70, 0.25);
+      box-shadow: 0 10px 28px rgba(8, 20, 50, 0.5), 0 0 0 1px rgba(93, 163, 232, 0.15) inset;
       transition: transform 240ms cubic-bezier(0.16, 1, 0.3, 1),
-                  box-shadow 240ms cubic-bezier(0.16, 1, 0.3, 1);
+                  box-shadow 240ms cubic-bezier(0.16, 1, 0.3, 1),
+                  border-color 240ms ease;
     }
     .btn-orange > * { position: relative; z-index: 2; }
+    .btn-orange i { color: #7CC0F2; transition: text-shadow 240ms ease; }
     .btn-orange::before {
       content: ''; position: absolute; inset: 0; z-index: 1;
-      background: linear-gradient(110deg, transparent 30%, rgba(255,255,255,0.35) 50%, transparent 70%);
+      background: linear-gradient(110deg, transparent 30%, rgba(124, 192, 242, 0.25) 50%, transparent 70%);
       transform: translateX(-120%);
       transition: transform 700ms cubic-bezier(0.16, 1, 0.3, 1);
     }
     .btn-orange:hover {
       transform: translateY(-2px);
-      box-shadow: 0 16px 40px rgba(93, 163, 232, 0.6), 0 4px 12px rgba(10, 40, 70, 0.3);
+      border-color: rgba(124, 192, 242, 0.6);
+      box-shadow: 0 16px 40px rgba(8, 20, 50, 0.6), 0 0 24px rgba(93, 163, 232, 0.35);
     }
+    .btn-orange:hover i { text-shadow: 0 0 10px rgba(124, 192, 242, 0.9); }
     .btn-orange:hover::before { transform: translateX(120%); }
     .btn-orange:active { transform: translateY(0); transition-duration: 80ms; }
-    .btn-orange:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+    .btn-orange:focus-visible { outline: 2px solid #7CC0F2; outline-offset: 3px; }
     .btn-outline {
       display: inline-flex; align-items: center; gap: 10px;
       background: rgba(255,255,255,0.06); color: var(--white); font-family: var(--font-body);
@@ -558,15 +562,17 @@
     .navbar__links a:hover::after { transform: scaleX(1); }
     .navbar__cta {
       display: inline-flex; align-items: center; gap: 8px;
-      background: linear-gradient(135deg, #5DA3E8 0%, #3A7BC8 100%);
+      background: linear-gradient(135deg, #1D3470 0%, #14254F 100%);
       color: var(--white); font-family: var(--font-body);
       font-size: 13px; font-weight: 700; padding: 12px 28px; border-radius: 50px;
-      transition: transform 0.3s, box-shadow 0.3s;
+      transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
       letter-spacing: 0.5px;
       text-transform: uppercase;
-      box-shadow: 0 4px 14px rgba(58, 123, 200, 0.3);
+      border: 1px solid rgba(93, 163, 232, 0.35);
+      box-shadow: 0 6px 18px rgba(8, 20, 50, 0.35);
     }
-    .navbar__cta:hover { transform: scale(1.05); box-shadow: 0 6px 20px rgba(58, 123, 200, 0.45); }
+    .navbar__cta i { color: #7CC0F2; }
+    .navbar__cta:hover { transform: scale(1.05); border-color: rgba(124, 192, 242, 0.6); box-shadow: 0 10px 26px rgba(8, 20, 50, 0.5), 0 0 16px rgba(93, 163, 232, 0.3); }
     .navbar__hamburger {
       display: none; background: none; border: none; font-size: 24px;
       color: var(--dark); cursor: pointer;
@@ -583,22 +589,21 @@
         linear-gradient(180deg, #0E869C 0%, #0a6a82 50%, #074b5d 100%);
     }
 
-    /* Hero subject: large SVG water droplet — base sinks into the wave band */
+    /* Hero subject: photoreal water droplet (parent-brand asset, transparent PNG) */
     .hero__droplet {
       position: absolute; left: 50%;
-      bottom: 80px;
+      bottom: 60px;
       transform: translateX(-50%);
-      height: clamp(480px, 72vh, 720px);
+      height: clamp(460px, 70vh, 700px);
       width: auto; max-width: 95vw;
       z-index: 2; pointer-events: none;
-      opacity: 0.85;
-      filter: drop-shadow(0 30px 80px rgba(0, 30, 50, 0.5));
+      filter: drop-shadow(0 40px 60px rgba(0, 30, 50, 0.45));
     }
     @media (max-width: 900px) {
-      .hero__droplet { bottom: 100px; height: clamp(420px, 60vh, 560px); opacity: 0.65; }
+      .hero__droplet { bottom: 90px; height: clamp(400px, 58vh, 520px); opacity: 0.65; }
     }
     @media (max-width: 600px) {
-      .hero__droplet { bottom: 110px; height: clamp(360px, 50vh, 460px); opacity: 0.5; }
+      .hero__droplet { bottom: 110px; height: clamp(320px, 46vh, 420px); opacity: 0.5; }
     }
 
     /* Container sits ABOVE droplet — type layered over droplet body */
@@ -682,20 +687,29 @@
       border-radius: 56px;
     }
 
-    /* Trust strip — typeset, not silhouettes */
-    .hero__trust-strip {
-      display: flex; flex-wrap: wrap; justify-content: center;
-      align-items: center; gap: 10px 22px;
-      font-family: var(--font-body);
-      font-size: 13px; font-weight: 600;
-      letter-spacing: 1.2px; text-transform: uppercase;
-      color: rgba(255,255,255,0.94);
+    /* Hero certifications ribbon — frosted pill with full-color seals */
+    .hero__certs {
+      display: inline-flex; align-items: center; justify-content: center;
+      gap: 22px;
+      padding: 12px 26px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-radius: 999px;
+      margin: 0 auto;
     }
-    .hero__trust-strip span { display: inline-flex; align-items: center; gap: 6px; }
-    .hero__trust-strip svg { width: 12px; height: 12px; opacity: 0.7; }
-    .hero__trust-strip .dot {
-      width: 3px; height: 3px; border-radius: 50%;
-      background: rgba(184, 232, 245, 0.6);
+    .hero__certs img {
+      height: 42px; width: auto; display: block;
+      opacity: 0.96;
+      transition: transform 240ms cubic-bezier(0.16, 1, 0.3, 1), opacity 240ms ease;
+    }
+    .hero__certs img:hover {
+      opacity: 1; transform: translateY(-2px);
+    }
+    @media (max-width: 600px) {
+      .hero__certs { gap: 14px; padding: 10px 18px; }
+      .hero__certs img { height: 32px; }
     }
 
     @media (max-width: 600px) {
@@ -703,13 +717,56 @@
       .hero-title { letter-spacing: -1px; }
       .hero__buttons .btn-orange,
       .hero__buttons .btn-outline { width: 100%; justify-content: center; }
-      .hero__trust-strip { font-size: 10px; gap: 8px 14px; }
-      .hero__trust-strip .dot { display: none; }
       .hero__droplet { opacity: 0.45; width: 380px; }
     }
 
     @media (prefers-reduced-motion: reduce) {
       .hero-title .word--accent .char { text-shadow: 0 0 8px rgba(184, 232, 245, 0.4); }
+    }
+
+    /* ===== CREDENTIALS BAR — dedicated trust section, post-wave ===== */
+    .credentials {
+      background: #FFFFFF;
+      padding: 36px 0 32px;
+      border-bottom: 1px solid rgba(14, 134, 156, 0.08);
+    }
+    .credentials__label {
+      text-align: center;
+      font-family: var(--font-body);
+      font-size: 11px; font-weight: 600;
+      letter-spacing: 2.4px; text-transform: uppercase;
+      color: #5a7a8a;
+      margin: 0 0 22px;
+    }
+    .credentials__grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 28px;
+      align-items: center;
+      justify-items: center;
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+    .credentials__grid a,
+    .credentials__grid span {
+      display: block;
+      transition: transform 240ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .credentials__grid a:hover {
+      transform: scale(1.06);
+    }
+    .credentials__grid img {
+      height: 64px; width: auto; display: block;
+      filter: saturate(0.97);
+    }
+    @media (max-width: 900px) {
+      .credentials__grid { grid-template-columns: repeat(3, 1fr); gap: 24px 18px; }
+      .credentials__grid img { height: 56px; }
+    }
+    @media (max-width: 500px) {
+      .credentials__grid { grid-template-columns: repeat(3, 1fr); gap: 18px 12px; }
+      .credentials__grid img { height: 44px; }
+      .credentials__label { font-size: 10px; letter-spacing: 1.8px; }
     }
 
     /* ===== HERO WAVES v8 — saturated 4-band chromatic separator ===== */
@@ -1354,47 +1411,9 @@
 
   <!-- ===== HERO v8 — Parent Brand Handoff ===== -->
   <section class="hero" id="hero">
-    <!-- Hero subject: photoreal water droplet (SVG, parent-brand aligned) -->
-    <svg class="hero__droplet" id="heroDroplet" viewBox="0 0 400 520" aria-hidden="true" preserveAspectRatio="xMidYMid meet">
-      <defs>
-        <radialGradient id="dropletBody" cx="42%" cy="38%" r="68%">
-          <stop offset="0%"   stop-color="#C7F2FA" stop-opacity="0.98"/>
-          <stop offset="22%"  stop-color="#7FDDEE" stop-opacity="0.95"/>
-          <stop offset="55%"  stop-color="#2BB0CC" stop-opacity="0.92"/>
-          <stop offset="88%"  stop-color="#0A6580" stop-opacity="0.95"/>
-          <stop offset="100%" stop-color="#053648" stop-opacity="0.98"/>
-        </radialGradient>
-        <radialGradient id="dropletHighlight" cx="35%" cy="22%" r="40%">
-          <stop offset="0%"   stop-color="#ffffff" stop-opacity="0.98"/>
-          <stop offset="40%"  stop-color="#ffffff" stop-opacity="0.45"/>
-          <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
-        </radialGradient>
-        <radialGradient id="dropletEdgeGlow" cx="50%" cy="50%" r="55%">
-          <stop offset="78%"  stop-color="#5DCDE6" stop-opacity="0"/>
-          <stop offset="92%"  stop-color="#A8E5F2" stop-opacity="0.7"/>
-          <stop offset="100%" stop-color="#E0F5FA" stop-opacity="0"/>
-        </radialGradient>
-        <linearGradient id="dropletBottomShadow" x1="50%" y1="60%" x2="50%" y2="100%">
-          <stop offset="0%"   stop-color="#000000" stop-opacity="0"/>
-          <stop offset="100%" stop-color="#001a26" stop-opacity="0.55"/>
-        </linearGradient>
-      </defs>
-      <!-- Main droplet body -->
-      <path d="M200,30 C200,30 70,195 70,335 C70,418 128,478 200,478 C272,478 330,418 330,335 C330,195 200,30 200,30 Z"
-            fill="url(#dropletBody)"/>
-      <!-- Bottom inner shadow for depth -->
-      <path d="M200,30 C200,30 70,195 70,335 C70,418 128,478 200,478 C272,478 330,418 330,335 C330,195 200,30 200,30 Z"
-            fill="url(#dropletBottomShadow)"/>
-      <!-- Edge rim light -->
-      <path d="M200,30 C200,30 70,195 70,335 C70,418 128,478 200,478 C272,478 330,418 330,335 C330,195 200,30 200,30 Z"
-            fill="url(#dropletEdgeGlow)"/>
-      <!-- Primary specular highlight (upper left) -->
-      <ellipse cx="148" cy="210" rx="42" ry="72" fill="url(#dropletHighlight)" transform="rotate(-22 148 210)"/>
-      <!-- Secondary smaller highlight -->
-      <ellipse cx="128" cy="310" rx="11" ry="26" fill="#ffffff" opacity="0.45" transform="rotate(-18 128 310)"/>
-      <!-- Tiny tip highlight -->
-      <ellipse cx="200" cy="55" rx="2" ry="6" fill="#ffffff" opacity="0.8"/>
-    </svg>
+    <!-- Hero subject: photoreal water droplet (parent-brand photographic asset) -->
+    <img class="hero__droplet" id="heroDroplet" src="assets/brand/aquafeel-droplet-transparent.png" alt="" aria-hidden="true" loading="eager" decoding="async" width="320" height="480">
+
 
     <div class="container">
       <div class="hero__badge" data-en="Arizona's Only Dual-Tank Specialist" data-es="El Unico Especialista de Doble Tanque en Arizona">Arizona's Only Dual-Tank Specialist</div>
@@ -1404,16 +1423,11 @@
         <a href="#contact" class="btn-orange"><i class="fas fa-calendar-check"></i> <span data-en="Book Your Free Test" data-es="Reserve Su Prueba Gratis">Book Your Free Test</span></a>
         <a href="#hardness" class="btn-outline"><i class="fas fa-arrow-down"></i> <span data-en="Learn More" data-es="Mas Informacion">Learn More</span></a>
       </div>
-      <div class="hero__trust-strip" aria-label="Certifications">
-        <span data-en="NSF/ANSI 44" data-es="NSF/ANSI 44">NSF/ANSI 44</span>
-        <span class="dot" aria-hidden="true"></span>
-        <span data-en="NSF/ANSI 42" data-es="NSF/ANSI 42">NSF/ANSI 42</span>
-        <span class="dot" aria-hidden="true"></span>
-        <span data-en="BBB Accredited" data-es="Acreditado BBB">BBB Accredited</span>
-        <span class="dot" aria-hidden="true"></span>
-        <span data-en="Made in USA" data-es="Hecho en EE.UU.">Made in USA</span>
-        <span class="dot" aria-hidden="true"></span>
-        <span data-en="Lifetime Warranty" data-es="Garantia de por Vida">Lifetime Warranty</span>
+      <div class="hero__certs" aria-label="Certifications">
+        <img src="assets/brand/NSF-ANSI-42.png" width="150" height="150" alt="NSF/ANSI 42 Certified" title="NSF/ANSI 42 — Aesthetic Effects">
+        <img src="assets/brand/Acredited_Business-BBB.png" width="150" height="150" alt="BBB Accredited Business" title="BBB Accredited Business">
+        <img src="assets/brand/Proudly-MADE-IN-USA.png" width="150" height="150" alt="Made in USA" title="Proudly Made in USA">
+        <img src="assets/brand/Lifetime-Warranty.png" width="150" height="150" alt="Lifetime Warranty" title="Lifetime Warranty">
       </div>
     </div>
 
@@ -1431,6 +1445,33 @@
         <!-- Band 5: cream handoff -->
         <path fill="#F4F5FB" d="M0,222 C300,234 600,218 900,228 C1100,234 1300,222 1440,228 L1440,240 L0,240 Z"/>
       </svg>
+    </div>
+  </section>
+
+  <!-- ===== CREDENTIALS BAR — full-color seals on white, post-wave handoff ===== -->
+  <section class="credentials" aria-label="Independent certifications">
+    <div class="container">
+      <p class="credentials__label" data-en="Independently Certified · Arizona Installed · Lifetime Backed" data-es="Certificado Independientemente · Instalado en Arizona · Respaldado de por Vida">Independently Certified · Arizona Installed · Lifetime Backed</p>
+      <div class="credentials__grid">
+        <a href="https://www.nsf.org/" target="_blank" rel="noopener" title="NSF/ANSI 42 — Aesthetic Effects">
+          <img src="assets/brand/NSF-ANSI-42.png" width="150" height="150" alt="NSF/ANSI 42 Certified" loading="lazy">
+        </a>
+        <a href="https://www.nsf.org/" target="_blank" rel="noopener" title="NSF/ANSI 44 — Cation Exchange Water Softeners">
+          <img src="assets/brand/NSF-ANSI-44.png" width="150" height="150" alt="NSF/ANSI 44 Certified" loading="lazy">
+        </a>
+        <a href="https://www.nsf.org/" target="_blank" rel="noopener" title="NSF/ANSI 61/372 — Drinking Water System Components">
+          <img src="assets/brand/NSF-ANSI-61_372.png" width="150" height="150" alt="NSF/ANSI 61/372 Certified" loading="lazy">
+        </a>
+        <a href="https://www.bbb.org/" target="_blank" rel="noopener" title="Better Business Bureau Accredited">
+          <img src="assets/brand/Acredited_Business-BBB.png" width="150" height="150" alt="BBB Accredited Business" loading="lazy">
+        </a>
+        <span title="Proudly Made in USA">
+          <img src="assets/brand/Proudly-MADE-IN-USA.png" width="150" height="150" alt="Proudly Made in USA" loading="lazy">
+        </span>
+        <span title="Lifetime Warranty">
+          <img src="assets/brand/Lifetime-Warranty.png" width="150" height="150" alt="Lifetime Warranty" loading="lazy">
+        </span>
+      </div>
     </div>
   </section>
 
@@ -2079,7 +2120,8 @@
       }, 0.55)
       .from('.hero__sub', { opacity: 0, y: 18, duration: 0.7 }, '-=0.35')
       .from('.hero__buttons', { opacity: 0, y: 18, duration: 0.6 }, '-=0.5')
-      .from('.hero__trust-strip span, .hero__trust-strip .dot', { opacity: 0, y: 6, stagger: 0.04, duration: 0.4 }, '-=0.4');
+      .from('.hero__certs', { opacity: 0, y: 12, duration: 0.6 }, '-=0.4')
+      .from('.hero__certs img', { opacity: 0, scale: 0.85, stagger: 0.06, duration: 0.45, ease: 'back.out(1.6)' }, '-=0.4');
 
     // Subtle scroll parallax on the droplet — single moving element only
     if (!prefersReducedMotion) {
