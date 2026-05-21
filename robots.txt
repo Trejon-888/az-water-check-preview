@@ -1,5 +1,5 @@
 # Aquafeel Solutions Arizona - Robots.txt
-# https://azwatercheck.com
+# https://aquafeelsolutionsarizona.com
 
 User-agent: *
 Allow: /
@@ -49,8 +49,8 @@ Disallow: /draft/
 Disallow: /staging/
 
 # Sitemaps
-Sitemap: https://azwatercheck.com/sitemap.xml
-Sitemap: https://azwatercheck.com/sitemap-images.xml
+Sitemap: https://aquafeelsolutionsarizona.com/sitemap.xml
+Sitemap: https://aquafeelsolutionsarizona.com/sitemap-images.xml
 
 # AI discovery
-# llms.txt: https://azwatercheck.com/llms.txt
+# llms.txt: https://aquafeelsolutionsarizona.com/llms.txt

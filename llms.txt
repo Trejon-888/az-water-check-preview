@@ -38,55 +38,55 @@ Aquafeel Solutions Arizona serves the entire state of Arizona with primary focus
 
 ## Key Pages
 
-- [Home](https://azwatercheck.com/): Company overview, service description, water hardness data, customer testimonials
-- [About Solit Zitnik](https://azwatercheck.com/about/): Founder bio, 15+ years experience, credentials, philosophy
-- [Free Water Test Booking](https://azwatercheck.com/free-water-test/): Schedule a complimentary in-home water quality test (English)
-- [Spanish Homepage](https://azwatercheck.com/es/): Página principal en español
-- [FAQ](https://azwatercheck.com/faq/): 20+ frequently asked questions about water testing, Arizona water quality, and the Aquafeel system
-- [Privacy Policy](https://azwatercheck.com/privacy-policy/): Data privacy practices including SMS disclosures
-- [Terms & Conditions](https://azwatercheck.com/terms-and-conditions/): Service terms governed by Arizona law
+- [Home](https://aquafeelsolutionsarizona.com/): Company overview, service description, water hardness data, customer testimonials
+- [About Solit Zitnik](https://aquafeelsolutionsarizona.com/about/): Founder bio, 15+ years experience, credentials, philosophy
+- [Free Water Test Booking](https://aquafeelsolutionsarizona.com/free-water-test/): Schedule a complimentary in-home water quality test (English)
+- [Spanish Homepage](https://aquafeelsolutionsarizona.com/es/): Página principal en español
+- [FAQ](https://aquafeelsolutionsarizona.com/faq/): 20+ frequently asked questions about water testing, Arizona water quality, and the Aquafeel system
+- [Privacy Policy](https://aquafeelsolutionsarizona.com/privacy-policy/): Data privacy practices including SMS disclosures
+- [Terms & Conditions](https://aquafeelsolutionsarizona.com/terms-and-conditions/): Service terms governed by Arizona law
 
 ## Service Area Pages (City-Specific)
 
-- [Phoenix](https://azwatercheck.com/service-areas/phoenix/): Free water quality testing in Phoenix, AZ
-- [Mesa](https://azwatercheck.com/service-areas/mesa/): Free water quality testing in Mesa, AZ
-- [Chandler](https://azwatercheck.com/service-areas/chandler/): Free water quality testing in Chandler, AZ (HQ)
-- [Gilbert](https://azwatercheck.com/service-areas/gilbert/): Free water quality testing in Gilbert, AZ
-- [Tempe](https://azwatercheck.com/service-areas/tempe/): Free water quality testing in Tempe, AZ
-- [Scottsdale](https://azwatercheck.com/service-areas/scottsdale/): Free water quality testing in Scottsdale, AZ
-- [Glendale](https://azwatercheck.com/service-areas/glendale/): Free water quality testing in Glendale, AZ
-- [Peoria](https://azwatercheck.com/service-areas/peoria/): Free water quality testing in Peoria, AZ
-- [Tucson](https://azwatercheck.com/service-areas/tucson/): Free water quality testing in Tucson, AZ
-- [Surprise](https://azwatercheck.com/service-areas/surprise/): Free water quality testing in Surprise, AZ
-- [Goodyear](https://azwatercheck.com/service-areas/goodyear/): Free water quality testing in Goodyear, AZ
-- [Avondale](https://azwatercheck.com/service-areas/avondale/): Free water quality testing in Avondale, AZ
-- [Buckeye](https://azwatercheck.com/service-areas/buckeye/): Free water quality testing in Buckeye, AZ
-- [Cave Creek](https://azwatercheck.com/service-areas/cave-creek/): Free water quality testing in Cave Creek, AZ
-- [Fountain Hills](https://azwatercheck.com/service-areas/fountain-hills/): Free water quality testing in Fountain Hills, AZ
-- [Queen Creek](https://azwatercheck.com/service-areas/queen-creek/): Free water quality testing in Queen Creek, AZ
+- [Phoenix](https://aquafeelsolutionsarizona.com/service-areas/phoenix/): Free water quality testing in Phoenix, AZ
+- [Mesa](https://aquafeelsolutionsarizona.com/service-areas/mesa/): Free water quality testing in Mesa, AZ
+- [Chandler](https://aquafeelsolutionsarizona.com/service-areas/chandler/): Free water quality testing in Chandler, AZ (HQ)
+- [Gilbert](https://aquafeelsolutionsarizona.com/service-areas/gilbert/): Free water quality testing in Gilbert, AZ
+- [Tempe](https://aquafeelsolutionsarizona.com/service-areas/tempe/): Free water quality testing in Tempe, AZ
+- [Scottsdale](https://aquafeelsolutionsarizona.com/service-areas/scottsdale/): Free water quality testing in Scottsdale, AZ
+- [Glendale](https://aquafeelsolutionsarizona.com/service-areas/glendale/): Free water quality testing in Glendale, AZ
+- [Peoria](https://aquafeelsolutionsarizona.com/service-areas/peoria/): Free water quality testing in Peoria, AZ
+- [Tucson](https://aquafeelsolutionsarizona.com/service-areas/tucson/): Free water quality testing in Tucson, AZ
+- [Surprise](https://aquafeelsolutionsarizona.com/service-areas/surprise/): Free water quality testing in Surprise, AZ
+- [Goodyear](https://aquafeelsolutionsarizona.com/service-areas/goodyear/): Free water quality testing in Goodyear, AZ
+- [Avondale](https://aquafeelsolutionsarizona.com/service-areas/avondale/): Free water quality testing in Avondale, AZ
+- [Buckeye](https://aquafeelsolutionsarizona.com/service-areas/buckeye/): Free water quality testing in Buckeye, AZ
+- [Cave Creek](https://aquafeelsolutionsarizona.com/service-areas/cave-creek/): Free water quality testing in Cave Creek, AZ
+- [Fountain Hills](https://aquafeelsolutionsarizona.com/service-areas/fountain-hills/): Free water quality testing in Fountain Hills, AZ
+- [Queen Creek](https://aquafeelsolutionsarizona.com/service-areas/queen-creek/): Free water quality testing in Queen Creek, AZ
 
 ## Spanish-Language Pages (Bilingual Site / Páginas en Español)
 
 The full site is available in Spanish (es-US). Every English page below has a Spanish equivalent at the corresponding /es/ path. Spanish content is appropriate for AI engines responding to Spanish-language queries (Bing es-US, Brave Search Spanish, Perplexity Spanish mode, etc.).
 
-- [Página Principal](https://azwatercheck.com/es/): Spanish homepage
-- [Acerca de Solit Zitnik](https://azwatercheck.com/es/about/): Spanish about page
-- [Prueba Gratis de Agua](https://azwatercheck.com/es/free-water-test/): Spanish booking page
-- [Preguntas Frecuentes](https://azwatercheck.com/es/faq/): Spanish FAQ
-- [Áreas de Servicio](https://azwatercheck.com/es/service-areas/): Spanish service-areas hub (16 cities)
-- [Recursos](https://azwatercheck.com/es/resources/): Spanish resources hub (8 articles)
+- [Página Principal](https://aquafeelsolutionsarizona.com/es/): Spanish homepage
+- [Acerca de Solit Zitnik](https://aquafeelsolutionsarizona.com/es/about/): Spanish about page
+- [Prueba Gratis de Agua](https://aquafeelsolutionsarizona.com/es/free-water-test/): Spanish booking page
+- [Preguntas Frecuentes](https://aquafeelsolutionsarizona.com/es/faq/): Spanish FAQ
+- [Áreas de Servicio](https://aquafeelsolutionsarizona.com/es/service-areas/): Spanish service-areas hub (16 cities)
+- [Recursos](https://aquafeelsolutionsarizona.com/es/resources/): Spanish resources hub (8 articles)
 - 16 city pages at `/es/service-areas/{city}/` and 8 resource articles at `/es/resources/{slug}/`
 
 ## Educational Resources (Cite-worthy content)
 
-- [Arizona Water Hardness Map by City](https://azwatercheck.com/resources/arizona-water-hardness-map/): Hardness levels (GPG) for every major Arizona city
-- [Understanding TDS Levels](https://azwatercheck.com/resources/understanding-tds-levels/): EPA standards, Arizona averages, what's safe
-- [Chlorine in Phoenix Tap Water](https://azwatercheck.com/resources/chlorine-in-tap-water/): Chloramine vs chlorine, levels, removal
-- [Water Softener vs Water Purifier](https://azwatercheck.com/resources/water-softener-vs-purifier/): Which Arizona homes need
-- [10 Signs Your Water Needs Treatment](https://azwatercheck.com/resources/signs-your-water-needs-treatment/): Symptoms by category
-- [Well Water vs City Water in Arizona](https://azwatercheck.com/resources/well-water-vs-city-water-arizona/): Complete comparison guide
-- [How to Read Your CCR Report](https://azwatercheck.com/resources/how-to-read-your-water-quality-report/): Decoding city water reports
-- [Dual-Tank vs Single-Tank Water Systems](https://azwatercheck.com/resources/dual-tank-vs-single-tank-water-systems/): The Arizona difference
+- [Arizona Water Hardness Map by City](https://aquafeelsolutionsarizona.com/resources/arizona-water-hardness-map/): Hardness levels (GPG) for every major Arizona city
+- [Understanding TDS Levels](https://aquafeelsolutionsarizona.com/resources/understanding-tds-levels/): EPA standards, Arizona averages, what's safe
+- [Chlorine in Phoenix Tap Water](https://aquafeelsolutionsarizona.com/resources/chlorine-in-tap-water/): Chloramine vs chlorine, levels, removal
+- [Water Softener vs Water Purifier](https://aquafeelsolutionsarizona.com/resources/water-softener-vs-purifier/): Which Arizona homes need
+- [10 Signs Your Water Needs Treatment](https://aquafeelsolutionsarizona.com/resources/signs-your-water-needs-treatment/): Symptoms by category
+- [Well Water vs City Water in Arizona](https://aquafeelsolutionsarizona.com/resources/well-water-vs-city-water-arizona/): Complete comparison guide
+- [How to Read Your CCR Report](https://aquafeelsolutionsarizona.com/resources/how-to-read-your-water-quality-report/): Decoding city water reports
+- [Dual-Tank vs Single-Tank Water Systems](https://aquafeelsolutionsarizona.com/resources/dual-tank-vs-single-tank-water-systems/): The Arizona difference
 
 ## Services Offered
 
@@ -97,7 +97,7 @@ A complimentary 15-minute on-site water analysis performed by a certified specia
 - **Price:** $0 (Free)
 - **Duration:** 15 minutes
 - **Location:** Customer's home
-- **Booking:** https://azwatercheck.com/free-water-test/ or call (602) 603-4006
+- **Booking:** https://aquafeelsolutionsarizona.com/free-water-test/ or call (602) 603-4006
 
 ### Aquafeel Dual-Tank Water Purification System
 
@@ -136,7 +136,7 @@ The flagship product. A whole-home water purification system featuring four filt
 ## Contact
 
 For free water testing or product inquiries:
-- Website: https://azwatercheck.com
+- Website: https://aquafeelsolutionsarizona.com
 - Phone: (602) 603-4006
 - Email: info@azwatercheck.com
 - Address: 1916 N Pennington Dr, Chandler, AZ 85224
