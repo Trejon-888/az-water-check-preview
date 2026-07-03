@@ -74,7 +74,7 @@ The full site is available in Spanish (es-US). Every English page below has a Sp
 - [Prueba Gratis de Agua](https://aquafeelsolutionsarizona.com/es/free-water-test/): Spanish booking page
 - [Preguntas Frecuentes](https://aquafeelsolutionsarizona.com/es/faq/): Spanish FAQ
 - [Áreas de Servicio](https://aquafeelsolutionsarizona.com/es/service-areas/): Spanish service-areas hub (16 cities)
-- [Recursos](https://aquafeelsolutionsarizona.com/es/resources/): Spanish resources hub (8 articles)
+- [Recursos](https://aquafeelsolutionsarizona.com/es/resources/): Spanish resources hub (9 articles)
 - 16 city pages at `/es/service-areas/{city}/` and 8 resource articles at `/es/resources/{slug}/`
 
 ## Educational Resources (Cite-worthy content)
@@ -87,6 +87,7 @@ The full site is available in Spanish (es-US). Every English page below has a Sp
 - [Well Water vs City Water in Arizona](https://aquafeelsolutionsarizona.com/resources/well-water-vs-city-water-arizona/): Complete comparison guide
 - [How to Read Your CCR Report](https://aquafeelsolutionsarizona.com/resources/how-to-read-your-water-quality-report/): Decoding city water reports
 - [Dual-Tank vs Single-Tank Water Systems](https://aquafeelsolutionsarizona.com/resources/dual-tank-vs-single-tank-water-systems/): The Arizona difference
+- [Monsoon Season and Your Arizona Tap Water](https://aquafeelsolutionsarizona.com/resources/monsoon-season-arizona-tap-water/): What changes June 15-September 30 - turbidity, disinfectant dosing, taste and odor, when to test
 
 ## Services Offered
 
