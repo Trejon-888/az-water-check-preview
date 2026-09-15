@@ -3,10 +3,10 @@
   const config = window.AQUAFEEL_CONTENT;
   const copy = {
     en: {
-      skip:'Skip to content',draft:'REVIEW DRAFT · Reviews, videos and booking connection pending',eyebrow:'AQUAFEEL SOLUTIONS ARIZONA',headline:'A little more clarity.\nA closer look at your water.',intro:'Get to know the team behind your free in-home water test. Then choose a time that works for you.',introCta:'Ready? Go to booking',reviewsEyebrow:'GET TO KNOW AQUAFEEL',reviewsTitle:'Hear from our customers.',storiesEyebrow:'IN THEIR OWN WORDS',storiesTitle:'Meet the people.\nHear their experiences.',bookingEyebrow:'YOUR NEXT STEP',bookingTitle:'Let’s start\nwith your water.',bookingText:'Book a free in-home water test with Aquafeel Solutions Arizona. Bring your questions—we’ll help you explore your water treatment options.',bookCta:'Book your free water test',bookingNote:'At your home · Free water test',privacy:'Privacy policy',terms:'Terms',previewEyebrow:'BOOKING PREVIEW',dialogTitle:'Choose a time for\nyour free water test.',calendarPending:'Scheduling connection pending',dialogDescription:'This is a review preview. The approved booking calendar will open here. No appointment has been booked and no information has been sent.',back:'Back to the page',close:'Close booking preview',reviewPending:'Review to be added',reviewHint:'Space reserved for an approved customer review.',videoPending:'Customer video to be added',videoHint:'Reserved for an approved testimonial.',pending:'CONTENT PENDING',english:'Customer experience · English',spanish:'Experiencia del cliente · Español',source:'Read the original review',caption:'Captions',liveEyebrow:'BOOK YOUR VISIT',liveDescription:'Choose an available time in the calendar below. Your appointment is only booked after confirmation from the scheduling service.',unavailable:'Booking is not available on this page yet. Please check back soon.'
+      skip:'Skip to content',draft:'DESIGN PREVIEW · Illustrative images · Customer reviews and booking pending',eyebrow:'AQUAFEEL SOLUTIONS ARIZONA',headline:'Get to know Aquafeel.\nTake the next step for your water.',intro:'Explore customer reviews and stories, then schedule your free in-home water test with Aquafeel Solutions Arizona.',introCta:'Go to the booking section',reviewsEyebrow:'CUSTOMER REVIEWS',reviewsTitle:'What our customers say',storiesEyebrow:'CUSTOMER STORIES',storiesTitle:'Hear their stories',bookingEyebrow:'YOUR NEXT STEP',bookingTitle:'Ready for your free in-home water test?',bookingText:'Have questions about your water? Take the next step with a free test at your home from Aquafeel Solutions Arizona.',bookCta:'Book your free water test',previewCta:'Book your free water test',previewNote:'Preview only · Calendar connection pending',bookingNote:'At your home · Free water test',privacy:'Privacy policy',terms:'Terms',previewEyebrow:'BOOKING PREVIEW',dialogTitle:'Your booking will\nstart here.',calendarPending:'Scheduling connection pending',dialogDescription:'This is a review preview. The approved booking calendar will open here. No appointment has been booked and no information has been sent.',back:'Back to the page',close:'Close booking preview',reviewPending:'Customer review coming soon',reviewHint:'An approved review and its original source will appear here.',videoPending:'Customer testimonial',videoHint:'Illustrative image · Customer video pending',pending:'ILLUSTRATIVE PREVIEW',english:'English testimonial',spanish:'Testimonio en español',source:'Read the original review',caption:'Captions',liveEyebrow:'BOOK YOUR VISIT',liveDescription:'Choose an available time in the calendar below. Your appointment is only booked after confirmation from the scheduling service.',unavailable:'Booking is not available on this page yet. Please check back soon.',storiesIntro:'Customer perspectives in English and Spanish.',welcomeKicker:'THANK YOU FOR YOUR INTEREST',welcomeDetails:'Free in-home water test · English & Español',reviewThemes:["The in-home experience","Working with our local team","From first contact to follow-up"],
     },
     es: {
-      skip:'Ir al contenido',draft:'BORRADOR PARA REVISIÓN · Reseñas, videos y conexión de reservas pendientes',eyebrow:'AQUAFEEL SOLUTIONS ARIZONA',headline:'Conozca mejor\nel agua de su hogar.',intro:'Conozca al equipo que está detrás de su prueba de agua gratis a domicilio. Después, elija un horario que le convenga.',introCta:'¿Listo? Ir a la reserva',reviewsEyebrow:'CONOZCA AQUAFEEL',reviewsTitle:'Escuche a nuestros clientes.',storiesEyebrow:'EN SUS PROPIAS PALABRAS',storiesTitle:'Conozca a las personas.\nEscuche sus experiencias.',bookingEyebrow:'SU SIGUIENTE PASO',bookingTitle:'Empecemos\npor su agua.',bookingText:'Reserve una prueba de agua gratis a domicilio con Aquafeel Solutions Arizona. Traiga sus preguntas: le ayudaremos a explorar opciones de tratamiento de agua.',bookCta:'Reservar mi prueba de agua gratis',bookingNote:'A domicilio · Prueba de agua gratis',privacy:'Política de privacidad',terms:'Términos',previewEyebrow:'VISTA PREVIA DE RESERVAS',dialogTitle:'Elija un horario para\nsu prueba de agua gratis.',calendarPending:'Conexión de reservas pendiente',dialogDescription:'Esta es una vista previa para revisión. El calendario de reservas aprobado se abrirá aquí. No se ha reservado ninguna cita ni se ha enviado información.',back:'Volver a la página',close:'Cerrar la vista previa de reservas',reviewPending:'Reseña por agregar',reviewHint:'Espacio reservado para una reseña de cliente aprobada.',videoPending:'Video de cliente por agregar',videoHint:'Espacio reservado para un testimonio aprobado.',pending:'CONTENIDO PENDIENTE',english:'Experiencia del cliente · Inglés',spanish:'Experiencia del cliente · Español',source:'Leer la reseña original',caption:'Subtítulos',liveEyebrow:'RESERVE SU VISITA',liveDescription:'Elija un horario disponible en el calendario. Su cita solo estará reservada cuando reciba la confirmación del servicio de reservas.',unavailable:'Las reservas aún no están disponibles en esta página. Vuelva pronto.'
+      skip:'Ir al contenido',draft:'VISTA PREVIA · Imágenes ilustrativas · Reseñas y reservas pendientes',eyebrow:'AQUAFEEL SOLUTIONS ARIZONA',headline:'Conozca Aquafeel.\nDé el siguiente paso para su agua.',intro:'Conozca las reseñas y experiencias de nuestros clientes y reserve su prueba de agua gratis a domicilio con Aquafeel Solutions Arizona.',introCta:'Ir a la sección de reservas',reviewsEyebrow:'RESEÑAS DE CLIENTES',reviewsTitle:'Lo que dicen nuestros clientes',storiesEyebrow:'EXPERIENCIAS DE CLIENTES',storiesTitle:'Conozca sus experiencias',bookingEyebrow:'SU SIGUIENTE PASO',bookingTitle:'¿Listo para su prueba de agua gratis a domicilio?',bookingText:'¿Tiene preguntas sobre el agua de su hogar? Dé el siguiente paso con una prueba gratis a domicilio de Aquafeel Solutions Arizona.',bookCta:'Reservar mi prueba de agua gratis',previewCta:'Reservar mi prueba de agua gratis',previewNote:'Vista previa · Calendario pendiente de conexión',bookingNote:'A domicilio · Prueba de agua gratis',privacy:'Política de privacidad',terms:'Términos',previewEyebrow:'VISTA PREVIA DE RESERVAS',dialogTitle:'Aquí podrá reservar\nsu prueba de agua.',calendarPending:'Conexión de reservas pendiente',dialogDescription:'Esta es una vista previa para revisión. El calendario de reservas aprobado se abrirá aquí. No se ha reservado ninguna cita ni se ha enviado información.',back:'Volver a la página',close:'Cerrar la vista previa de reservas',reviewPending:'Próximamente: reseña de cliente',reviewHint:'Aquí aparecerán una reseña aprobada y su fuente original.',videoPending:'Testimonio de cliente',videoHint:'Imagen ilustrativa · Video de cliente pendiente',pending:'VISTA ILUSTRATIVA',english:'Testimonio en inglés',spanish:'Testimonio en español',source:'Leer la reseña original',caption:'Subtítulos',liveEyebrow:'RESERVE SU VISITA',liveDescription:'Elija un horario disponible en el calendario. Su cita solo estará reservada cuando reciba la confirmación del servicio de reservas.',unavailable:'Las reservas aún no están disponibles en esta página. Vuelva pronto.',storiesIntro:'Experiencias de clientes en inglés y español.',welcomeKicker:'GRACIAS POR SU INTERÉS',welcomeDetails:'Prueba de agua gratis a domicilio · English & Español',reviewThemes:["La experiencia a domicilio","La atención de nuestro equipo","Desde el primer contacto"],
     }
   };
   let language = new URLSearchParams(location.search).get('lang') === 'es' ? 'es' : config.defaultLanguage;
@@ -22,17 +22,20 @@
   function renderEvidence() {
     const t=copy[language];
     const reviews=document.querySelector('#review-grid'); reviews.replaceChildren();
-    config.reviews.forEach(item => {
+    config.reviews.forEach((item,index) => {
       const source=safeHttps(item.sourceUrl);
       const ready=item.approved && item.quote && item.author && source;
       if(!ready && !config.reviewMode)return;
       const card=element('article','review-card');
-      card.append(element('div','review-platform',item.platform));
+      const logoFiles={Google:'google-logo.png',Yelp:'yelp-logo.svg',Trustpilot:'trustpilot-logo.svg'};
+      const heading=element('div','review-platform platform-'+item.platform.toLowerCase());
+      const logo=document.createElement('img');logo.src='assets/'+logoFiles[item.platform];logo.alt=item.platform;logo.width=140;logo.height=44;heading.append(logo);card.append(heading);
+      card.setAttribute('aria-label',item.platform+(language==='es'?' — reseñas':' reviews'));
       if(ready){
         card.append(element('blockquote','',item.quote),element('span','review-author',item.author));
         const link=element('a','review-source',t.source);link.href=source;link.target='_blank';link.rel='noopener noreferrer';card.append(link);
       } else {
-        card.append(element('span','pending-label',t.reviewPending),element('p','pending-copy',t.reviewHint));
+        card.append(element('h3','review-theme',t.reviewThemes[index]),element('p','pending-copy',t.reviewHint),element('span','review-status',t.reviewPending));
       }
       reviews.append(card);
     });
@@ -50,12 +53,13 @@
         const captions=safeAsset(item.captions);if(captions){const track=document.createElement('track');track.kind='captions';track.srclang=item.language;track.label=item.language==='es'?'Español':'English';track.src=captions;video.append(track);}
         card.append(video);
       }else{
-        const stage=element('div','video-stage');
+        const stage=element('div','video-stage illustrated-stage');
+        const illustration=document.createElement('img');illustration.src=item.language==='es'?'assets/illustrative-carafe-arizona.png':'assets/illustrative-faucet-glass.png';illustration.alt=language==='es'?'Imagen ilustrativa generada de agua en una cocina de Arizona':'Generated illustrative image of water in an Arizona kitchen';illustration.width=1672;illustration.height=941;illustration.loading='lazy';stage.append(illustration);
         const icon=element('span','play-outline'); icon.setAttribute('aria-hidden','true');
-        icon.innerHTML='<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m8 5 11 7-11 7Z"/></svg>';
-        stage.append(icon,element('span','pending-label',t.pending),element('p','',t.videoPending));card.append(stage);
+        icon.innerHTML='<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m9 5 10 7-10 7Z"/></svg>';
+        stage.append(icon,element('span','pending-label',t.pending));card.append(stage);
       }
-      const label=element('div','video-label');label.append(element('h3','',item.name || title),element('span','',item.language==='es'?'ES':'EN'));card.append(label);videos.append(card);
+      const label=element('div','video-label');label.append(element('h3','',item.name || title),element('span','',item.language==='es'?'ES':'EN'));card.append(label);if(!ready)card.append(element('p','illustration-note',t.videoHint));videos.append(card);
     });
     videos.closest('section').hidden = !videos.children.length;
   }
@@ -69,6 +73,12 @@
     document.querySelectorAll('[data-lang]').forEach(node=>node.setAttribute('aria-pressed',String(node.dataset.lang===language)));
     document.querySelector('.language-switch').setAttribute('aria-label',language==='es'?'Idioma de la página':'Page language');
     document.querySelector('.draft-bar').hidden=!config.reviewMode;
+    if(config.reviewMode && !bookingUrl()){
+      setText(button.querySelector('[data-copy="bookCta"]'),t.previewCta);
+      setText(document.querySelector('.booking-note'),t.previewNote);
+    }
+    document.querySelector('.brand').setAttribute('aria-label',language==='es'?'Inicio de Aquafeel Solutions Arizona':'Aquafeel Solutions Arizona home');
+    document.querySelector('.site-footer nav').setAttribute('aria-label',language==='es'?'Información legal':'Legal');
     renderEvidence();
   }
   document.querySelectorAll('[data-lang]').forEach(node=>node.addEventListener('click',()=>{
@@ -94,3 +104,4 @@
   document.querySelector('#year').textContent=new Date().getFullYear();
   renderLanguage();
 })();
+
