@@ -1,6 +1,8 @@
 (() => {
   'use strict';
   const config = window.AQUAFEEL_CONTENT;
+  // The complete static preview stays visible if configuration fails to load.
+  if (!config) return;
   const copy = {
     en: {
       skip:'Skip to content',draft:'DESIGN PREVIEW · Illustrative images · Customer reviews and booking pending',eyebrow:'AQUAFEEL SOLUTIONS ARIZONA',headline:'Get to know Aquafeel.\nTake the next step for your water.',intro:'Explore customer reviews and stories, then schedule your free in-home water test with Aquafeel Solutions Arizona.',introCta:'Go to the booking section',reviewsEyebrow:'CUSTOMER REVIEWS',reviewsTitle:'What our customers say',storiesEyebrow:'CUSTOMER STORIES',storiesTitle:'Hear their stories',bookingEyebrow:'YOUR NEXT STEP',bookingTitle:'Ready for your free in-home water test?',bookingText:'Have questions about your water? Take the next step with a free test at your home from Aquafeel Solutions Arizona.',bookCta:'Book your free water test',previewCta:'Book your free water test',previewNote:'Preview only · Calendar connection pending',bookingNote:'At your home · Free water test',privacy:'Privacy policy',terms:'Terms',previewEyebrow:'BOOKING PREVIEW',dialogTitle:'Your booking will\nstart here.',calendarPending:'Scheduling connection pending',dialogDescription:'This is a review preview. The approved booking calendar will open here. No appointment has been booked and no information has been sent.',back:'Back to the page',close:'Close booking preview',reviewPending:'Customer review coming soon',reviewHint:'An approved review and its original source will appear here.',videoPending:'Customer testimonial',videoHint:'Illustrative image · Customer video pending',pending:'ILLUSTRATIVE PREVIEW',english:'English testimonial',spanish:'Testimonio en español',source:'Read the original review',caption:'Captions',liveEyebrow:'BOOK YOUR VISIT',liveDescription:'Choose an available time in the calendar below. Your appointment is only booked after confirmation from the scheduling service.',unavailable:'Booking is not available on this page yet. Please check back soon.',storiesIntro:'Customer perspectives in English and Spanish.',welcomeKicker:'THANK YOU FOR YOUR INTEREST',welcomeDetails:'Free in-home water test · English & Español',reviewThemes:["The in-home experience","Working with our local team","From first contact to follow-up"],
@@ -54,7 +56,7 @@
         card.append(video);
       }else{
         const stage=element('div','video-stage illustrated-stage');
-        const illustration=document.createElement('img');illustration.src=item.language==='es'?'assets/illustrative-carafe-arizona.png':'assets/illustrative-faucet-glass.png';illustration.alt=language==='es'?'Imagen ilustrativa generada de agua en una cocina de Arizona':'Generated illustrative image of water in an Arizona kitchen';illustration.width=1672;illustration.height=941;illustration.loading='lazy';stage.append(illustration);
+        const illustration=document.createElement('img');illustration.src=item.language==='es'?'assets/illustrative-carafe-arizona.jpg':'assets/illustrative-faucet-glass.jpg';illustration.alt=language==='es'?'Imagen ilustrativa generada de agua en una cocina de Arizona':'Generated illustrative image of water in an Arizona kitchen';illustration.width=959;illustration.height=540;illustration.loading='eager';illustration.decoding='async';stage.append(illustration);
         const icon=element('span','play-outline'); icon.setAttribute('aria-hidden','true');
         icon.innerHTML='<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m9 5 10 7-10 7Z"/></svg>';
         stage.append(icon,element('span','pending-label',t.pending));card.append(stage);
@@ -83,7 +85,7 @@
   }
   document.querySelectorAll('[data-lang]').forEach(node=>node.addEventListener('click',()=>{
     language=node.dataset.lang;
-    const url=new URL(location.href);url.searchParams.set('lang',language);history.replaceState(null,'',url);
+    const url=new URL(location.href);url.searchParams.set('lang',language);try { history.replaceState(null,'',url); } catch { /* Some embedded browsers restrict history updates. */ }
     renderLanguage();
   }));
   button.addEventListener('click',()=>{
@@ -97,9 +99,9 @@
       setText(document.querySelector('#dialog-description'),t.unavailable);
       dialog.querySelector('.calendar-preview').hidden=true;
     }
-    dialog.showModal();
+    if(typeof dialog.showModal==='function')dialog.showModal();else dialog.setAttribute('open','');
   });
-  dialog.querySelectorAll('.close-dialog,.dismiss-dialog').forEach(node=>node.addEventListener('click',()=>dialog.close()));
+  dialog.querySelectorAll('.close-dialog,.dismiss-dialog').forEach(node=>node.addEventListener('click',()=>{if(typeof dialog.close==='function')dialog.close();else{dialog.removeAttribute('open');button.focus();}}));
   dialog.addEventListener('close',()=>{dialog.querySelector('iframe')?.remove();button.focus();});
   document.querySelector('#year').textContent=new Date().getFullYear();
   renderLanguage();
