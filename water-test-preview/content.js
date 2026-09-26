@@ -10,7 +10,7 @@ window.AQUAFEEL_CONTENT = {
   ],
   videos: [
     // Spoken language: Spanish (captions are burned into the video). Vertical 9:16 phone recording.
-    { language: "es", approved: true, orientation: "portrait", name: "", src: "assets/testimonial-es.mp4", poster: "assets/testimonial-es-poster.jpg", captions: "" },
+    { language: "es", approved: true, orientation: "portrait", hideLabel: true, name: "", src: "assets/testimonial-es.mp4", poster: "assets/testimonial-es-poster.jpg", captions: "" },
     // Hidden until a second customer video is supplied. Remove hidden:true to show the pending card again.
     { language: "en", approved: false, hidden: true, name: "", src: "", poster: "", captions: "" }
   ],
