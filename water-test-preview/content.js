@@ -9,8 +9,10 @@ window.AQUAFEEL_CONTENT = {
     { platform: "Trustpilot", approved: false, quote: "", author: "", sourceUrl: "" }
   ],
   videos: [
-    { language: "en", approved: false, name: "", src: "", poster: "", captions: "" },
-    { language: "es", approved: false, name: "", src: "", poster: "", captions: "" }
+    // Spoken language: Spanish (captions are burned into the video). Vertical 9:16 phone recording.
+    { language: "es", approved: true, orientation: "portrait", name: "", src: "assets/testimonial-es.mp4", poster: "assets/testimonial-es-poster.jpg", captions: "" },
+    // Hidden until a second customer video is supplied. Remove hidden:true to show the pending card again.
+    { language: "en", approved: false, hidden: true, name: "", src: "", poster: "", captions: "" }
   ],
   // Lewis owns the new GHL flow. Do not substitute the archived booking URL.
   booking: { approved: false, embedUrl: "" }
