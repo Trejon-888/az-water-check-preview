@@ -64,7 +64,7 @@
         icon.innerHTML='<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m9 5 10 7-10 7Z"/></svg>';
         stage.append(icon,element('span','pending-label',t.pending));card.append(stage);
       }
-      const label=element('div','video-label');label.append(element('h3','',item.name || title),element('span','',item.language==='es'?'ES':'EN'));card.append(label);if(!ready)card.append(element('p','illustration-note',t.videoHint));videos.append(card);
+      if(!(ready && item.hideLabel)){const label=element('div','video-label');label.append(element('h3','',item.name || title),element('span','',item.language==='es'?'ES':'EN'));card.append(label);}if(!ready)card.append(element('p','illustration-note',t.videoHint));videos.append(card);
     });
     videos.classList.toggle('video-grid--single',videos.children.length===1);
     videos.closest('section').hidden = !videos.children.length;
